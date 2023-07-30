@@ -15,7 +15,9 @@ export const NavBar = styled.nav`
    justify-content: space-between;
    margin: 0 2rem;
    color: #fff;
-
+   @media(max-width:700px){
+      margin:0
+   }
 `
 export const Div = styled.div`
    display: flex;

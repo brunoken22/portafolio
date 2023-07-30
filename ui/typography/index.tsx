@@ -10,8 +10,8 @@ export const Subtitle = styled.h2`
 `
 export const Body = styled.p<any>`
    font-size: 1.2rem;
-   font-weight: ${((props:any)=>props.weight?props.weight:300)};
-   margin:${((props:any)=>props.margin?props.margin:0)};
+   font-weight: ${((props:any)=>props.$weight?props.$weight:300)};
+   margin:${((props:any)=>props.$margin?props.$margin:0)};
    text-align: center;
    @media (max-width:700px) {
       margin-left: 2%;
