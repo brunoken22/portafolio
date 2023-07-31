@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import Linkedin from '@/ui/icons/linkedin.svg'
 import Github from '@/ui/icons/github.svg'
 import Link from 'next/link';
+import {  Slide } from "react-awesome-reveal";
+
 type FormData = {
    name: string;
    email: string;
@@ -15,6 +17,7 @@ export function Contact(){
 
    return (
       <ContenedorForm id="3">
+         <Slide>
          <DivContact>
             <div>
                <Body><span style={{color:"greenyellow"}}>Datos de contacto</span></Body>
@@ -46,6 +49,7 @@ export function Contact(){
                <Button>Enviar</Button>
             </div>
          </Form>
+         </Slide>
       </ContenedorForm>
    )
 }

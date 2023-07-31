@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Heart from '@/ui/icons/heart.svg'
+import {  Zoom} from "react-awesome-reveal";
+
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
   accessToken: 'vfQ16mfGkwZCKSPTKJypjjLoKDZH_6mZgkD__9if1ws',
@@ -25,7 +27,9 @@ export function Proyectos(){
             <Subtitle>Experiencia</Subtitle>
          </div>
          <DivProyectos>
-            {proyect?(proyect as any).map((el:any,p:any)=>{return (<div key={p}><TemplateProyect ><Link href={el.fields.linkDeArticle} key={p} target='blank'>
+            {proyect?(proyect as any).map((el:any,p:any)=>{return (<div key={p}><Zoom
+ 
+><TemplateProyect ><Link href={el.fields.linkDeArticle} key={p} target='blank'>
                <Image src={el.fields.linkImgPagina} width={350} height={230} alt={el.fields.appMisPelis}></Image></Link>
                <div >
                   <Body>{el.fields.appMisPelis}</Body>
@@ -34,7 +38,7 @@ export function Proyectos(){
                      <Botton onClick={(e:any)=>e.target.style.fill="tomato"}><Heart ></Heart></Botton>
                  </div>
                </div>
-            </TemplateProyect></div>)}):null}
+            </TemplateProyect></Zoom></div>)}):null}
          </DivProyectos>
       </div>   
    )
