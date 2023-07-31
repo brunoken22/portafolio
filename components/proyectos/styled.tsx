@@ -6,6 +6,7 @@ export const TemplateProyect = styled.div`
    color: #fff;
    gap: 3rem;
    border: 2px solid #fff;
+   box-shadow: #ddd 0px 0px 8px 1px;
    &:hover{
       opacity: 0.8;
    }

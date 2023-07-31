@@ -17,7 +17,7 @@ export function Contact(){
       <ContenedorForm id="3">
          <DivContact>
             <div>
-               <Body>Datos de contacto</Body>
+               <Body><span style={{color:"greenyellow"}}>Datos de contacto</span></Body>
                <Subtitle>¡Trabajemos juntos!</Subtitle>
             </div>
             <OneContact>

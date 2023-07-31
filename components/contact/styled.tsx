@@ -13,7 +13,7 @@ export const DivContact = styled(ContenedorForm)`
       margin: 1rem;
     }
 `
-export const OneContact = styled(DivContact)`
+export const OneContact = styled(DivContact)<any>`
    align-items: center;
    flex-direction: ${((props:any)=>props.$direction)};
 `

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Container>
       <div>
-        <div style={{display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center",}}><Image src={img} alt="hero" height={0} width={300} style={{backgroundColor:"rgb(229 229 229)",borderRadius:"50%"}}/></div>
+        <div style={{display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center",}}><Image src={img} alt="hero"  height={250} width={250}  style={{ backgroundColor: "rgb(229 229 229)",borderRadius: "50%",maxWidth: "300px",minWidth: "250px"}}/></div>
         <div style={{display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center",}}>
             <div >
               <Title>Bruno ken</Title>
@@ -21,6 +21,7 @@ export default function Home() {
       </div>
       <Skill/>
       <Proyectos/>
+      <hr style={{width:"80%",backgroundColor:"#ddd",boxShadow:" #ddd 0px 100px 1000px 10px;"}}/>
       <Contact/>
     </Container>
   ) 
