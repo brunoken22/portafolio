@@ -12,6 +12,9 @@ export const Form= styled.form`
     border: 2px solid #252525;
     border-left-width: thick;
     border-bottom-width: thick;
+    @media(max-width:700px){
+      margin: 0;
+    }
 `
 export const Label = styled.label`
     display: block;
