@@ -30,7 +30,7 @@ export function Proyectos(){
                <div >
                   <Body>{el.fields.appMisPelis}</Body>
                  <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",padding: "1rem",height:"90px"}}>
-                     <Body $weight="100" $size={"1rem"}>50 me gusta</Body>
+                     <Body $weight="100" $size={"1rem"}>{"0"} Me gusta</Body>
                      <Botton onClick={(e:any)=>e.target.style.fill="tomato"}><Heart ></Heart></Botton>
                  </div>
                </div>

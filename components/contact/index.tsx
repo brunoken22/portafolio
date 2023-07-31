@@ -1,22 +1,46 @@
-import {Label,Input,Button,Form,ContenedorForm}from './styled'
+import {Label,Input,Button,Form,ContenedorForm,Textarea,DivContact,OneContact}from './styled'
 import { Body,Subtitle } from '@/ui/typography'
-
+import { useForm } from "react-hook-form";
+import Linkedin from '@/ui/icons/linkedin.svg'
+import Github from '@/ui/icons/github.svg'
+import Link from 'next/link';
+type FormData = {
+   name: string;
+   email: string;
+};
 export function Contact(){
+   const { register, setValue, handleSubmit, formState: { errors } } = useForm<FormData>();
+   const onSubmit = handleSubmit(data => console.log(data));
+ 
+
    return (
       <ContenedorForm id="3">
-         <Subtitle>Contacto</Subtitle>
+         <DivContact>
+            <div>
+               <Body>Datos de contacto</Body>
+               <Subtitle>¡Trabajemos juntos!</Subtitle>
+            </div>
+            <OneContact>
+               <div style={{display: "inline-flex"}}><Body>Tlf: </Body><a href="tel:+541161204047" style={{color:"#fff"}}>+541161204047</a></div>
+               <div style={{display: "inline-flex"}}><Body>Email: </Body><a href="bruno_am_22@hotmail.com" style={{color:"#fff"}}>bruno_am_22@hotmail.com</a></div>
+            </OneContact>
+            <OneContact $direction="row">
+               <Link href="https://github.com/brunoken22" target="_blank"><Github/></Link>
+               <Link href="https://www.linkedin.com/in/brunoken18/" target="_blank"><Linkedin/></Link>   
+            </OneContact>
+         </DivContact>
          <Form>
             <div>
-               <Label>Nombre</Label>
-               <Input></Input>
+               <Label htmlFor='name'>Nombre</Label>
+               <Input type='text' {...register("name")} placeholder='Bruno Ken'></Input>
             </div>
             <div>
                <Label>Email</Label>
-               <Input></Input>
+               <Input type='email' {...register("email")} placeholder='Bruno_am_22@hotmail.com'></Input>
             </div>
             <div>
                <Label>Mensaje</Label>
-               <textarea style={{width:"100%"}}></textarea>
+               <Textarea ></Textarea>
             </div>
             <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
                <Button>Enviar</Button>
