@@ -4,9 +4,11 @@ import img from "@/ui/img/hero.png"
 import {Body,Title} from '@/ui/typography'
 import { Skill } from '@/components/skill'
 import { Proyectos } from '@/components/proyectos'
+import { Contact } from '@/components/contact'
+import { Container } from '@/ui/contenedores'
 export default function Home() {
   return (
-    <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between",alignItems:"center",marginTop:"3rem",gap:"3rem"}}>
+    <Container>
       <div>
         <div style={{display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center",}}><Image src={img} alt="hero" height={0} width={300} style={{backgroundColor:"rgb(229 229 229)",borderRadius:"50%"}}/></div>
         <div style={{display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center",}}>
@@ -19,7 +21,8 @@ export default function Home() {
       </div>
       <Skill/>
       <Proyectos/>
-    </div>
+      <Contact/>
+    </Container>
   ) 
 }
 

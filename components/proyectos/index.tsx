@@ -20,16 +20,19 @@ export function Proyectos(){
       })
    },[])
    return(
-      <div>
+      <div id="1">
          <div>
             <Subtitle>Experiencia</Subtitle>
          </div>
          <DivProyectos>
             {proyect?(proyect as any).map((el:any,p:any)=>{return (<div key={p}><TemplateProyect ><Link href={el.fields.linkDeArticle} key={p} target='blank'>
-               <Image src={el.fields.linkImgPagina} width={400} height={250} alt={el.fields.appMisPelis}></Image></Link>
-               <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",padding: "1rem"}}>
+               <Image src={el.fields.linkImgPagina} width={350} height={230} alt={el.fields.appMisPelis}></Image></Link>
+               <div >
                   <Body>{el.fields.appMisPelis}</Body>
-                  <Botton><Heart ></Heart></Botton>
+                 <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",padding: "1rem",height:"90px"}}>
+                     <Body $weight="100" $size={"1rem"}>50 me gusta</Body>
+                     <Botton onClick={(e:any)=>e.target.style.fill="tomato"}><Heart ></Heart></Botton>
+                 </div>
                </div>
             </TemplateProyect></div>)}):null}
          </DivProyectos>

@@ -17,7 +17,7 @@ import 'swiper/css/pagination';
 import { ContentIcons } from './styled'
 export function Skill() {
   return (
-      <div style={{textAlign:"center",width:"100%"}}>
+      <div style={{textAlign:"center",width:"100%"}} id='2'>
          <div>
             <Subtitle>Skill</Subtitle>
          </div>

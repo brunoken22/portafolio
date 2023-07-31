@@ -17,4 +17,16 @@ export const DivIconsHero =  styled.div<any>`
          transform: rotate(360deg) translateX(20px) rotate(-360deg);
       }
    }
+
+`
+export const Container = styled.div`
+   display:flex;
+   flex-direction:column;
+   justify-content:space-between;
+   align-items:center;
+   margin-top:3rem;
+   gap:3rem;
+   @media(max-width:700px){
+      margin: auto 5%;
+   }
 `

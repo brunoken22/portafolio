@@ -10,7 +10,7 @@ export const Subtitle = styled.h2`
    text-align: center;
 `
 export const Body = styled.p<any>`
-   font-size: 1.2rem;
+   font-size: ${((props:any)=>props.$size?props.$size:"1.2rem")};
    font-weight: ${((props:any)=>props.$weight?props.$weight:300)};
    margin:${((props:any)=>props.$margin?props.$margin:0)};
    text-align: center;

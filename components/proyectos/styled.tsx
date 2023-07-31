@@ -6,7 +6,9 @@ export const TemplateProyect = styled.div`
    color: #fff;
    gap: 3rem;
    border: 2px solid #fff;
-
+   &:hover{
+      opacity: 0.8;
+   }
 `
 export const DivProyectos = styled.div`
    display: flex;
@@ -21,11 +23,17 @@ export const Botton = styled.button`
    background: transparent;
    cursor: pointer;
    fill: lightcyan;
-
-   &:hover{
+   &:hover svg{
       fill: tomato;
+      width: 45px;
+      height: 45px;
+      z-index: 10;
    }
-   &:focus{
+   &:focus svg{
       fill: tomato;
+      width: 45px;
+      height: auto;
+      z-index: 10;
    }
+   
 `
