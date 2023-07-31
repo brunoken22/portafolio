@@ -25,13 +25,13 @@ export function Skill() {
          </div>
          <ContentIcons>
             <DivIconsHero $right="80%" $top="20%"><Firebase/></DivIconsHero>
-            <DivIconsHero $right="80%" $top="30%"><Express/></DivIconsHero>
             <DivIconsHero $right="80%" $top="40%"><Css/></DivIconsHero>
             <DivIconsHero $right="80%" $top="50%"><Js/></DivIconsHero>
             <DivIconsHero $right="15%" $top="20%"><Node/></DivIconsHero>
             <DivIconsHero $right="15%" $top="30%"><Potsgresql/></DivIconsHero>
             <DivIconsHero $right="15%" $top="40%"><ReactSvg/></DivIconsHero>
             <DivIconsHero $right="15%" $top="50%"><Typescriptsvg/></DivIconsHero> 
+            <DivIconsHero $right="80%" $top="30%"><Express style={{width: "120px !important"}}/></DivIconsHero>
          </ContentIcons>
       </div>
   );
