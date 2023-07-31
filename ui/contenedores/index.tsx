@@ -17,7 +17,11 @@ export const DivIconsHero =  styled.div<any>`
          transform: rotate(360deg) translateX(20px) rotate(-360deg);
       }
    }
-
+   @media(max-width:700px){
+      & > * {
+         width: 60px;
+      }
+   }
 `
 export const Container = styled.div`
    display:flex;

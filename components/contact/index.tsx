@@ -21,8 +21,8 @@ export function Contact(){
                <Subtitle>¡Trabajemos juntos!</Subtitle>
             </div>
             <OneContact>
-               <div style={{display: "inline-flex"}}><Body>Tlf: </Body><a href="tel:+541161204047" style={{color:"#fff"}}>+541161204047</a></div>
-               <div style={{display: "inline-flex"}}><Body>Email: </Body><a href="bruno_am_22@hotmail.com" style={{color:"#fff"}}>bruno_am_22@hotmail.com</a></div>
+               <div style={{display: "inline-flex"}}><Body>Tlf: </Body><a href="tel:+541161204047" style={{color:"#fff"}}> +541161204047</a></div>
+               <div style={{display: "inline-flex"}}><Body>Email: </Body><a href="bruno_am_22@hotmail.com" style={{color:"#fff"}}> bruno_am_22@hotmail.com</a></div>
             </OneContact>
             <OneContact $direction="row">
                <Link href="https://github.com/brunoken22" target="_blank"><Github/></Link>
