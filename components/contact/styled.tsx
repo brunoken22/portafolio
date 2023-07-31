@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-export const ContenedorForm = styled.div<any>`
+export const ContenedorForm = styled.div`
    width: 100%;
    display: flex; 
    justify-content: space-evenly;
