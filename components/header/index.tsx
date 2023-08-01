@@ -30,7 +30,7 @@ export function Header() {
           <Bk/>
         </div>
         <Div  >
-          {pages.map((e:any,p:any)=>(<Enlaces href={"http://localhost:3000/#2"} key={p}>{e}</Enlaces>))}
+          {pages.map((e:any,p:any)=>(<Enlaces href={"#"+p} key={p}>{e}</Enlaces>))}
         </Div>
         <Hambug onClick={handleClick}>
             <LineaDiv></LineaDiv>
