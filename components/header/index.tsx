@@ -31,9 +31,11 @@ export function Header() {
         </Hambug>
       </NavBar>
     </HeaderNav>
-      <DivDespleHam>
-        <DespleHam desple={desple}/>
-      </DivDespleHam>
+    {
+      desple?    <DivDespleHam >
+      <DespleHam desple={desple}/>
+    </DivDespleHam>:null
+    }
     </>
   )
 }
