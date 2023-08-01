@@ -19,7 +19,9 @@ export function Header() {
     
     setDesple(true)
   }
-
+  const handleClickHam = (click:boolean)=>{
+    // setDesple(click) 
+  }
   return (
     <>
         <HeaderNav>
@@ -39,7 +41,7 @@ export function Header() {
     </HeaderNav>
     {
       desple?<DivDespleHam >
-      <DespleHam />
+      <DespleHam click={handleClickHam}/>
      </DivDespleHam>:null
     }
     </>
