@@ -4,6 +4,7 @@ export const ContenedorForm = styled.div`
    display: flex; 
    justify-content: space-evenly;
    flex-wrap: wrap;
+   align-items: center;
 `
 export const DivContact = styled(ContenedorForm)`
    width:auto;

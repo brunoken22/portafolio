@@ -1,9 +1,21 @@
 "use client"
-import { NavBar,Enlaces,Div,HeaderNav } from './sytled'; 
+import { useEffect, useState,useRef } from 'react';
+import { NavBar,Enlaces,Div,HeaderNav,Hambug,LineaDiv } from './sytled'; 
 import Bk from '@/ui/icons/BK.svg'
 const pages = ['Experiencia', 'Skill', 'Contacto'];
 
 export function Header() {
+  const [width, setWidth] = useState(false);
+  const hambur = useRef(null)
+  const nohambur:any = useRef(null)
+
+  useEffect(()=>{
+    console.log("hola2")
+    if (nohambur.current) {
+      console.log(nohambur.current);
+    }
+  },[])
+
 
   return (
     <HeaderNav>
@@ -11,11 +23,14 @@ export function Header() {
         <div>
           <Bk/>
         </div>
-        <Div>
-          <Enlaces href="#1">Experiencia</Enlaces>
-          <Enlaces href="#2">Skill</Enlaces>
-          <Enlaces href="#3">Contacto</Enlaces>
+        <Div ref={nohambur} >
+          {pages.map((e:any,p:any)=>(<Enlaces key={p}>{e}</Enlaces>))}
         </Div>
+        <Hambug  ref={hambur}>
+          <LineaDiv></LineaDiv>
+          <LineaDiv></LineaDiv>
+          <LineaDiv></LineaDiv>
+        </Hambug>
       </NavBar>
     </HeaderNav>
   )

@@ -46,3 +46,15 @@ export const Enlaces = styled.a`
       background: #FF6038;
    }
 `
+
+export const Hambug = styled.div`
+   display: none;
+   flex-direction: column;
+   gap:0.3rem;
+   margin-right: 1rem;
+`
+export const LineaDiv = styled.div`
+   width: 30px;
+   height: 4px;
+   background-color: #fff;
+`
