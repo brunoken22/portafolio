@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
-import { NavBar,Enlaces,Div,HeaderNav,Hambug,LineaDiv } from './sytled'; 
+import { NavBar,Enlaces,Div,HeaderNav,Hambug,LineaDiv,DivDespleHam } from './sytled'; 
 import { DespleHam } from '../hamburg';
 import Bk from '@/ui/icons/BK.svg'
 const pages = ['Experiencia', 'Skill', 'Contacto'];
@@ -10,7 +10,8 @@ export function Header() {
 
   const handleClick = (e:any)=>{
     e.preventDefault();
-   setDesple(true)
+
+    setDesple(true)
   }
 
   return (
@@ -30,7 +31,9 @@ export function Header() {
         </Hambug>
       </NavBar>
     </HeaderNav>
-      <DespleHam desple={desple}/>
+      <DivDespleHam>
+        <DespleHam desple={desple}/>
+      </DivDespleHam>
     </>
   )
 }

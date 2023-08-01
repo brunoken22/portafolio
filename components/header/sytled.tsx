@@ -46,7 +46,15 @@ export const Enlaces = styled.a`
       background: #FF6038;
    }
 `
-
+export const DivDespleHam = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+`
 export const Hambug = styled.div`
    display: none;
    flex-direction: column;
@@ -57,6 +65,7 @@ export const Hambug = styled.div`
       display: flex;
    }
 `
+
 export const LineaDiv = styled.div`
    width: 30px;
    height: 4px;

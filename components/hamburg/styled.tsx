@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const DivHamburg = styled.div`
-   display: flex;
+
+   background-color: #292931;
+    display: flex;
     flex-direction: column;
     gap: 0.3rem;
     cursor: pointer;
@@ -14,7 +16,7 @@ export const DivHamburg = styled.div`
     align-items: center;
     z-index: 10;
     border-radius: 50% 0 0 50%;
-    backdrop-filter: contrast(0.5);
+
 
 `
 export const DivElemnt = styled.div`
