@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { NavBar,Enlaces,Div,HeaderNav,Hambug,LineaDiv,DivDespleHam } from './sytled'; 
 import { DespleHam } from '../hamburg';
 import Bk from '@/ui/icons/BK.svg'
+import Link from 'next/link';
 const pages = [ 'Skill','Experiencia','Contacto'];
 
 export function Header() {
@@ -22,15 +23,16 @@ export function Header() {
   const handleClickHam = (click:boolean)=>{
     setDesple(click) 
   }
+
   return (
     <>
-        <HeaderNav>
+      <HeaderNav>
       <NavBar>
         <div>
-          <Bk/>
+          <Link href='/'><Bk/></Link>
         </div>
         <Div  >
-          {pages.map((e:any,p:any)=>(<Enlaces href={"#"+p} key={p}>{e}</Enlaces>))}
+          {pages.map((e:any,p:any)=>(<Enlaces href={"#"+p}  key={p}>{e}</Enlaces>))}
         </Div>
         <Hambug onClick={handleClick}>
             <LineaDiv></LineaDiv>
