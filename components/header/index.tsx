@@ -16,8 +16,7 @@ export function Header() {
       setDesple(false)
       return
     }
-    console.log(window)
-    // (window as any).style.overflow = "hidden"
+    
     setDesple(true)
   }
 

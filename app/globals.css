@@ -2,10 +2,10 @@
    box-sizing: border-box;
 }
 body{
-   margin: 0;
-   background-color: #0e141b;
-   color:#fff;
-   overflow-y: scroll;
+  margin: 0;
+  background-color: #0e141b;
+  color:#fff;
+
 }
 
  /* Estilo del scrollbar */
