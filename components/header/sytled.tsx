@@ -52,6 +52,7 @@ export const Hambug = styled.div`
    flex-direction: column;
    gap:0.3rem;
    margin-right: 1rem;
+   cursor:pointer;
    @media(max-width:700px){
       display: flex;
    }
