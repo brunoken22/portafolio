@@ -1,18 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import {DivHamburg,DivElemnt,Enlaces} from './styled'
-const pages = ['Experiencia', 'Skill', 'Contacto'];
+const pages = [ 'Skill','Experiencia','Contacto'];
 
 export function DespleHam(props:any){
-   
-
 
    return (
       <>
-         {props.desple?<DivHamburg>
+        <DivHamburg>
             <DivElemnt>
-               {pages.map((e:any,p:any)=>(<Enlaces key={p}>{e}</Enlaces>))}
+               {pages.map((e:any,p:any)=>(<Enlaces href={"#"+p} key={p}>{e}</Enlaces>))}
             </DivElemnt>
-         </DivHamburg>:null}
+         </DivHamburg>
       </>
    )
 }

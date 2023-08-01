@@ -33,6 +33,7 @@ export const Enlaces = styled.a`
    text-decoration: none;
    color: #fff;
    font-weight: 500;
+   cursor: pointer;
    &:after {
       content: "";
       display: block;
@@ -54,6 +55,10 @@ export const DivDespleHam = styled.div`
     bottom: 0;
     z-index: 2;
     backdrop-filter: blur(5px);
+    ::-webkit-scrollbar {
+     overflow: hidden !important;
+   }
+
 `
 export const Hambug = styled.div`
    display: none;

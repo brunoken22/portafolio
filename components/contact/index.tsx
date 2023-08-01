@@ -16,7 +16,7 @@ export function Contact(){
  
 
    return (
-      <ContenedorForm id="3">
+      <ContenedorForm id="2">
          <Slide>
          <DivContact>
             <div>

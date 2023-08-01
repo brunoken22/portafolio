@@ -1,21 +1,19 @@
 import styled from 'styled-components'
 
 export const DivHamburg = styled.div`
-
    background-color: #292931;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    cursor: pointer;
-    position: fixed;
-    top: 8%;
-    right: 0;
-    left: 40%;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    border-radius: 50% 0 0 50%;
+   display: flex;
+   flex-direction: column;
+   gap: 0.3rem;
+   position: fixed;
+   top: 8%;
+   right: 0;
+   left: 40%;
+   bottom: 0;
+   justify-content: center;
+   align-items: center;
+   z-index: 10;
+   border-radius: 50% 0 0 50%;
 
 
 `
@@ -26,7 +24,7 @@ export const DivElemnt = styled.div`
    align-items: center;
    height: 20%;
    font-size: 1.5rem;
-   
+
 `
 export const Enlaces = styled.a`
    text-decoration: none;

@@ -17,7 +17,7 @@ import 'swiper/css/pagination';
 import { ContentIcons } from './styled'
 export function Skill() {
   return (
-      <div style={{textAlign:"center",width:"100%"}} id='2'>
+      <div style={{textAlign:"center",width:"100%"}} id='0'>
          <hr style={{width:"80%",backgroundColor:"#ddd",boxShadow:"#ddd 0px 100px 1000px 10px"}}/>
 
          <div>
