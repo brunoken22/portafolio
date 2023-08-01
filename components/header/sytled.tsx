@@ -55,7 +55,9 @@ export const DivDespleHam = styled.div`
     bottom: 0;
     z-index: 2;
     backdrop-filter: blur(5px);
-
+   @media(min-width:701px){
+      display: none;
+   }
 `
 export const Hambug = styled.div`
    display: none;
