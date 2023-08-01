@@ -33,13 +33,21 @@ export function Proyectos(){
                <Image src={el.fields.linkImgPagina} width={350} height={230} alt={el.fields.appMisPelis}></Image></Link>
                <div >
                   <Body>{el.fields.appMisPelis}</Body>
-                 <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",padding: "1rem",height:"90px"}}>
-                     <Body $weight="100" $size={"1rem"}>{"0"} Me gusta</Body>
-                     <Botton onClick={(e:any)=>e.target.style.fill="tomato"}><Heart ></Heart></Botton>
-                 </div>
+                  <Like/>
                </div>
             </TemplateProyect></Zoom></div>)}):null}
          </DivProyectos>
       </div>   
+   )
+}
+
+function Like (){
+   const [contador,setContador] = useState(0)
+
+   return (
+      <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",padding: "1rem",height:"90px"}}>
+         <Body $weight="100" $size={"1rem"}>{contador} Me gusta</Body>
+         <Botton onClick={(e:any)=>{e.target.style.fill="tomato";setContador((e:number)=>e+1)}}><Heart ></Heart></Botton>
+      </div>
    )
 }
