@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import useSWRImmutable from "swr/immutable";
-
+// "https://portafolio-taupe-nine.vercel.app"
 async function fetchApiAuth(api: any) {
    const option = api[1] || {};
    if (api) {
@@ -24,7 +24,7 @@ export function ObtenerLikes() {
    return { data, error, isLoading };
 }
 
-export function SubirLikes(like: any) {
+export async function SubirLikes(like: any) {
    const api = "/api/like";
    const header = {
       method: "POST",
@@ -33,11 +33,9 @@ export function SubirLikes(like: any) {
       },
       body: JSON.stringify(like),
    };
-   const { data, error, isLoading } = useSWRImmutable(
-      like.id ? [api, header] : null,
-      fetchApiAuth
-   );
-   return { data, error, isLoading };
+   const data = await fetchApiAuth(like.id ? [api, header] : null);
+
+   return data;
 }
 export function QuitarLike(like: any) {
    const api = "/api/like";
@@ -48,9 +46,7 @@ export function QuitarLike(like: any) {
       },
       body: JSON.stringify(like),
    };
-   const { data, error, isLoading } = useSWRImmutable(
-      like.id ? [api, header] : null,
-      fetchApiAuth
-   );
-   return { data, error, isLoading };
+
+   const dataMod = fetchApiAuth(like.like ? [api, header] : null);
+   return dataMod;
 }

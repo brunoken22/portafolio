@@ -45,40 +45,61 @@ export function Proyectos(){
    )
 }
 
-function Like (props:any){
-   const [contador,setContador] = useState(0)
+ function Like (props:any){
+   const [contador,setContador] = useState(props.data.likes)
    const [newData,setNewData] = useState({id:"",proyect:"",like:0})
    const [modData,setModData] = useState({id:"",proyect:"",like:0})
 
-   const { data, error, isLoading } = SubirLikes(newData);
-   const {  } = QuitarLike(modData);
-
-
    useEffect(()=>{
       setContador(props.data.likes)
-   },[props.data.likes,newData,data])
+   },[props.data.likes])
 
-   const handleClick = (e:any)=>{
+   const handleClick = async(e:any)=>{
       e.preventDefault();
-      console.log("heart")
+      e.target.style.disabled = true
+      e.target.style.cursor = "progress";
+      await SubirLikes({
+         id:props.data.id,
+         proyect:props.data.proyect,
+         like:contador+1
+      });
+      e.target.style.disabled = false
+      e.target.style.cursor = "pointer";
       e.target.style.fill = "tomato"
-      setContador((e:number)=>e+1)
+      
+      setContador(((e:number)=>e+1))
       setNewData({
          id:props.data.id,
          proyect:props.data.proyect,
          like:contador+1
       })
-   }
-   const handleDobleClick = (e:any)=>{
-      e.preventDefault();
-      console.log("noheart")
-      e.target.style.fill = "#fff"
       setModData({
+         id:"",
+         proyect:"",
+         like:0
+      })
+   }
+
+   const handleDobleClick = async(e:any)=>{
+      e.preventDefault();
+      e.target.style.disabled = true
+      e.target.style.cursor = "progress";
+      await QuitarLike({
          id:props.data.id,
          proyect:props.data.proyect,
          like:contador-1
       })
+      e.target.style.disabled = false
+      e.target.style.cursor = "pointer";
+      e.target.style.fill = "#fff"  
+      setContador(((e:number)=>e-1))
+      setNewData({
+         id:"",
+         proyect:"",
+         like:0
+      })
    }
+
    return (
       <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",padding: "1rem",height:"90px"}} >
          <Body $weight="100" $size={"1rem"}>{contador} Me gusta</Body>
