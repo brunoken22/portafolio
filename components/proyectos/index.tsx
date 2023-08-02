@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Heart from '@/ui/icons/heart.svg'
 import {Zoom} from "react-awesome-reveal";
-import { ObtenerLikes,SubirLikes } from '@/lib/hook'
+import { ObtenerLikes,SubirLikes,QuitarLike } from '@/lib/hook'
 
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
@@ -47,27 +47,42 @@ export function Proyectos(){
 
 function Like (props:any){
    const [contador,setContador] = useState(0)
-   const [newData,setNewData] = useState({})
+   const [newData,setNewData] = useState({id:"",proyect:"",like:0})
+   const [modData,setModData] = useState({id:"",proyect:"",like:0})
+
    const { data, error, isLoading } = SubirLikes(newData);
+   const {  } = QuitarLike(modData);
+
 
    useEffect(()=>{
       setContador(props.data.likes)
-   },[props.data])
+   },[props.data.likes,newData,data])
+
    const handleClick = (e:any)=>{
       e.preventDefault();
+      console.log("heart")
       e.target.style.fill = "tomato"
       setContador((e:number)=>e+1)
       setNewData({
          id:props.data.id,
          proyect:props.data.proyect,
-         like:true
+         like:contador+1
       })
    }
-
+   const handleDobleClick = (e:any)=>{
+      e.preventDefault();
+      console.log("noheart")
+      e.target.style.fill = "#fff"
+      setModData({
+         id:props.data.id,
+         proyect:props.data.proyect,
+         like:contador-1
+      })
+   }
    return (
       <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",padding: "1rem",height:"90px"}} >
          <Body $weight="100" $size={"1rem"}>{contador} Me gusta</Body>
-         <Botton onClick={handleClick}><Heart ></Heart></Botton>
+         <Botton onClick={newData.id?handleDobleClick:handleClick}><Heart ></Heart></Botton>
       </div>
    )
 }

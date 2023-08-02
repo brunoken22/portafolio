@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import useSWRImmutable from "swr/immutable";
+
 async function fetchApiAuth(api: any) {
    const option = api[1] || {};
    if (api) {
@@ -33,7 +34,22 @@ export function SubirLikes(like: any) {
       body: JSON.stringify(like),
    };
    const { data, error, isLoading } = useSWRImmutable(
-      [api, header],
+      like.id ? [api, header] : null,
+      fetchApiAuth
+   );
+   return { data, error, isLoading };
+}
+export function QuitarLike(like: any) {
+   const api = "/api/like";
+   const header = {
+      method: "PATCH",
+      headers: {
+         "Content-Type": "application/json",
+      },
+      body: JSON.stringify(like),
+   };
+   const { data, error, isLoading } = useSWRImmutable(
+      like.id ? [api, header] : null,
       fetchApiAuth
    );
    return { data, error, isLoading };
