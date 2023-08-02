@@ -3,7 +3,7 @@ let apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
 apiInstance.setApiKey(
    SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,
-   "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"
+   process.env.SENDINBLUE as string
 );
 export async function sendEmail(dataEmail: any) {
    apiInstance
