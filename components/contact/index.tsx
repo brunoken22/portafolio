@@ -5,14 +5,23 @@ import Linkedin from '@/ui/icons/linkedin.svg'
 import Github from '@/ui/icons/github.svg'
 import Link from 'next/link';
 import {  Slide } from "react-awesome-reveal";
-
+import { mensaje } from '@/lib/hook';
 type FormData = {
    name: string;
    email: string;
+   message:string
 };
 export function Contact(){
    const { register, setValue, handleSubmit, formState: { errors } } = useForm<FormData>();
-   const onSubmit = handleSubmit(data => console.log(data));
+
+    const onSubmit = async(e:any) => {
+      await mensaje(      {
+         name:e.name,
+         email:e.email,
+         message:e.message
+     })
+     alert("mensaje enviado")
+   };
  
 
    return (
@@ -32,7 +41,7 @@ export function Contact(){
                <Link href="https://www.linkedin.com/in/brunoken18/" target="_blank"><Linkedin/></Link>   
             </OneContact>
          </DivContact>
-         <Form>
+         <Form onSubmit={handleSubmit(onSubmit)}>
             <div>
                <Label htmlFor='name'>Nombre</Label>
                <Input type='text' {...register("name")} placeholder='Bruno Ken'></Input>
@@ -43,7 +52,7 @@ export function Contact(){
             </div>
             <div>
                <Label>Mensaje</Label>
-               <Textarea ></Textarea>
+               <Textarea  {...register("message")}></Textarea>
             </div>
             <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
                <Button>Enviar</Button>

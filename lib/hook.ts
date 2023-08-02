@@ -37,7 +37,7 @@ export async function SubirLikes(like: any) {
 
    return data;
 }
-export function QuitarLike(like: any) {
+export async function QuitarLike(like: any) {
    const api = "/api/like";
    const header = {
       method: "PATCH",
@@ -47,6 +47,20 @@ export function QuitarLike(like: any) {
       body: JSON.stringify(like),
    };
 
-   const dataMod = fetchApiAuth(like.like ? [api, header] : null);
+   const dataMod = await fetchApiAuth(like.like ? [api, header] : null);
+   return dataMod;
+}
+
+export function mensaje(data: any) {
+   const api = "/api/mensaje";
+   const header = {
+      method: "POST",
+      headers: {
+         "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+   };
+
+   const dataMod = fetchApiAuth(data ? [api, header] : null);
    return dataMod;
 }
