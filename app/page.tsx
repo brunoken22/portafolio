@@ -23,7 +23,10 @@ export default function Home() {
       return (handleScroll.current.style.width = "0% !important")
     }
   }
-  window.addEventListener("scroll",handlescrol)
+  if (typeof window !== 'undefined') {
+    window.addEventListener("scroll",handlescrol)
+
+  }
   
   return (
     <>
