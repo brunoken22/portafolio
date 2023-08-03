@@ -10,7 +10,7 @@ import Arrow from '@/ui/icons/arrow.svg'
 export default function Home() {
   return (
     <Container>
-      <div>
+      <div style={{display: "flex",flexDirection:"column",justifyContent: "space-evenly",alignItems: "center",height:"90vh"}}>
         <div style={{display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center",}}><Image src={img} alt="hero"  height={250} width={250}  style={{ backgroundColor: "rgb(229 229 229)",borderRadius: "50%",maxWidth: "300px",minWidth: "250px"}}/></div>
         <div style={{display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center",}}>
             <div >
@@ -19,8 +19,8 @@ export default function Home() {
             </div>
           <Body $margin="2rem 20%" $weight="200">Tengo un sólido conocimiento en desarrollo Fullstack y un entusiasmo por la creación de soluciones innovadoras. Durante mi formación, he adquirido habilidades en diversas tecnologías, incluyendo desarrollo web front-end con HTML, CSS, TypeScript y frameworks como React.js ,Next.js. También estoy familiarizado con el desarrollo back-end utilizando Node.js, Express y bases de datos como PostgreSQL Y Firebase.</Body>
         </div>
+        <a href='#0'><Arrow className="arrow"/></a>
       </div>
-      <a href='#0'><Arrow className="arrow"/></a>
       <Skill/>
       <Proyectos/>
       <hr style={{width:"80%",backgroundColor:"#ddd",boxShadow:"#ddd 0px 100px 1000px 10px"}}/>
