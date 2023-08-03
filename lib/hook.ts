@@ -14,7 +14,7 @@ async function fetchApiAuth(api: any) {
          if (data) {
             return data;
          }
-         throw "Algo salió +mal";
+         throw "Algo salió mal";
       }
    }
 }
