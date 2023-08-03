@@ -9,6 +9,7 @@ async function fetchApiAuth(api: any) {
             "https://portafolio-taupe-nine.vercel.app" + api[0],
             option
          );
+
          const data = await response.json();
          if (data) {
             return data;
