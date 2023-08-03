@@ -47,3 +47,14 @@ body{
     opacity: 0;
     transform: translateY(60px);}
 }
+
+.progress-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background:linear-gradient(to right,#a286f1,#4778ff);
+  transition: width .3s ease-in;
+  z-index: 10;
+}
