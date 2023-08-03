@@ -1,4 +1,4 @@
-import {Label,Input,Button,Form,ContenedorForm,Textarea,DivContact,OneContact}from './styled'
+import {Label,Input,Button,Form,ContenedorForm,Textarea,DivContact,OneContact,Enviado}from './styled'
 import { Body,Subtitle } from '@/ui/typography'
 import { useForm } from "react-hook-form";
 import Linkedin from '@/ui/icons/linkedin.svg'
@@ -9,18 +9,22 @@ import { mensaje } from '@/lib/hook';
 type FormData = {
    name: string;
    email: string;
-   message:string
+   message:string;
 };
 export function Contact(){
-   const { register, setValue, handleSubmit, formState: { errors } } = useForm<FormData>();
+   const { register, setValue, handleSubmit, formState,reset } = useForm<FormData>();
 
-    const onSubmit = async(e:any) => {
+   const onSubmit = async(e:any) => {
       await mensaje(      {
          name:e.name,
          email:e.email,
          message:e.message
      })
-     alert("mensaje enviado")
+     setValue("name","")
+     setValue("email","")
+     setValue("message","")
+
+      alert("mensaje enviado")
    };
  
 
@@ -57,6 +61,12 @@ export function Contact(){
             <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
                <Button>Enviar</Button>
             </div>
+
+            {formState.isSubmitted && (
+               <div>
+                  <Enviado>Formulario enviado, Revisa tu correo</Enviado>
+               </div>
+            )}
          </Form>
          </Slide>
       </ContenedorForm>

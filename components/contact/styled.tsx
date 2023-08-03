@@ -1,4 +1,19 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+const msj = keyframes`
+   0%{
+      color:#fff;
+      /* box-shadow:0px 0px 10px 10px ; */
+   }
+   50%{
+      color:#8ff79d;
+      /* box-shadow:0px 0px 20px 20px ; */
+
+   }
+   100%{
+      color:#00ff22;
+      /* box-shadow:0px 0px 30px 30px ; */
+   }
+`
 export const ContenedorForm = styled.div`
    width: 100%;
    display: flex; 
@@ -71,4 +86,10 @@ export const Button = styled.button`
       background-color: #0b7dda;
    }
 `
-   
+
+export const Enviado = styled.p`
+   text-align: center;
+   animation: ${msj} 2s ease 5s infinite normal  forwards ;
+   box-shadow: 0px 10px 10px 1px;
+
+`

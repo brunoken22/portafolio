@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled,{keyframes} from 'styled-components'
+
 
 export const HeaderNav = styled.header`
    position: sticky;
