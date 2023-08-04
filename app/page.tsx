@@ -45,6 +45,7 @@ export default function Home() {
           <a href='#0'><Arrow className="arrow"/></a>
         </div>
         <Skill/>
+        <hr style={{width:"80%",backgroundColor:"#ddd",boxShadow:"#ddd 0px 100px 1000px 10px"}}/>
         <Proyectos/>
         <hr style={{width:"80%",backgroundColor:"#ddd",boxShadow:"#ddd 0px 100px 1000px 10px"}}/>
         <Contact/>

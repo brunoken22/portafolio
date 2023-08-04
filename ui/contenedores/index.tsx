@@ -21,16 +21,17 @@ export const DivIconsHero =  styled.div<any>`
       & > * {
          width: 60px;
       }
-   }
+   } 
 `
 export const Container = styled.div`
    display:flex;
-   flex-direction:column;
+   flex-direction:column; 
    justify-content:space-between;
    align-items:center;
-   margin-top:3rem;
    gap:3rem;
+   color:${({theme}:any)=>theme.color};
+   background-color:${({theme}:any)=>theme.background};
    @media(max-width:700px){
-      margin: auto 5%;
+      padding: auto 5%;
    }
 `

@@ -1,11 +1,11 @@
+:root{
+  --fondo-bg : #0e141b 
+}
 *{
    box-sizing: border-box;
 }
 body{
   margin: 0;
-  background-color: #0e141b;
-  color:#fff;
-
 }
 
  /* Estilo del scrollbar */
@@ -33,6 +33,14 @@ body{
     box-shadow: 0px 0px 100px 5px;
 }
 
+.default g{
+  fill:  (var(--fondo-bg));
+}
+
+.light{
+  fill: (var(--fondo-bg));
+
+}
 
 @keyframes arrow {
   0% {
@@ -58,3 +66,16 @@ body{
   transition: width .3s ease-in;
   z-index: 10;
 }
+
+.modeLight{
+  background-color: #080303;
+  transition: transform .5s ease;
+  transform: translateX(24px) scale(1.0) rotate(180deg);
+}
+.modeDark{
+  background-color: rgb(212, 212, 1); 
+  transition: transform .5s ease;
+  transform: translateX(0px) scale(1.0) rotate(180deg);
+
+}
+

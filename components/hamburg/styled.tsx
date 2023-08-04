@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const DivHamburg = styled.div`
-   background-color: #292931;
+   color:${({theme}:any)=>theme.color};
+   background-color:${({theme}:any)=>theme.background};
    display: flex;
    flex-direction: column;
    gap: 0.3rem;
@@ -24,11 +25,14 @@ export const DivElemnt = styled.div`
    align-items: center;
    height: 20%;
    font-size: 1.5rem;
+   color:${({theme}:any)=>theme.color};
+   background-color:${({theme}:any)=>theme.background};
 
 `
 export const Enlaces = styled.a`
    text-decoration: none;
-   color: #fff;
+   color:${({theme}:any)=>theme.color};
+   background-color:${({theme}:any)=>theme.background};
    font-weight: 500;
    cursor: pointer;
    &:after {

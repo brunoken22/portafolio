@@ -91,7 +91,7 @@ export function Proyectos(){
       })
       e.target.style.disabled = false
       e.target.style.cursor = "pointer";
-      e.target.style.fill = "#fff"  
+      e.target.style.fill = "#ddd"  
       setContador(((e:number)=>e-1))
       setNewData({
          id:"",
