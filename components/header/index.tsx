@@ -37,21 +37,21 @@ export function Header(props:any) {
   return (
     <>
       <HeaderNav>
-      <NavBar>
-        <div>
-          <Link href='/'><Bk className={`${theme == "default"?"light":"default"}`}/></Link>
-        </div>
-        <Div  >
-          {pages.map((e:any,p:any)=>(<Enlaces href={"#"+p}  key={p}>{e}</Enlaces>))}
-        </Div>
-        <Mode><ModeBoton onClick={handleCambiar} className={`${theme == "default" ? "modeLight" : "modeDark"}`}></ModeBoton></Mode>
-        <Hambug onClick={handleClick}>
-            <LineaDiv></LineaDiv>
-            <LineaDiv></LineaDiv>
-            <LineaDiv></LineaDiv>
-        </Hambug>
-      </NavBar>
-    </HeaderNav>
+        <NavBar>
+          <div>
+            <Link href='/'><Bk className={`${theme == "default"?"light":"default"}`}/></Link>
+          </div>
+          <Div  >
+            {pages.map((e:any,p:any)=>(<Enlaces href={"#"+p}  key={p}>{e}</Enlaces>))}
+          </Div>
+          <Mode><ModeBoton onClick={handleCambiar} className={`${theme == "default" ? "modeLight" : "modeDark"}`}></ModeBoton></Mode>
+          <Hambug onClick={handleClick}>
+              <LineaDiv></LineaDiv>
+              <LineaDiv></LineaDiv>
+              <LineaDiv></LineaDiv>
+          </Hambug>
+        </NavBar>
+      </HeaderNav>
     {
       desple?<DivDespleHam >
       <DespleHam click={handleClickHam}/>

@@ -18,7 +18,8 @@ export function Layout({children}:any){
   const [tema,setTema] = useState("default")
 
    const handleTema=(e:any)=>{
-      if(tema == "default"){
+      // console.log(e)
+      if(e == "default"){
          setTema("light")
          return
        }
