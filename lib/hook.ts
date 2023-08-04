@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import useSWRImmutable from "swr/immutable";
 // "https://portafolio-taupe-nine.vercel.app"
 async function fetchApiAuth(api: any) {
    const option = api[1] || {};
