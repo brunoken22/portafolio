@@ -13,7 +13,7 @@ export const HeaderNav = styled.header`
    left: 0;
    z-index: 10;
 `
-export const NavBarr = styled.nav`
+export const NavBarrr = styled.nav`
    display: flex;
    align-items: center;
    justify-content: space-between;
