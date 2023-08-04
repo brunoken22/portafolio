@@ -38,7 +38,7 @@ export function Header(props:any) {
       <HeaderNav>
         <NavBar>
           <div>
-            <Link href='/'><Bk className={`${theme == "default"?"light":"default"}`}/></Link>
+            <Link href='/' aria-label="logo"><Bk className={`${theme == "default"?"light":"default"}`}/></Link>
           </div>
           <Div  >
             {pages.map((e:any,p:any)=>(<Enlaces href={"#"+p}  key={p}>{e}</Enlaces>))}

@@ -41,22 +41,22 @@ export function Contact(){
                <div style={{display: "flex",alignItems:"center"}}><Body>Email: </Body><Enlaces href="mailto:bruno_am_22@hotmail.com"> bruno_am_22@hotmail.com</Enlaces></div>
             </OneContact>
             <OneContact $direction="row">
-               <Link href="https://github.com/brunoken22" target="_blank"><Github/></Link>
-               <Link href="https://www.linkedin.com/in/brunoken18/" target="_blank"><Linkedin/></Link>   
+               <Link href="https://github.com/brunoken22" aria-label="github" target="_blank"><Github/></Link>
+               <Link href="https://www.linkedin.com/in/brunoken18/" aria-label="linkedin" target="_blank"><Linkedin/></Link>   
             </OneContact>
          </DivContact>
          <Form onSubmit={handleSubmit(onSubmit)}>
             <div>
                <Label htmlFor='name'>Nombre</Label>
-               <Input type='text' {...register("name")} placeholder='Bruno Ken'></Input>
+               <Input type='text' {...register("name")} id="name" placeholder='Bruno Ken'></Input>
             </div>
             <div>
-               <Label>Email</Label>
-               <Input type='email' {...register("email")} placeholder='Bruno_am_22@hotmail.com'></Input>
+               <Label htmlFor='email'>Email</Label>
+               <Input type='email' {...register("email")} id="email" placeholder='Bruno_am_22@hotmail.com'></Input>
             </div>
             <div>
-               <Label>Mensaje</Label>
-               <Textarea  {...register("message")}></Textarea>
+               <Label htmlFor='message'>Mensaje</Label>
+               <Textarea  {...register("message")} id="message"></Textarea>
             </div>
             <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
                <Button>Enviar</Button>

@@ -42,7 +42,7 @@ export default function Home() {
               </div>
             <Body $margin="2rem 20%" $weight="200">Tengo un sólido conocimiento en desarrollo Fullstack y un entusiasmo por la creación de soluciones innovadoras. Durante mi formación, he adquirido habilidades en diversas tecnologías, incluyendo desarrollo web front-end con HTML, CSS, TypeScript y frameworks como React.js ,Next.js. También estoy familiarizado con el desarrollo back-end utilizando Node.js, Express y bases de datos como PostgreSQL Y Firebase.</Body>
           </div>
-          <a href='#0'><Arrow className="arrow"/></a>
+          <a href='#0' aria-label="arrow"><Arrow className="arrow"/></a>
         </div>
         <Skill/>
         <hr style={{width:"80%",backgroundColor:"#ddd",boxShadow:"#ddd 0px 100px 1000px 10px"}}/>
