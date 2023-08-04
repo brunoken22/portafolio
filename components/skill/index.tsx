@@ -20,7 +20,7 @@ export function Skill() {
       <div style={{textAlign:"center",width:"100%"}} id='0'>
 
          <div>
-            <Subtitle>Skill</Subtitle>
+            <h2 >Skill</h2>
          </div>
          <ContentIcons>
             <DivIconsHero $right="80%" $top="20%"><Firebase/></DivIconsHero>
