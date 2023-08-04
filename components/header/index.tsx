@@ -1,5 +1,4 @@
 'use client'
-import Body from 'next/document'
 import { useEffect, useState } from 'react';
 import { NavBar,Enlaces,Div,HeaderNav,Hambug,LineaDiv,DivDespleHam, ModeBoton, Mode } from './sytled'; 
 import { DespleHam } from '../hamburg';

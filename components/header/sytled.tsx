@@ -75,7 +75,6 @@ export const Hambug = styled.div`
       display: flex;
    }
 `
-
 export const LineaDiv = styled.div`
    width: 30px;
    height: 4px;

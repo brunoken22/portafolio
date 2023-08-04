@@ -12,13 +12,13 @@ export const Title = styled.h1`
    }
 `
 export const Subtitle = styled.h2`
-   color:${({theme}:any)=>theme.color};
+   /* color:${({theme}:any)=>theme.color};
    font-weight:${({theme}:any)=>theme.color ==="#000"? 400 :"" }; 
    font-size: 2rem;
    text-align: center;
    @media(max-width:700px){
       font-size: 1.5rem;
-   }
+   } */
 `
 export const Body = styled.p<any>`
    font-size: ${((props:any)=>props.$size?props.$size:"1.2rem")};

@@ -19,7 +19,7 @@ export function Layout({children}:any){
 
    const handleTema=(e:any)=>{
       // console.log(e)
-      if(e == "default"){
+      if(tema == "default"){
          setTema("light")
          return
        }
@@ -27,12 +27,10 @@ export function Layout({children}:any){
    }
 
    return (
-      <>
          <ThemeProvider theme={themes[tema]}>
             <Header tema={handleTema}/>
                {children}
             <Footer/>
          </ThemeProvider>
-      </>
    )
 }

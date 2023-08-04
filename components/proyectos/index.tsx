@@ -30,7 +30,7 @@ export function Proyectos(){
    return(
       <div id="1">
          <div>
-            <Subtitle>Experiencia</Subtitle>
+            <h2 style={{textAlign:"center"}}>Experiencia</h2>
          </div>
          <DivProyectos>
             {proyect && data?(proyect as any).map((el:any,p:number)=>{return (<div key={p}><Zoom><TemplateProyect ><Link id={data[p].id} href={el.fields.linkDeArticle} key={p} target='blank'>
