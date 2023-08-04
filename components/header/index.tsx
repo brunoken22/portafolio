@@ -1,7 +1,7 @@
 'use client'
 import Body from 'next/document'
 import { useEffect, useState } from 'react';
-import { NavBar,Enlaces,Div,HeaderNav,Hambug,LineaDiv,DivDespleHam, ModeBoton, Mode } from './sytled'; 
+import { NavBarr,Enlaces,Div,HeaderNav,Hambug,LineaDiv,DivDespleHam, ModeBoton, Mode } from './sytled'; 
 import { DespleHam } from '../hamburg';
 import Bk from '@/ui/icons/BK.svg'
 import Link from 'next/link';
@@ -37,7 +37,7 @@ export function Header(props:any) {
   return (
     <>
       <HeaderNav>
-      <NavBar>
+      <NavBarr>
         <div>
           <Link href='/'><Bk className={`${theme == "default"?"light":"default"}`}/></Link>
         </div>
@@ -50,7 +50,7 @@ export function Header(props:any) {
             <LineaDiv></LineaDiv>
             <LineaDiv></LineaDiv>
         </Hambug>
-      </NavBar>
+      </NavBarr>
     </HeaderNav>
     {
       desple?<DivDespleHam >
