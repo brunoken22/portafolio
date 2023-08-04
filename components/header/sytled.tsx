@@ -6,6 +6,8 @@ export const HeaderNav = styled.header`
    backdrop-filter: blur(3px);
    color:${({theme}:any)=>theme.color};
    background-color:${({theme}:any)=>theme.background};
+   transition: all 0.15s linear; 
+
    margin: 0;
    padding: 0;
    top: 0;
@@ -19,6 +21,8 @@ export const NavBar = styled.nav`
    justify-content: space-between !important ;
    margin: 0 2rem !important;
    color:${({theme}:any)=>theme.color} !important;
+   transition: all 0.15s linear; 
+
    @media(max-width:700px){
       margin:0 !important
    }

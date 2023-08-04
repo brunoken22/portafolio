@@ -31,6 +31,8 @@ export const Container = styled.div`
    gap:3rem;
    color:${({theme}:any)=>theme.color};
    background-color:${({theme}:any)=>theme.background};
+  transition: all 0.15s linear; 
+
    @media(max-width:700px){
       padding: auto 5%;
    }

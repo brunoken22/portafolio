@@ -6,7 +6,7 @@ export const Title = styled.h1`
    font-size: 4rem;
    margin-bottom: 0;
    text-align: center;
-   text-shadow:${({theme}:any)=>theme.color } 1px 1px 10px; 
+   text-shadow:${({theme}:any)=>theme.color } 1px 1px 10px;
    @media(max-width:700px){
       font-size: 3rem;
    }
