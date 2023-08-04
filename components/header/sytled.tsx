@@ -14,13 +14,13 @@ export const HeaderNav = styled.header`
    z-index: 10;
 `
 export const NavBarrr = styled.nav`
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   margin: 0 2rem;
-   color:${({theme}:any)=>theme.color};
+   display: flex !important;
+   align-items: center !important;
+   justify-content: space-between !important ;
+   margin: 0 2rem !important;
+   color:${({theme}:any)=>theme.color} !important;
    @media(max-width:700px){
-      margin:0
+      margin:0 !important
    }
 `
 export const Div = styled.div`
