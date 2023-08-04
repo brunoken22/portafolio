@@ -89,6 +89,7 @@ export const Mode = styled.div`
    display: flex;
    align-items: center;
    padding: 0px 5px;
+   cursor:pointer;
 `
 export const ModeBoton = styled.div`
    width: 20px;
