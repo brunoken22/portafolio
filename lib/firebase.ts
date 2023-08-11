@@ -1,10 +1,10 @@
 import admin from "firebase-admin";
-import firebaseJson from "./firebase.json";
-const serviceAccount = JSON.stringify(firebaseJson);
 
 if (!admin.apps.length) {
    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
+      credential: admin.credential.cert(
+         JSON.parse(process.env.FIREBASE as string)
+      ),
    });
 }
 const firebase = admin.firestore();

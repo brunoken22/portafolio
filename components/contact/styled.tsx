@@ -1,4 +1,19 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+const msj = keyframes`
+   0%{
+      color:#fff;
+      /* box-shadow:0px 0px 10px 10px ; */
+   }
+   50%{
+      color:#8ff79d;
+      /* box-shadow:0px 0px 20px 20px ; */
+
+   }
+   100%{
+      color:#00ff22;
+      /* box-shadow:0px 0px 30px 30px ; */
+   }
+`
 export const ContenedorForm = styled.div`
    width: 100%;
    display: flex; 
@@ -56,10 +71,15 @@ export const Textarea=styled.textarea`
       outline: 3px solid #84dcff;
    }
 `
+export const Span = styled.span`
+   color:${({theme}:any)=>theme.color == "#000"?"#7868fd":"greenyellow"};
+
+`
+
 export const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color:${({theme}:any)=>theme.background == "#fff" ? "#a29ae7" : "#0b7dda"};
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -71,4 +91,15 @@ export const Button = styled.button`
       background-color: #0b7dda;
    }
 `
-   
+
+export const Enviado = styled.p`
+   text-align: center;
+   animation: ${msj} 2s ease 5s infinite normal  forwards ;
+   box-shadow: 0px 10px 10px 1px;
+
+`
+export const Enlaces = styled.a`
+  color: ${({theme}:any)=>theme.color};
+  text-decoration: none;
+
+`

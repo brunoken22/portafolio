@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const TemplateProyect = styled.div`
    display: flex;
    flex-direction: column;
-   color: #fff;
+   background-color:${({theme}:any)=>theme.background};
+   color:${({theme}:any)=>theme.color};
    gap: 3rem;
    border: 2px solid #fff;
    box-shadow: #ddd 0px 0px 8px 1px;
@@ -23,7 +24,7 @@ export const Botton = styled.button`
    border: 0;
    background: transparent;
    cursor: pointer;
-   fill: lightcyan;
+   fill: #ddd;
    &:hover svg{
       fill: tomato;
       width: 45px;
