@@ -1,7 +1,7 @@
 'use client';
 import * as contentful from 'contentful';
 import {TemplateProyect, DivProyectos, Botton} from './styled';
-import {Subtitle, Body} from '@/ui/typography';
+import {Body} from '@/ui/typography';
 import Image from 'next/image';
 import {useEffect, useState} from 'react';
 import Link from 'next/link';

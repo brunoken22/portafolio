@@ -8,6 +8,8 @@ export const TemplateProyect = styled.div`
   gap: 3rem;
   border: 2px solid #fff;
   box-shadow: #ddd 0px 0px 8px 1px;
+  transition: transform 200ms ease;
+
   &:hover {
     opacity: 0.8;
     transform: scale(1.1);
