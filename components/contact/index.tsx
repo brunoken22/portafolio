@@ -24,8 +24,7 @@ type FormData = {
   message: string;
 };
 export function Contact() {
-  const {register, setValue, handleSubmit, formState, reset} =
-    useForm<FormData>();
+  const {register, setValue, handleSubmit, formState} = useForm<FormData>();
 
   const onSubmit = async (e: any) => {
     await mensaje({
@@ -41,7 +40,7 @@ export function Contact() {
   };
 
   return (
-    <ContenedorForm id='2'>
+    <ContenedorForm id='contacto'>
       <Slide triggerOnce>
         <DivContact>
           <div>
@@ -105,7 +104,7 @@ export function Contact() {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Button>Enviar</Button>
+            <Button aria-label='Enviar'>Enviar</Button>
           </div>
 
           {formState.isSubmitted && (

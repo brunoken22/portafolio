@@ -25,7 +25,7 @@ export function Proyectos() {
   }, []);
 
   return (
-    <div id='1'>
+    <div id='proyectos'>
       <div>
         <h2 style={{textAlign: 'center'}}>Experiencia</h2>
       </div>
@@ -129,7 +129,9 @@ function Like(props: any) {
       <Body $weight='100' $size={'1rem'}>
         {contador} Me gusta
       </Body>
-      <Botton onClick={newData.id ? handleDobleClick : handleClick}>
+      <Botton
+        onClick={newData.id ? handleDobleClick : handleClick}
+        aria-label='like'>
         <Heart></Heart>
       </Botton>
     </div>
