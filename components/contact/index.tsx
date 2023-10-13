@@ -15,6 +15,7 @@ import {Body, Subtitle} from '@/ui/typography';
 import {useForm} from 'react-hook-form';
 import Linkedin from '@/ui/icons/linkedin.svg';
 import Github from '@/ui/icons/github.svg';
+import Whatsapp from '@/ui/icons/whatsapp.svg';
 import Link from 'next/link';
 import {Slide} from 'react-awesome-reveal';
 import {mensaje} from '@/lib/hook';
@@ -75,6 +76,12 @@ export function Contact() {
               target='_blank'>
               <Linkedin />
             </Link>
+            <Link
+              href='https://wa.me/+541161204047'
+              aria-label='whatsapp'
+              target='_blank'>
+              <Whatsapp />
+            </Link>
           </OneContact>
         </DivContact>
         <Form onSubmit={handleSubmit(onSubmit)}>
@@ -84,7 +91,8 @@ export function Contact() {
               type='text'
               {...register('name')}
               id='name'
-              placeholder='Bruno Ken'></Input>
+              placeholder='Bruno Ken'
+              required></Input>
           </div>
           <div>
             <Label htmlFor='email'>Email</Label>
@@ -92,11 +100,12 @@ export function Contact() {
               type='email'
               {...register('email')}
               id='email'
-              placeholder='Bruno_am_22@hotmail.com'></Input>
+              placeholder='Bruno_am_22@hotmail.com'
+              required></Input>
           </div>
           <div>
             <Label htmlFor='message'>Mensaje</Label>
-            <Textarea {...register('message')} id='message'></Textarea>
+            <Textarea {...register('message')} id='message' required></Textarea>
           </div>
           <div
             style={{

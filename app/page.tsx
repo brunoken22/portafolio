@@ -72,7 +72,9 @@ export default function Home() {
                 alignItems: 'center',
               }}>
               <div>
-                <Title>Bruno ken</Title>
+                <Title>
+                  Bruno ken <span>&#160;</span>
+                </Title>
                 <Body $weight='100'>Software Developer</Body>
               </div>
               <Body $margin='2rem 20%' $weight='200'>
@@ -80,12 +82,12 @@ export default function Home() {
                 entusiasmo por la creación de soluciones innovadoras. Durante mi
                 formación, he adquirido habilidades en diversas tecnologías,
                 incluyendo desarrollo web front-end con HTML, CSS, TypeScript y
-                frameworks como React.js ,Next.js. También estoy familiarizado
-                con el desarrollo back-end utilizando Node.js, Express y bases
-                de datos como PostgreSQL Y Firebase.
+                frameworks como <span>React.js ,Next.js</span>. También estoy
+                familiarizado con el desarrollo back-end utilizando Node.js,
+                Express y bases de datos como PostgreSQL Y Firebase.
               </Body>
             </div>
-            <a href='#0' aria-label='arrow'>
+            <a href='#skill' aria-label='arrow'>
               <Arrow className='arrow' />
             </a>
           </div>
