@@ -2,36 +2,12 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
   color: ${({theme}: any) => theme.color};
-  /* font-size: 4rem;
-  margin-bottom: 0;
   text-align: center;
-  text-shadow: ${({theme}: any) => theme.color} 1px 1px 10px; */
-
-  position: relative;
-  float: left;
-  background: #0e141b;
-  color: #fff;
-  font-size: 2.5em;
+  font-size: 4rem;
+  margin-bottom: 0;
+  /* text-shadow: ${({theme}: any) => theme.color} 1px 1px 10px; */
   @media (max-width: 700px) {
     font-size: 3rem;
-  }
-  span {
-    position: absolute;
-    right: 0;
-    width: 0;
-    background: #0e141b;
-    border-left: 1px solid #fff;
-    margin-left: 5rem;
-    animation: escribir 5s steps(30) infinite alternate;
-  }
-
-  @keyframes escribir {
-    from {
-      width: 100%;
-    }
-    to {
-      width: 0;
-    }
   }
 `;
 
@@ -55,5 +31,35 @@ export const Body = styled.p<any>`
     margin-left: 2%;
     margin-right: 2%;
     font-size: 1rem;
+  }
+`;
+
+export const BodyParr = styled.p`
+  color: ${({theme}: any) => theme.color};
+  position: relative;
+  float: left;
+  background: #0e141b;
+  color: #fff;
+  margin-top: 0;
+  font-weight: 100;
+  text-align: center;
+
+  span {
+    position: absolute;
+    right: 0;
+    width: 0;
+    background: #0e141b;
+    border-left: 1px solid #fff;
+    margin-left: 5rem;
+    animation: escribir 5s steps(30) infinite alternate;
+  }
+
+  @keyframes escribir {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
   }
 `;

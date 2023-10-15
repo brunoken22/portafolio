@@ -102,3 +102,9 @@ export const Enlaces = styled.a`
   color: ${({theme}: any) => theme.color};
   text-decoration: none;
 `;
+
+export const DivEnlaceContact = styled.div<any>`
+  svg {
+    fill: ${({theme}: any) => theme.color};
+  }
+`;

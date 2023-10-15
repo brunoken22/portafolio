@@ -10,6 +10,7 @@ import {
   Enviado,
   Span,
   Enlaces,
+  DivEnlaceContact,
 } from './styled';
 import {Body, Subtitle} from '@/ui/typography';
 import {useForm} from 'react-hook-form';
@@ -68,19 +69,25 @@ export function Contact() {
               href='https://github.com/brunoken22'
               aria-label='github'
               target='_blank'>
-              <Github />
+              <DivEnlaceContact>
+                <Github />
+              </DivEnlaceContact>
             </Link>
             <Link
               href='https://www.linkedin.com/in/brunoken18/'
               aria-label='linkedin'
               target='_blank'>
-              <Linkedin />
+              <DivEnlaceContact>
+                <Linkedin />
+              </DivEnlaceContact>
             </Link>
             <Link
-              href='https://wa.me/+541161204047'
+              href='https://w.app/SoftwareDeveloper'
               aria-label='whatsapp'
               target='_blank'>
-              <Whatsapp />
+              <DivEnlaceContact>
+                <Whatsapp />
+              </DivEnlaceContact>
             </Link>
           </OneContact>
         </DivContact>

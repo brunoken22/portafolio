@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import img from '@/ui/img/hero.webp';
-import {Body, Title} from '@/ui/typography';
+import {Body, Title, BodyParr} from '@/ui/typography';
 import {Skill} from '@/components/skill';
 import {Proyectos} from '@/components/proyectos';
 import {Contact} from '@/components/contact';
@@ -71,11 +71,16 @@ export default function Home() {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <div>
-                <Title>
-                  Bruno ken <span>&#160;</span>
-                </Title>
-                <Body $weight='100'>Software Developer</Body>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}>
+                <Title>Bruno ken</Title>
+                <BodyParr>
+                  Software Developer <span>&#160;</span>
+                </BodyParr>
               </div>
               <Body $margin='2rem 20%' $weight='200'>
                 Tengo un sólido conocimiento en desarrollo Fullstack y un
