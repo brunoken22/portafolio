@@ -62,11 +62,13 @@ export const Input = styled.input`
   }
 `;
 export const Textarea = styled.textarea`
-  height: 150px;
-  width: 100%;
   text-indent: 6px;
   border-radius: 10px;
   font-size: 1rem;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 310px;
+  min-height: 100px;
   &:focus {
     outline: 3px solid #84dcff;
   }

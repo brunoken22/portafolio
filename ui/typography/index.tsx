@@ -50,7 +50,7 @@ export const BodyParr = styled.p`
     width: 0;
     background: #0e141b;
     border-left: 1px solid #fff;
-    margin-left: 5rem;
+    margin-right: -7px;
     animation: escribir 5s steps(30) infinite alternate;
   }
 

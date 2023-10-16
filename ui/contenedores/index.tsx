@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const DivIconsHero =  styled.div<any>`
-   right: ${((props)=>props.$right)|| "50%"};
-   top: ${((props)=>props.$top)|| "15%"};
+export const DivIconsHero = styled.div<any>`
+  /* right: ${((props) => props.$right) || '50%'};
+   top: ${((props) => props.$top) || '15%'};
    -webkit-animation: orbit8 5s linear infinite;
    -moz-animation: orbit8 5s linear infinite;
    -o-animation: orbit8 5s linear infinite;
@@ -21,19 +21,19 @@ export const DivIconsHero =  styled.div<any>`
       & > * {
          width: 60px;
       }
-   } 
-`
+   }  */
+`;
 export const Container = styled.div`
-   display:flex;
-   flex-direction:column; 
-   justify-content:space-between;
-   align-items:center;
-   gap:3rem;
-   color:${({theme}:any)=>theme.color};
-   background-color:${({theme}:any)=>theme.background};
-  transition: all 0.15s linear; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  color: ${({theme}: any) => theme.color};
+  background-color: ${({theme}: any) => theme.background};
+  transition: all 0.15s linear;
 
-   @media(max-width:700px){
-      padding: auto 5%;
-   }
-`
+  @media (max-width: 700px) {
+    padding: auto 5%;
+  }
+`;
