@@ -1,46 +1,40 @@
-:root{
-  --fondo-bg : #0e141b 
+:root {
+  --fondo-bg: #0e141b;
 }
-*{
-   box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
+body {
   margin: 0;
   overflow-x: hidden;
 }
 
- /* Estilo del scrollbar */
- ::-webkit-scrollbar {
-   width: 10px;
- }
+/* Estilo del scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
- /* Estilo del scrollbar vertical */
- ::-webkit-scrollbar-thumb {
-   background-color: #5d7b8d;
-   border-radius: 6px;
- }
- ::-webkit-scrollbar-thumb:hover {
+/* Estilo del scrollbar vertical */
+::-webkit-scrollbar-thumb {
+  background-color: #5d7b8d;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
   background-color: #74838b; /* Cambia el color del thumb cuando se pasa el mouse sobre él */
 }
 
-.arrow{
-  animation: arrow 5s ease-in infinite,
-  arrow 5s 5s ease-in infinite,
-  arrow 5s 5s ease-out infinite,
-  arrow 1500ms 3s ease-in infinite;
-  border: 1px solid #fff;
-    border-radius: 50%;
-    padding: 15px;
-    box-shadow: 0px 0px 100px 5px;
+.arrow {
+  animation: arrow 5s ease-in infinite, arrow 5s 5s ease-in infinite,
+    arrow 5s 5s ease-out infinite, arrow 1500ms 3s ease-in infinite;
+  padding: 15px;
 }
 
-.default g{
-  fill:  (var(--fondo-bg));
-}
-
-.light{
+.default g {
   fill: (var(--fondo-bg));
+}
 
+.light {
+  fill: (var(--fondo-bg));
 }
 
 @keyframes arrow {
@@ -48,36 +42,35 @@ body{
     opacity: 0;
     transform: translateY(-60px);
   }
-  20%,80% {
+  20%,
+  80% {
     opacity: 1;
     transform: translateX(0);
   }
   100% {
     opacity: 0;
-    transform: translateY(60px);}
+    transform: translateY(60px);
+  }
 }
 
-.progress-bar{
+.progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 0%;
   height: 5px;
-  background:linear-gradient(to right,#a286f1,#4778ff);
-  transition: width .3s ease-in;
+  background: linear-gradient(to right, #a286f1, #4778ff);
+  transition: width 0.3s ease-in;
   z-index: 10;
 }
 
-.modeLight{
+.modeLight {
   background-color: #080303;
-  transition: transform .5s ease;
-  transform: translateX(24px) scale(1.0) rotate(180deg);
+  transition: transform 0.5s ease;
+  transform: translateX(24px) scale(1) rotate(180deg);
 }
-.modeDark{
-  background-color: rgb(212, 212, 1); 
-  transition: transform .5s ease;
-  transform: translateX(0px) scale(1.0) rotate(180deg);
-
-} 
-
-
+.modeDark {
+  background-color: rgb(212, 212, 1);
+  transition: transform 0.5s ease;
+  transform: translateX(0px) scale(1) rotate(180deg);
+}
