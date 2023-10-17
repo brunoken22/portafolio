@@ -6,6 +6,9 @@ export const ContentIcons = styled.div`
   flex-wrap: wrap;
   gap: 5rem;
   justify-content: center;
+  @media (max-width: 500px) {
+    gap: 3rem;
+  }
 `;
 export const DivContentIcons = styled.div`
   /* animation: movie 10s linear infinite;

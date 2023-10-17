@@ -7,14 +7,11 @@ import Node from '@/ui/icons/node.svg';
 import Potsgresql from '@/ui/icons/postgresql.svg';
 import ReactSvg from '@/ui/icons/react.svg';
 import Typescriptsvg from '@/ui/icons/typescript.svg';
+import SequelizeSvg from '@/ui/icons/sequelize-svgrepo-com.svg';
 import React from 'react';
 import {DivIconsHero} from '@/ui/contenedores';
 import {ContentIcons, DivContentIcons} from './styled';
-// import {Swiper, SwiperSlide} from 'swiper/react';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
+
 export function Skill() {
   return (
     <div style={{textAlign: 'center', width: '100%'}} id='skill'>
@@ -41,6 +38,9 @@ export function Skill() {
             </DivIconsHero>
             <DivIconsHero $right='15%' $top='30%'>
               <Potsgresql />
+            </DivIconsHero>
+            <DivIconsHero $right='15%' $top='30%'>
+              <SequelizeSvg />
             </DivIconsHero>
             <DivIconsHero $right='15%' $top='40%'>
               <ReactSvg />
