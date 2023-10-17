@@ -2,16 +2,13 @@ import styled, {keyframes} from 'styled-components';
 const msj = keyframes`
    0%{
       color:#fff;
-      /* box-shadow:0px 0px 10px 10px ; */
    }
    50%{
       color:#8ff79d;
-      /* box-shadow:0px 0px 20px 20px ; */
 
    }
    100%{
       color:#00ff22;
-      /* box-shadow:0px 0px 30px 30px ; */
    }
 `;
 export const ContenedorForm = styled.div`
@@ -108,5 +105,14 @@ export const Enlaces = styled.a`
 export const DivEnlaceContact = styled.div<any>`
   svg {
     fill: ${({theme}: any) => theme.color};
+  }
+  .github:hover {
+    fill: #e196ff;
+  }
+  .whatsapp:hover {
+    fill: #5cb95c;
+  }
+  .linkedin:hover {
+    fill: #4b9cec;
   }
 `;

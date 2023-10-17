@@ -70,7 +70,7 @@ export function Contact() {
               aria-label='github'
               target='_blank'>
               <DivEnlaceContact>
-                <Github />
+                <Github className='github' />
               </DivEnlaceContact>
             </Link>
             <Link
@@ -78,7 +78,7 @@ export function Contact() {
               aria-label='linkedin'
               target='_blank'>
               <DivEnlaceContact>
-                <Linkedin />
+                <Linkedin className='linkedin' />
               </DivEnlaceContact>
             </Link>
             <Link
@@ -86,7 +86,7 @@ export function Contact() {
               aria-label='whatsapp'
               target='_blank'>
               <DivEnlaceContact>
-                <Whatsapp />
+                <Whatsapp className='whatsapp' />
               </DivEnlaceContact>
             </Link>
           </OneContact>
