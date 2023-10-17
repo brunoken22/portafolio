@@ -10,11 +10,11 @@ import Typescriptsvg from '@/ui/icons/typescript.svg';
 import React from 'react';
 import {DivIconsHero} from '@/ui/contenedores';
 import {ContentIcons, DivContentIcons} from './styled';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+// import {Swiper, SwiperSlide} from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
 export function Skill() {
   return (
     <div style={{textAlign: 'center', width: '100%'}} id='skill'>

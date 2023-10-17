@@ -2,29 +2,32 @@ import styled from 'styled-components';
 
 export const DivIconsHero = styled.div<any>`
   svg {
+    opacity: 0.4 !important;
+  }
+  svg:hover {
+    opacity: 1 !important;
+  }
+  .htlm:hover {
     fill: #ddd;
   }
-  /* right: ${((props) => props.$right) || '50%'};
-   top: ${((props) => props.$top) || '15%'};
-   -webkit-animation: orbit8 5s linear infinite;
-   -moz-animation: orbit8 5s linear infinite;
-   -o-animation: orbit8 5s linear infinite;
-   animation: orbit8 5s linear infinite;
-   opacity: 1;
-   @keyframes orbit8 {
-      0% {
-      transform: rotate(0deg) translateX(20px) rotate(0deg);
-      }
-
-      100% {
-         transform: rotate(360deg) translateX(20px) rotate(-360deg);
-      }
-   }
-   @media(max-width:700px){
-      & > * {
-         width: 60px;
-      }
-   }  */
+  .css:hover {
+    fill: #ddd;
+  }
+  .js:hover {
+    fill: #ddd;
+  }
+  .react:hover {
+    fill: #ddd;
+  }
+  .expre:hover {
+    fill: #ddd;
+  }
+  .node:hover {
+    fill: #ddd;
+  }
+  .post:hover {
+    fill: #ddd;
+  }
 `;
 export const Container = styled.div`
   display: flex;
