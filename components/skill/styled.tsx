@@ -5,7 +5,7 @@ export const ContentIcons = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 5rem;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 export const DivContentIcons = styled.div`
   /* animation: movie 10s linear infinite;
