@@ -8,6 +8,8 @@ import Potsgresql from '@/ui/icons/postgresql.svg';
 import ReactSvg from '@/ui/icons/react.svg';
 import Typescriptsvg from '@/ui/icons/typescript.svg';
 import SequelizeSvg from '@/ui/icons/sequelize-svgrepo-com.svg';
+import StyleComSvg from '@/ui/icons/styled-components-svgrepo-com (1).svg';
+import NextSvg from '@/ui/icons/next-js-svgrepo-com.svg';
 import React from 'react';
 import {DivIconsHero} from '@/ui/contenedores';
 import {ContentIcons, DivContentIcons} from './styled';
@@ -44,6 +46,12 @@ export function Skill() {
             </DivIconsHero>
             <DivIconsHero $right='15%' $top='40%'>
               <ReactSvg />
+            </DivIconsHero>
+            <DivIconsHero $right='15%' $top='40%'>
+              <NextSvg />
+            </DivIconsHero>
+            <DivIconsHero $right='15%' $top='40%'>
+              <StyleComSvg />
             </DivIconsHero>
             <DivIconsHero $right='15%' $top='50%'>
               <Typescriptsvg />
