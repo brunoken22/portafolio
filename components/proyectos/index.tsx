@@ -27,7 +27,7 @@ export function Proyectos() {
   return (
     <div id='proyectos'>
       <div>
-        <h2 style={{textAlign: 'center'}}>Experiencia</h2>
+        <h2 style={{textAlign: 'center', marginBottom: '3rem'}}>Experiencia</h2>
       </div>
       <DivProyectos>
         {proyect && data

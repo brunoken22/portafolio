@@ -18,7 +18,7 @@ export function Skill() {
   return (
     <div style={{textAlign: 'center', width: '100%'}} id='skill'>
       <div>
-        <h2>Skill</h2>
+        <h2 style={{marginBottom: '3rem'}}>Skill</h2>
       </div>
       <div>
         <DivContentIcons>
