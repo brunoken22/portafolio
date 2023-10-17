@@ -7,27 +7,7 @@ export const DivIconsHero = styled.div<any>`
   svg:hover {
     opacity: 1 !important;
   }
-  .htlm:hover {
-    fill: #ddd;
-  }
-  .css:hover {
-    fill: #ddd;
-  }
-  .js:hover {
-    fill: #ddd;
-  }
-  .react:hover {
-    fill: #ddd;
-  }
-  .expre:hover {
-    fill: #ddd;
-  }
-  .node:hover {
-    fill: #ddd;
-  }
-  .post:hover {
-    fill: #ddd;
-  }
+  fill: ${({theme}: any) => theme.color};
 `;
 export const Container = styled.div`
   display: flex;
