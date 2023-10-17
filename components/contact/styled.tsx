@@ -108,11 +108,14 @@ export const DivEnlaceContact = styled.div<any>`
   }
   .github:hover {
     fill: #e196ff;
+    transform: scale(1.2);
   }
   .whatsapp:hover {
     fill: #5cb95c;
+    transform: scale(1.2);
   }
   .linkedin:hover {
     fill: #4b9cec;
+    transform: scale(1.2);
   }
 `;
