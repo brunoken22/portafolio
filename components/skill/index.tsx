@@ -21,11 +21,14 @@ export function Skill() {
       <div>
         <h2>Skill</h2>
       </div>
-      <div style={{position: 'relative'}}>
+      <div>
         <DivContentIcons>
           <ContentIcons>
             <DivIconsHero $right='80%' $top='20%'>
               <Firebase />
+            </DivIconsHero>
+            <DivIconsHero $right='80%' $top='30%'>
+              <Html style={{width: '120px !important'}} />
             </DivIconsHero>
             <DivIconsHero $right='80%' $top='40%'>
               <Css />

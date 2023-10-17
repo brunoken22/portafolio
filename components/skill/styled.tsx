@@ -3,17 +3,20 @@ import styled from 'styled-components';
 export const ContentIcons = styled.div`
   display: flex;
   align-items: center;
-  gap: 10rem;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: space-evenly;
 `;
 export const DivContentIcons = styled.div`
-  animation: movie 5s infinite linear;
+  /* animation: movie 10s linear infinite;
   transition: transform 1s linear;
+  position: relative;
   @keyframes movie {
-    from {
-      transform: translate(-100%, 0);
+    0% {
+      right: 0%;
     }
-    to {
-      transform: translate(100%, 0);
+    100% {
+      right: 100%;
     }
-  }
+  } */
 `;

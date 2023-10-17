@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const DivIconsHero = styled.div<any>`
+  svg {
+    fill: #ddd;
+  }
   /* right: ${((props) => props.$right) || '50%'};
    top: ${((props) => props.$top) || '15%'};
    -webkit-animation: orbit8 5s linear infinite;
