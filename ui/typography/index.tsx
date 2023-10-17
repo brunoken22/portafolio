@@ -5,7 +5,6 @@ export const Title = styled.h1`
   text-align: center;
   font-size: 4rem;
   margin-bottom: 0;
-  /* text-shadow: ${({theme}: any) => theme.color} 1px 1px 10px; */
   @media (max-width: 700px) {
     font-size: 3rem;
   }
@@ -38,18 +37,17 @@ export const BodyParr = styled.p`
   color: ${({theme}: any) => theme.color};
   position: relative;
   float: left;
-  background: #0e141b;
-  color: #fff;
+  background: ${({theme}: any) => theme.background};
   margin-top: 0;
-  font-weight: 100;
+  font-weight: ${({theme}: any) => (theme.background !== '#fff' ? 100 : 500)};
   text-align: center;
 
   span {
     position: absolute;
     right: 0;
     width: 0;
-    background: #0e141b;
-    border-left: 1px solid #fff;
+    background-color: ${({theme}: any) => theme.background};
+    border-left: 1px solid ${({theme}: any) => theme.color};
     margin-right: -7px;
     animation: escribir 5s steps(30) infinite alternate;
   }
