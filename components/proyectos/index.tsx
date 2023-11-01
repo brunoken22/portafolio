@@ -17,11 +17,11 @@ import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
 
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
-  accessToken: 'vfQ16mfGkwZCKSPTKJypjjLoKDZH_6mZgkD__9if1ws',
+  accessToken: process.env.NEXT_PUBLIC_CONTENFUL as string,
 });
 export function Proyectos() {
   const [proyect, setProyect] = useState();
-  const {data, error, isLoading} = ObtenerLikes();
+  const {data} = ObtenerLikes();
 
   useEffect(() => {
     client.getEntries({content_type: 'cms'}).then((response: any) => {
