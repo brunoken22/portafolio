@@ -1,6 +1,12 @@
 'use client';
 import * as contentful from 'contentful';
-import {TemplateProyect, DivProyectos, Botton} from './styled';
+import {
+  TemplateProyect,
+  DivProyectos,
+  Botton,
+  TemplateLoadingProyect,
+  Loader,
+} from './styled';
 import {Body} from '@/ui/typography';
 import Image from 'next/image';
 import {useEffect, useState} from 'react';
@@ -33,7 +39,7 @@ export function Proyectos() {
         {proyect && data
           ? (proyect as any).map((el: any, p: number) => {
               return (
-                <div key={p}>
+                <div key={data[p].id}>
                   <Zoom triggerOnce>
                     <TemplateProyect>
                       <Link
@@ -56,7 +62,24 @@ export function Proyectos() {
                 </div>
               );
             })
-          : null}
+          : [1, 2, 3, 4, 5, 6, 7, 8].map((item: number) => (
+              <TemplateLoadingProyect key={item}>
+                <Loader>
+                  <div className='space'>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                    <div className='loading'></div>
+                  </div>
+                </Loader>
+              </TemplateLoadingProyect>
+            ))}
       </DivProyectos>
     </div>
   );
