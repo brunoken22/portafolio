@@ -23,8 +23,9 @@ const client = contentful.createClient({
 export function Proyectos() {
   const [proyect, setProyect] = useState();
   const {data} = ObtenerLikes();
-  const [localStorageLikes, setLocalStorageLikes] = useState<Array<Object>>(
-    JSON.parse(localStorage.getItem('likes') as string) as Object[]
+  const [localStorageLikes, setLocalStorageLikes] = useState<any>(
+    typeof localStorage !== 'undefined' &&
+      (JSON.parse(localStorage.getItem('likes') as string) as Object[])
   );
 
   useEffect(() => {
@@ -107,7 +108,9 @@ function Like(props: any) {
     e.preventDefault();
     const target = e.target as HTMLElement;
     target.style.cursor = 'progress';
-    const getLikesLocal = JSON.parse(localStorage.getItem('likes') as string);
+    const getLikesLocal =
+      typeof localStorage !== 'undefined' &&
+      JSON.parse(localStorage.getItem('likes') as string);
 
     let newLikesAll;
     if (isLike) {
@@ -136,7 +139,8 @@ function Like(props: any) {
       target.style.fill = 'tomato';
     }
     target.style.cursor = 'pointer';
-    localStorage.setItem('likes', JSON.stringify(newLikesAll));
+    typeof localStorage !== 'undefined' &&
+      localStorage.setItem('likes', JSON.stringify(newLikesAll));
   };
 
   return (
