@@ -64,11 +64,13 @@ export const DivProyectos = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Botton = styled.button`
+export const Botton = styled.button<any>`
   border: 0;
   background: transparent;
   cursor: pointer;
-  fill: #ddd;
+  svg {
+    fill: ${(prev) => (prev.$isLike ? 'tomato' : '#ddd')};
+  }
   &:hover svg {
     fill: tomato;
     width: 45px;

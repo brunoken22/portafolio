@@ -19,9 +19,13 @@ const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
   accessToken: process.env.NEXT_PUBLIC_CONTENFUL as string,
 });
+
 export function Proyectos() {
   const [proyect, setProyect] = useState();
   const {data} = ObtenerLikes();
+  const [localStorageLikes, setLocalStorageLikes] = useState<Array<Object>>(
+    JSON.parse(localStorage.getItem('likes') as string) as Object[]
+  );
 
   useEffect(() => {
     client.getEntries({content_type: 'cms'}).then((response: any) => {
@@ -39,23 +43,35 @@ export function Proyectos() {
         {proyect && data
           ? (proyect as any).map((el: any, p: number) => {
               return (
-                <div key={data[p].id}>
+                <div key={el.fields.id}>
                   <Zoom triggerOnce>
                     <TemplateProyect>
                       <Link
-                        id={data[p].id}
                         href={el.fields.linkDeArticle}
                         key={p}
                         target='blank'>
                         <Image
                           src={el.fields.linkImgPagina}
+                          loading='lazy'
                           width={350}
                           height={230}
                           alt={el.fields.appMisPelis}></Image>
                       </Link>
                       <div>
                         <Body>{el.fields.appMisPelis}</Body>
-                        <Like data={data[p]} />
+                        <Like
+                          id={el.fields.id}
+                          data={data.find(
+                            (item: any) => item.id == el.fields.id && item
+                          )}
+                          isLikeLocal={
+                            localStorageLikes?.find(
+                              (item: any) => item.id === el.fields.id
+                            )
+                              ? true
+                              : false
+                          }
+                        />
                       </div>
                     </TemplateProyect>
                   </Zoom>
@@ -87,57 +103,41 @@ export function Proyectos() {
 
 function Like(props: any) {
   const [contador, setContador] = useState(props.data.likes);
-  const [newData, setNewData] = useState({id: '', proyect: '', like: 0});
-  const [modData, setModData] = useState({id: '', proyect: '', like: 0});
-
-  useEffect(() => {
-    setContador(props.data.likes);
-  }, [props.data.likes]);
-
-  const handleClick = async (e: any) => {
+  const [isLike, setIsLike] = useState<boolean>(props.isLikeLocal);
+  const handleLike = async (e: MouseEvent) => {
     e.preventDefault();
-    e.target.style.disabled = true;
-    e.target.style.cursor = 'progress';
-    await SubirLikes({
-      id: props.data.id,
-      proyect: props.data.proyect,
-      like: contador + 1,
-    });
-    e.target.style.disabled = false;
-    e.target.style.cursor = 'pointer';
-    e.target.style.fill = 'tomato';
+    const target = e.target as HTMLElement;
+    target.style.cursor = 'progress';
+    const getLikesLocal = JSON.parse(localStorage.getItem('likes') as string);
 
-    setContador((e: number) => e + 1);
-    setNewData({
-      id: props.data.id,
-      proyect: props.data.proyect,
-      like: contador + 1,
-    });
-    setModData({
-      id: '',
-      proyect: '',
-      like: 0,
-    });
-  };
-
-  const handleDobleClick = async (e: any) => {
-    e.preventDefault();
-    e.target.style.disabled = true;
-    e.target.style.cursor = 'progress';
-    await QuitarLike({
-      id: props.data.id,
-      proyect: props.data.proyect,
-      like: contador - 1,
-    });
-    e.target.style.disabled = false;
-    e.target.style.cursor = 'pointer';
-    e.target.style.fill = '#ddd';
-    setContador((e: number) => e - 1);
-    setNewData({
-      id: '',
-      proyect: '',
-      like: 0,
-    });
+    let newLikesAll;
+    if (isLike) {
+      newLikesAll = [
+        ...getLikesLocal.filter((item: any) => item.id !== props.id),
+      ];
+      setIsLike(false);
+      setContador((e: number) => e - 1);
+      await QuitarLike({
+        id: props.data.id,
+        proyect: props.data.proyect,
+        like: contador - 1,
+      });
+      target.style.fill = '#ddd';
+    } else {
+      newLikesAll = getLikesLocal
+        ? [...getLikesLocal, {id: Number(props.id)}]
+        : [{id: Number(props.id)}];
+      setIsLike(true);
+      setContador((e: number) => e + 1);
+      await SubirLikes({
+        id: props.data.id,
+        proyect: props.data.proyect,
+        like: contador + 1,
+      });
+      target.style.fill = 'tomato';
+    }
+    target.style.cursor = 'pointer';
+    localStorage.setItem('likes', JSON.stringify(newLikesAll));
   };
 
   return (
@@ -153,7 +153,9 @@ function Like(props: any) {
         {contador} Me gusta
       </Body>
       <Botton
-        onClick={newData.id ? handleDobleClick : handleClick}
+        id={props.id}
+        onClick={handleLike}
+        $isLike={isLike}
         aria-label='like'>
         <Heart></Heart>
       </Botton>

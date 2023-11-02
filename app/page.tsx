@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import img from '@/ui/img/hero.webp';
 import {Body, Title, BodyParr} from '@/ui/typography';
 import {Skill} from '@/components/skill';
 import {Proyectos} from '@/components/proyectos';
@@ -51,7 +50,7 @@ export default function Home() {
                 alignItems: 'center',
               }}>
               <Image
-                src={img}
+                src={'/hero.webp'}
                 alt='hero'
                 loading='lazy'
                 height={250}

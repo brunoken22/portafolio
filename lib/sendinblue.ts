@@ -1,18 +1,18 @@
-import * as SibApiV3Sdk from "@sendinblue/client";
+import * as SibApiV3Sdk from '@sendinblue/client';
 let apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
 apiInstance.setApiKey(
-   SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,
-   process.env.SENDINBLUE as string
+  SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,
+  process.env.SENDINBLUE as string
 );
 export async function sendEmail(dataEmail: any) {
-   apiInstance
-      .sendTransacEmail({
-         subject: "Gracias por Contáctarme!",
-         sender: { email: "bruno_am_22@hotmail.com", name: "Bruno Ken" },
-         replyTo: { email: "bruno_am_22@hotmail.com", name: "Bruno Ken" },
-         to: [{ name: dataEmail.name, email: dataEmail.email }],
-         htmlContent: `
+  apiInstance
+    .sendTransacEmail({
+      subject: 'Gracias por Contáctarme!',
+      sender: {email: 'bruno_am_22@hotmail.com', name: 'Bruno Ken'},
+      replyTo: {email: 'bruno_am_22@hotmail.com', name: 'Bruno Ken'},
+      to: [{name: dataEmail.name, email: dataEmail.email}],
+      htmlContent: `
          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
          <meta charset="UTF-8">
          <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -148,23 +148,23 @@ export async function sendEmail(dataEmail: any) {
         
        </body></html>
          `,
-      })
-      .then(
-         function (data: any) {
-            console.log(data.body);
-         },
-         function (error: any) {
-            console.error(error);
-         }
-      );
-   apiInstance
-      .sendTransacEmail({
-         subject: "Mensaje de portafolio!",
+    })
+    .then(
+      function (data: any) {
+        return data.body;
+      },
+      function (error: any) {
+        return error;
+      }
+    );
+  apiInstance
+    .sendTransacEmail({
+      subject: 'Mensaje de portafolio!',
 
-         sender: { email: dataEmail.email, name: dataEmail.name },
-         replyTo: { email: dataEmail.email, name: dataEmail.name },
-         to: [{ name: "Bruno Ken", email: "bruno_am_22@hotmail.com" }],
-         htmlContent: `
+      sender: {email: dataEmail.email, name: dataEmail.name},
+      replyTo: {email: dataEmail.email, name: dataEmail.name},
+      to: [{name: 'Bruno Ken', email: 'bruno_am_22@hotmail.com'}],
+      htmlContent: `
          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
          <meta charset="UTF-8">
          <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -241,14 +241,13 @@ export async function sendEmail(dataEmail: any) {
         
        </body></html>
          `,
-      })
-      .then(
-         function (data: any) {
-            console.log(data.body);
-            return data.body;
-         },
-         function (error: any) {
-            console.error(error);
-         }
-      );
+    })
+    .then(
+      function (data: any) {
+        return data.body;
+      },
+      function (error: any) {
+        return error;
+      }
+    );
 }

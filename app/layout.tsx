@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang='es'>
+      <head>
+        <link rel='preload' as='image' href='/hero.webp' />
+      </head>
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <Layout>{children}</Layout>

@@ -1,6 +1,5 @@
 'use client';
 import {Header} from '../header';
-
 import React, {useState} from 'react';
 import {ThemeProvider} from 'styled-components';
 const themes: any = {
