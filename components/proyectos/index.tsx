@@ -100,7 +100,6 @@ export function Proyectos() {
     </div>
   );
 }
-
 function Like(props: any) {
   const [contador, setContador] = useState(props.data.likes);
   const [isLike, setIsLike] = useState<boolean>(props.isLikeLocal);
