@@ -82,7 +82,7 @@ export function Contact() {
               </DivEnlaceContact>
             </Link>
             <Link
-              href='https://w.app/SoftwareDeveloper'
+              href='tel:+541161204047'
               aria-label='whatsapp'
               target='_blank'>
               <DivEnlaceContact>
