@@ -8,7 +8,6 @@ import {
   Loader,
 } from './styled';
 import {Body} from '@/ui/typography';
-import Image from 'next/image';
 import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import Heart from '@/ui/icons/heart.svg';
@@ -51,12 +50,12 @@ export function Proyectos() {
                         href={el.fields.linkDeArticle}
                         key={p}
                         target='blank'>
-                        <Image
+                        <img
                           src={el.fields.linkImgPagina}
                           loading='lazy'
                           width={350}
                           height={230}
-                          alt={el.fields.appMisPelis}></Image>
+                          alt={el.fields.appMisPelis}></img>
                       </Link>
                       <div>
                         <Body>{el.fields.appMisPelis}</Body>
