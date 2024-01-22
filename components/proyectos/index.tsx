@@ -6,11 +6,13 @@ import {
   Botton,
   TemplateLoadingProyect,
   Loader,
+  LinkGthub,
 } from './styled';
 import {Body} from '@/ui/typography';
 import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import Heart from '@/ui/icons/heart.svg';
+import Github from '@/ui/icons/github.svg';
 import {Zoom} from 'react-awesome-reveal';
 import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
 
@@ -58,20 +60,37 @@ export function Proyectos() {
                           alt={el.fields.appMisPelis}></img>
                       </Link>
                       <div>
-                        <Body>{el.fields.appMisPelis}</Body>
-                        <Like
-                          id={el.fields.id}
-                          data={data.find(
-                            (item: any) => item.id == el.fields.id && item
-                          )}
-                          isLikeLocal={
-                            localStorageLikes?.find(
-                              (item: any) => item.id === el.fields.id
-                            )
-                              ? true
-                              : false
-                          }
-                        />
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            marginLeft: '1.2rem',
+                            marginRight: '1.2rem',
+                          }}>
+                          <Body>{el.fields.appMisPelis}</Body>
+                          <LinkGthub
+                            href={el.fields.github}
+                            alt='Link github proyect'
+                            target='_blank'>
+                            <Github />
+                          </LinkGthub>
+                        </div>
+                        <div>
+                          <Like
+                            id={el.fields.id}
+                            data={data.find(
+                              (item: any) => item.id == el.fields.id && item
+                            )}
+                            isLikeLocal={
+                              localStorageLikes?.find(
+                                (item: any) => item.id === el.fields.id
+                              )
+                                ? true
+                                : false
+                            }
+                          />
+                        </div>
                       </div>
                     </TemplateProyect>
                   </Zoom>

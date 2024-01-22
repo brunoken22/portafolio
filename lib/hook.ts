@@ -4,10 +4,7 @@ async function fetchApiAuth(api: any) {
   const option = api[1] || {};
   if (api) {
     if (true) {
-      const response = await fetch(
-        'https://portafolio-taupe-nine.vercel.app' + api[0],
-        option
-      );
+      const response = await fetch('http://localhost:3000' + api[0], option);
       const data = await response.json();
       if (data) {
         return data;

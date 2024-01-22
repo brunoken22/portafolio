@@ -84,3 +84,11 @@ export const Botton = styled.button<any>`
     z-index: 10;
   }
 `;
+export const LinkGthub = styled.a<any>`
+  svg {
+    fill: ${({theme}: any) => (theme?.background == '#fff' ? '#000' : '#fff')};
+  }
+  &:hover svg {
+    opacity: 0.6;
+  }
+`;
