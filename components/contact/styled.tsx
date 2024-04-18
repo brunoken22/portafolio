@@ -49,11 +49,11 @@ export const Label = styled.label`
   display: block;
 `;
 export const Input = styled.input`
-  height: 30px;
   width: 100%;
   text-indent: 6px;
   border-radius: 10px;
   font-size: 1rem;
+  padding: 0.5rem;
   &:focus {
     outline: 3px solid #84dcff;
   }
@@ -66,6 +66,7 @@ export const Textarea = styled.textarea`
   min-width: 100%;
   max-height: 310px;
   min-height: 100px;
+  padding: 0.5rem;
   &:focus {
     outline: 3px solid #84dcff;
   }
@@ -83,7 +84,8 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2ren;
+  width: 100%;
+  font-size: 1rem;
   &:hover {
     background-color: #4793d1;
   }
@@ -103,6 +105,7 @@ export const Enlaces = styled.a`
 `;
 
 export const DivEnlaceContact = styled.div<any>`
+  width: 25px;
   svg {
     fill: ${({theme}: any) => theme.color};
   }

@@ -119,6 +119,7 @@ export function Contact() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              width: '100%',
             }}>
             <Button aria-label='Enviar'>Enviar</Button>
           </div>
