@@ -36,11 +36,12 @@ export const Form = styled.form`
   gap: 1rem;
   margin: 3rem;
   padding: 1rem;
-  width: 360px;
+  width: 450px;
   border: 2px solid #252525;
   border-left-width: thick;
   border-bottom-width: thick;
   @media (max-width: 700px) {
+    width: 95vw;
     margin: 0;
     margin-bottom: 2rem;
   }

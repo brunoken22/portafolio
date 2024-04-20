@@ -24,7 +24,7 @@ const client = contentful.createClient({
 export function Proyectos() {
   const [proyect, setProyect] = useState();
   const {data} = ObtenerLikes();
-  const [localStorageLikes, setLocalStorageLikes] = useState<any>(
+  const [localStorageLikes] = useState<any>(
     typeof localStorage !== 'undefined' &&
       (JSON.parse(localStorage.getItem('likes') as string) as Object[])
   );
@@ -35,7 +35,6 @@ export function Proyectos() {
       setProyect(productos);
     });
   }, []);
-
   return (
     <div id='proyectos'>
       <div>
