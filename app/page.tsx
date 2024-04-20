@@ -4,7 +4,7 @@ import {Body, Title, BodyParr} from '@/ui/typography';
 import {Skill} from '@/components/skill';
 import {Proyectos} from '@/components/proyectos';
 import {Contact} from '@/components/contact';
-import {Container} from '@/ui/contenedores';
+import {Container, EnlaceArrow} from '@/ui/contenedores';
 import Arrow from '@/ui/icons/arrow.svg';
 import {useRef} from 'react';
 
@@ -81,7 +81,7 @@ export default function Home() {
                   Software Developer <span>&#160;</span>
                 </BodyParr>
               </div>
-              <Body $margin='2rem 20%' $weight='200'>
+              <Body $margin='2rem 20%'>
                 Tengo un sólido conocimiento en desarrollo Fullstack y un
                 entusiasmo por la creación de soluciones innovadoras. Durante mi
                 formación, he adquirido habilidades en diversas tecnologías,
@@ -91,9 +91,9 @@ export default function Home() {
                 Express y bases de datos como PostgreSQL Y Firebase.
               </Body>
             </div>
-            <a href='#skill' aria-label='arrow'>
+            <EnlaceArrow href='#skill' aria-label='arrow'>
               <Arrow className='arrow' />
-            </a>
+            </EnlaceArrow>
           </div>
           <Skill />
           <hr

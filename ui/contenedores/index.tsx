@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const DivIconsHero = styled.div<any>`
   svg {
-    opacity: 0.4 !important;
+    opacity: 1 !important;
   }
   svg:hover {
-    opacity: 1 !important;
+    opacity: 0.7 !important;
   }
   fill: ${({theme}: any) => theme.color};
 `;
@@ -21,5 +21,12 @@ export const Container = styled.div`
 
   @media (max-width: 700px) {
     padding: auto 5%;
+  }
+`;
+
+export const EnlaceArrow = styled.a`
+  fill: ${({theme}: any) => theme.color};
+  &:hover {
+    opacity: 0.7;
   }
 `;

@@ -6,7 +6,10 @@ export const ContentIcons = styled.div`
   flex-wrap: wrap;
   gap: 5rem;
   justify-content: center;
+  width: 70%;
+  margin: auto;
   @media (max-width: 500px) {
+    width: 95%;
     gap: 3rem;
   }
 `;

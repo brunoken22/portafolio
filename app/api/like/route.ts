@@ -22,16 +22,7 @@ export async function POST(request: NextRequest) {
 export async function GET() {
   try {
     const collection = await firebase.listCollections();
-    // await firebase
-    //   .collection('proyect1')
-    //   .doc()
-    //   .get()
-    //   .then((dataSnapShop) => {
-    //     console.log('data', dataSnapShop.data);
-    //     return NextResponse.json(dataSnapShop.data, {
-    //       status: 200,
-    //     });
-    //   });
+
     const data: any = [];
     for (let snap of collection) {
       const proyect = snap.id;

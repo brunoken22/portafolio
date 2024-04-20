@@ -18,7 +18,7 @@ import Linkedin from '@/ui/icons/linkedin.svg';
 import Github from '@/ui/icons/github.svg';
 import Whatsapp from '@/ui/icons/whatsapp.svg';
 import Link from 'next/link';
-import {Slide} from 'react-awesome-reveal';
+import {Slide, Fade} from 'react-awesome-reveal';
 import {mensaje} from '@/lib/hook';
 type FormData = {
   name: string;
@@ -43,7 +43,7 @@ export function Contact() {
 
   return (
     <ContenedorForm id='contacto'>
-      <Slide triggerOnce>
+      <Slide>
         <DivContact>
           <div>
             <Body>

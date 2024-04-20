@@ -21,8 +21,7 @@ export const Subtitle = styled.h2`
 `;
 export const Body = styled.p<any>`
   font-size: ${(props: any) => (props.$size ? props.$size : '1.2rem')};
-  font-weight: ${(props: any) => (props.$weight ? props.$weight : 300)};
-  font-weight: ${({theme}: any) => (theme.color === '#000' ? 400 : '')};
+  font-weight: ${(props: any) => (props.$weight ? props.$weight : 400)};
   margin: ${(props: any) => (props.$margin ? props.$margin : 0)};
   color: ${({theme}: any) => theme.color};
   text-align: center;

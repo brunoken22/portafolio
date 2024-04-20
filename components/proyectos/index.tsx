@@ -45,7 +45,7 @@ export function Proyectos() {
           ? (proyect as any).map((el: any, p: number) => {
               return (
                 <div key={el.fields.id}>
-                  <Zoom triggerOnce>
+                  <Zoom>
                     <TemplateProyect>
                       <Link
                         href={el.fields.linkDeArticle}
@@ -54,9 +54,14 @@ export function Proyectos() {
                         <img
                           src={el.fields.linkImgPagina}
                           loading='lazy'
-                          width={350}
+                          width={320}
                           height={230}
-                          alt={el.fields.appMisPelis}></img>
+                          alt={el.fields.appMisPelis}
+                          style={{
+                            objectFit: 'cover',
+                            borderTopLeftRadius: '15px',
+                            borderTopRightRadius: '15px',
+                          }}></img>
                       </Link>
                       <div>
                         <div
@@ -67,7 +72,7 @@ export function Proyectos() {
                             marginLeft: '1.2rem',
                             marginRight: '1.2rem',
                           }}>
-                          <Body>{el.fields.appMisPelis}</Body>
+                          <Body $weight='500'>{el.fields.appMisPelis}</Body>
                           <LinkGthub
                             href={el.fields.github}
                             alt='Link github proyect'
@@ -169,9 +174,7 @@ function Like(props: any) {
         padding: '1rem',
         height: '90px',
       }}>
-      <Body $weight='100' $size={'1rem'}>
-        {contador} Me gusta
-      </Body>
+      <Body $size={'1rem'}>{contador} Me encanta</Body>
       <Botton
         id={props.id}
         onClick={handleLike}

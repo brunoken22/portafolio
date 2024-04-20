@@ -5,19 +5,20 @@ export const TemplateProyect = styled.div`
   flex-direction: column;
   background-color: ${({theme}: any) => theme.background};
   color: ${({theme}: any) => theme.color};
-  gap: 3rem;
-  border: 2px solid #fff;
-  box-shadow: #ddd 0px 0px 8px 1px;
+  gap: 1rem;
+  box-shadow: -2px 0px 5px 4px #5959597a;
   transition: transform 200ms ease;
+  border-radius: 15px;
 
   &:hover {
+    box-shadow: 0px 0px 10px 10px #5959597a;
     opacity: 0.8;
     transform: scale(1.1);
   }
 `;
 export const TemplateLoadingProyect = styled(TemplateProyect)`
-  width: 350px;
-  height: 400px;
+  width: 320px;
+  height: 380px;
   box-shadow: none;
   border: none;
   background-color: transparent;
@@ -63,6 +64,11 @@ export const DivProyectos = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+
+  @media (max-width: 570px) {
+    padding: 0.5rem;
+  }
 `;
 export const Botton = styled.button<any>`
   border: 0;

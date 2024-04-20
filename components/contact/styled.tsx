@@ -37,9 +37,9 @@ export const Form = styled.form`
   margin: 3rem;
   padding: 1rem;
   width: 450px;
-  border: 2px solid #252525;
-  border-left-width: thick;
-  border-bottom-width: thick;
+  box-shadow: -2px 2px 3px 1px #ddd;
+  border-radius: 5px;
+
   @media (max-width: 700px) {
     width: 95vw;
     margin: 0;
@@ -55,8 +55,14 @@ export const Input = styled.input`
   border-radius: 10px;
   font-size: 1rem;
   padding: 0.5rem;
+  border: 1px solid
+    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+  border-bottom: 3px solid
+    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+  border-left: 3px solid
+    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
   &:focus {
-    outline: 3px solid #84dcff;
+    outline: none;
   }
 `;
 export const Textarea = styled.textarea`
@@ -66,10 +72,19 @@ export const Textarea = styled.textarea`
   max-width: 100%;
   min-width: 100%;
   max-height: 310px;
-  min-height: 100px;
+  min-height: 140px;
   padding: 0.5rem;
+  border: 1px solid
+    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+
+  border-bottom: 3px solid
+    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+
+  border-left: 3px solid
+    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+
   &:focus {
-    outline: 3px solid #84dcff;
+    outline: none;
   }
 `;
 export const Span = styled.span`
