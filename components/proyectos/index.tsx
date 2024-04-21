@@ -7,6 +7,7 @@ import {
   TemplateLoadingProyect,
   Loader,
   LinkGthub,
+  ImageProyect,
 } from './styled';
 import {Body} from '@/ui/typography';
 import {useEffect, useState} from 'react';
@@ -51,17 +52,11 @@ export function Proyectos() {
                         href={el.fields.linkDeArticle}
                         key={p}
                         target='blank'>
-                        <img
+                        <ImageProyect
                           src={el.fields.linkImgPagina}
                           loading='lazy'
-                          width={320}
-                          height={230}
                           alt={el.fields.appMisPelis}
-                          style={{
-                            objectFit: 'cover',
-                            borderTopLeftRadius: '15px',
-                            borderTopRightRadius: '15px',
-                          }}></img>
+                        />
                       </Link>
                       <div>
                         <div

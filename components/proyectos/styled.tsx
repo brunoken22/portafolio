@@ -70,6 +70,16 @@ export const DivProyectos = styled.div`
     padding: 0.5rem;
   }
 `;
+export const ImageProyect = styled.img`
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 320px;
+  height: 230px;
+  @media (max-width: 470px) {
+    width: 90vw;
+  }
+`;
 export const Botton = styled.button<any>`
   border: 0;
   background: transparent;
@@ -91,6 +101,7 @@ export const Botton = styled.button<any>`
   }
 `;
 export const LinkGthub = styled.a<any>`
+  width: auto;
   svg {
     fill: ${({theme}: any) => (theme?.background == '#fff' ? '#000' : '#fff')};
   }
