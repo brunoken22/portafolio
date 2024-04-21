@@ -70,9 +70,9 @@ export function Header(props: any) {
               }`}></ModeBoton>
           </Mode>
           <Hambug onClick={handleClick} onBlur={() => console.log('onblur')}>
-            <LineaDiv></LineaDiv>
-            <LineaDiv></LineaDiv>
-            <LineaDiv></LineaDiv>
+            <LineaDiv $isActive={!desple}></LineaDiv>
+            <LineaDiv $isActive={desple}></LineaDiv>
+            <LineaDiv $isActive={desple}></LineaDiv>
           </Hambug>
         </NavBar>
       </HeaderNav>

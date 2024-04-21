@@ -16,6 +16,7 @@ import Heart from '@/ui/icons/heart.svg';
 import Github from '@/ui/icons/github.svg';
 import {Zoom} from 'react-awesome-reveal';
 import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
+import {SpanTitle} from '@/ui/contenedores';
 
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
@@ -38,20 +39,30 @@ export function Proyectos() {
   }, []);
   return (
     <div id='proyectos'>
-      <div>
-        <h2 style={{textAlign: 'center', marginBottom: '3rem'}}>Experiencia</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <h2
+          style={{
+            textAlign: 'center',
+            marginBottom: '3rem',
+            position: 'relative',
+            width: 'min-content',
+          }}>
+          Experiencia<SpanTitle></SpanTitle>
+        </h2>
       </div>
       <DivProyectos>
         {proyect && data
-          ? (proyect as any).map((el: any, p: number) => {
+          ? (proyect as any).map((el: any) => {
               return (
                 <div key={el.fields.id}>
                   <Zoom>
                     <TemplateProyect>
-                      <Link
-                        href={el.fields.linkDeArticle}
-                        key={p}
-                        target='blank'>
+                      <Link href={el.fields.linkDeArticle} target='blank'>
                         <ImageProyect
                           src={el.fields.linkImgPagina}
                           loading='lazy'

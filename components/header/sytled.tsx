@@ -78,11 +78,23 @@ export const Hambug = styled.button`
     display: flex;
   }
 `;
-export const LineaDiv = styled.div`
+export const LineaDiv = styled.div<{$isActive: boolean}>`
   width: 30px;
   height: 4px;
+  transition: all 2s;
   background-color: ${({theme}: any) =>
     theme.background == '#fff' ? '#000' : '#fff'};
+  /* &:nth-child(1) {
+    display: ${({$isActive}) => ($isActive ? 'block' : 'none')};
+  }
+  &:nth-child(2) {
+    &:nth-child(1) {
+      display: ${({$isActive}) => ($isActive ? 'block' : 'none')};
+    }
+  }
+  &:nth-child(2) {
+    display: ${({$isActive}) => ($isActive ? 'block' : 'none')};
+  } */
 `;
 export const Mode = styled.div`
   border-radius: 40%;

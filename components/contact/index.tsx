@@ -82,7 +82,7 @@ export function Contact() {
               </DivEnlaceContact>
             </Link>
             <Link
-              href='https://api.whatsapp.com/send?phone=+541161204047&text=Mi%20nombre%20es%20Bruno,%20y%20soy%20un%20apasionado%20desarrollador%20fullstack%20con%20una%20s%C3%B3lida%20experiencia%20en%20la%20creaci%C3%B3n%20de%20soluciones%20web%20completas%20y%20eficientes.%20Me%20encantar%C3%ADa%20formar%20parte%20de%20su%20equipo%20y%20contribuir%20con%20mi%20experiencia%20y%20entusiasmo%20al%20%C3%A9xito%20de%20sus%20proyectos.'
+              href='https://api.whatsapp.com/send?phone=+541161204047&text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20?'
               aria-label='whatsapp'
               target='_blank'>
               <DivEnlaceContact>
