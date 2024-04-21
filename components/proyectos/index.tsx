@@ -66,7 +66,7 @@ export function Proyectos() {
                             alignItems: 'center',
                             textAlign: 'start',
                           }}>
-                          <Body $weight='500' $size='1.3rem'>
+                          <Body $weight='500' $size='1.3rem' $align='start'>
                             {el.fields.appMisPelis}
                           </Body>
                           <LinkGthub
