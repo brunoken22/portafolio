@@ -58,14 +58,13 @@ export function Proyectos() {
                           alt={el.fields.appMisPelis}
                         />
                       </Link>
-                      <div>
+                      <div style={{padding: '0.5rem'}}>
                         <div
                           style={{
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            marginLeft: '1.2rem',
-                            marginRight: '1.2rem',
+                            textAlign: 'start',
                           }}>
                           <Body $weight='500' $size='1.3rem'>
                             {el.fields.appMisPelis}
@@ -168,7 +167,7 @@ function Like(props: any) {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '1rem',
+
         height: '90px',
       }}>
       <Body $size={'1rem'}>{contador} Me encanta</Body>

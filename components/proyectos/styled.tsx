@@ -9,7 +9,7 @@ export const TemplateProyect = styled.div`
   box-shadow: -2px 0px 5px 4px #5959597a;
   transition: transform 200ms ease;
   border-radius: 15px;
-
+  width: min-content;
   &:hover {
     box-shadow: 0px 0px 10px 10px #5959597a;
     opacity: 0.8;
