@@ -11,103 +11,103 @@ import SequelizeSvg from '@/ui/icons/sequelize-svgrepo-com.svg';
 import StyleComSvg from '@/ui/icons/styled-components-svgrepo-com (1).svg';
 import NextSvg from '@/ui/icons/next-js-svgrepo-com.svg';
 import React from 'react';
-import {DivIconsHero} from '@/ui/contenedores';
-import {ContentIcons, DivContentIcons} from './styled';
-
+import {SpanTitle} from '@/ui/contenedores';
+import './style.css';
+import {DivContentIcons} from './styled';
 export function Skill() {
   return (
     <div style={{textAlign: 'center', width: '100%'}} id='skill'>
-      <div>
-        <h2 style={{marginBottom: '3rem'}}>Skill</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <h2
+          style={{
+            marginBottom: '3rem',
+            position: 'relative',
+            width: 'min-content',
+          }}>
+          Habilidades<SpanTitle></SpanTitle>
+        </h2>
       </div>
-      <div>
-        <DivContentIcons>
-          <ContentIcons>
-            <DivIconsHero $right='80%' $top='20%'>
-              <Firebase />
-            </DivIconsHero>
-            <DivIconsHero $right='80%' $top='30%'>
-              <Html style={{width: '120px !important'}} />
-            </DivIconsHero>
-            <DivIconsHero $right='80%' $top='40%'>
-              <Css />
-            </DivIconsHero>
-            <DivIconsHero $right='80%' $top='50%'>
-              <Js />
-            </DivIconsHero>
-            <DivIconsHero $right='15%' $top='20%'>
-              <Node />
-            </DivIconsHero>
-            <DivIconsHero $right='15%' $top='30%'>
-              <Potsgresql />
-            </DivIconsHero>
-            <DivIconsHero $right='15%' $top='30%'>
-              <SequelizeSvg />
-            </DivIconsHero>
-            <DivIconsHero $right='15%' $top='40%'>
-              <ReactSvg />
-            </DivIconsHero>
-            <DivIconsHero $right='15%' $top='40%'>
-              <NextSvg />
-            </DivIconsHero>
-            <DivIconsHero $right='15%' $top='40%'>
-              <StyleComSvg />
-            </DivIconsHero>
-            <DivIconsHero $right='15%' $top='50%'>
-              <Typescriptsvg />
-            </DivIconsHero>
-            <DivIconsHero $right='80%' $top='30%'>
-              <Express style={{width: '120px !important'}} />
-            </DivIconsHero>
-          </ContentIcons>
+      <div className='slider'>
+        <DivContentIcons className='slide-track'>
+          <div className='slide'>
+            <Firebase />
+          </div>
+          <div className='slide'>
+            <Html style={{width: '120px !important'}} />
+          </div>
+          <div className='slide'>
+            <Css />
+          </div>
+          <div className='slide'>
+            <Js />
+          </div>
+          <div className='slide'>
+            <Node />
+          </div>
+          <div className='slide'>
+            <Potsgresql />
+          </div>
+          <div className='slide'>
+            <SequelizeSvg />
+          </div>
+          <div className='slide'>
+            <ReactSvg />
+          </div>
+          <div className='slide'>
+            <NextSvg />
+          </div>
+          <div className='slide'>
+            <StyleComSvg />
+          </div>
+          <div className='slide'>
+            <Typescriptsvg />
+          </div>
+          <div className='slide'>
+            <Express style={{width: '120px !important'}} />
+          </div>
+          <div className='slide'>
+            <Firebase />
+          </div>
+          <div className='slide'>
+            <Html style={{width: '120px !important'}} />
+          </div>
+          <div className='slide'>
+            <Css />
+          </div>
+          <div className='slide'>
+            <Js />
+          </div>
+          <div className='slide'>
+            <Node />
+          </div>
+          <div className='slide'>
+            <Potsgresql />
+          </div>
+          <div className='slide'>
+            <SequelizeSvg />
+          </div>
+          <div className='slide'>
+            <ReactSvg />
+          </div>
+          <div className='slide'>
+            <NextSvg />
+          </div>
+          <div className='slide'>
+            <StyleComSvg />
+          </div>
+          <div className='slide'>
+            <Typescriptsvg />
+          </div>
+          <div className='slide'>
+            <Express style={{width: '120px !important'}} />
+          </div>
         </DivContentIcons>
       </div>
     </div>
   );
-}
-
-{
-  /* <Swiper
-spaceBetween={50}
-slidesPerView={3}
-autoplay={{
-  delay: 1000,
-}}>
-<SwiperSlide>
-  {' '}
-  <Firebase />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <Css />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <Js />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <Node />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <Potsgresql />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <ReactSvg />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <Typescriptsvg />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <Express style={{width: '120px !important'}} />
-</SwiperSlide>
-<SwiperSlide>
-  {' '}
-  <Html style={{width: '120px !important'}} />
-</SwiperSlide>
-</Swiper> */
 }

@@ -30,3 +30,12 @@ export const EnlaceArrow = styled.a`
     opacity: 0.7;
   }
 `;
+
+export const SpanTitle = styled.span`
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  bottom: -20%;
+  left: 0;
+  background-color: #ff8827;
+`;
