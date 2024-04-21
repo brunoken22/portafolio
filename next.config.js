@@ -18,7 +18,10 @@ const nextConfig = withSvgr({
    },
    images: {
       domains: ["cdn.sanity.io", "images.ctfassets.net"],
-   },
+  },
+  compiler: {
+    styledComponents: true,
+  },
 });
 
 module.exports = nextConfig;
