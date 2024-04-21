@@ -69,7 +69,7 @@ export function Header(props: any) {
                 theme == 'default' ? 'modeLight' : 'modeDark'
               }`}></ModeBoton>
           </Mode>
-          <Hambug onClick={handleClick}>
+          <Hambug onClick={handleClick} onBlur={() => console.log('onblur')}>
             <LineaDiv></LineaDiv>
             <LineaDiv></LineaDiv>
             <LineaDiv></LineaDiv>

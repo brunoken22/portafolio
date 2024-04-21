@@ -28,7 +28,6 @@ export const Body = styled.p<any>`
   @media (max-width: 700px) {
     margin-left: 2%;
     margin-right: 2%;
-    font-size: 1rem;
   }
 `;
 

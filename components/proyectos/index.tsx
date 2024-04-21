@@ -72,7 +72,9 @@ export function Proyectos() {
                             marginLeft: '1.2rem',
                             marginRight: '1.2rem',
                           }}>
-                          <Body $weight='500'>{el.fields.appMisPelis}</Body>
+                          <Body $weight='500' $size='1.3rem'>
+                            {el.fields.appMisPelis}
+                          </Body>
                           <LinkGthub
                             href={el.fields.github}
                             alt='Link github proyect'
