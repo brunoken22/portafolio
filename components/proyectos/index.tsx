@@ -58,7 +58,7 @@ export function Proyectos() {
                           alt={el.fields.appMisPelis}
                         />
                       </Link>
-                      <div style={{padding: '0.5rem'}}>
+                      <div style={{padding: '1rem'}}>
                         <div
                           style={{
                             display: 'flex',

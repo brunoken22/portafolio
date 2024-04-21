@@ -82,6 +82,7 @@ export const ImageProyect = styled.img`
 `;
 export const Botton = styled.button<any>`
   border: 0;
+  padding: 0;
   background: transparent;
   cursor: pointer;
   svg {
