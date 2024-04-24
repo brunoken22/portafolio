@@ -102,7 +102,7 @@ export function Proyectos() {
                 </div>
               );
             })
-          : [1, 2, 3, 4, 5, 6, 7, 8].map((item: number) => (
+          : [1, 2, 3, 4, 5].map((item: number) => (
               <TemplateLoadingProyect key={item}>
                 <Loader>
                   <div className='space'>

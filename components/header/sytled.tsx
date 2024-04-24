@@ -73,6 +73,7 @@ export const Hambug = styled.button`
   flex-direction: column;
   gap: 0.3rem;
   margin-right: 1rem;
+  position: relative;
   cursor: pointer;
   @media (max-width: 700px) {
     display: flex;

@@ -72,7 +72,7 @@ export function Header(props: any) {
                 theme == 'default' ? 'modeLight' : 'modeDark'
               }`}></ModeBoton>
           </Mode>
-          <Hambug onClick={handleClick} onBlur={() => console.log('onblur')}>
+          <Hambug onClick={handleClick}>
             <LineaDiv $isActive={!desple}></LineaDiv>
             <LineaDiv $isActive={desple}></LineaDiv>
             <LineaDiv $isActive={desple}></LineaDiv>
@@ -86,8 +86,8 @@ export function Header(props: any) {
       ) : null}
       <DivWhatsaap>
         <EnlaceWhatsaap
-          href='https://api.whatsapp.com/send?phone=+541161204047&text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20?'
-          className='hover:opacity-70'>
+          href='https://api.whatsapp.com/send?phone=+541161204047&text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20'
+          target='_blank'>
           <WhatsaapSvg />
         </EnlaceWhatsaap>
       </DivWhatsaap>

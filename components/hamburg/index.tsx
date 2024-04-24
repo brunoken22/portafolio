@@ -1,9 +1,8 @@
-import React from 'react';
 import {DivHamburg, DivElemnt, Enlaces} from './styled';
 import {useRouter} from 'next/navigation';
 const pages = [
   {title: 'Habilidades', link: '#habilidades'},
-  {title: 'Experiencia', link: '#proyectos'},
+  {title: 'Proyectos', link: '#proyectos'},
   {title: 'Contacto', link: '#contacto'},
 ];
 
