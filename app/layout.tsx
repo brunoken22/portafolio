@@ -1,13 +1,13 @@
 import './globals.css';
 import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
+import {Poppins} from 'next/font/google';
 import {Layout} from '@/components/layout';
 import {StyledComponentsRegistry} from '@/components/layout/registry';
-const inter = Inter({subsets: ['latin']});
+const poppins = Poppins({subsets: ['latin'], weight: '400'});
+
 export const metadata: Metadata = {
   title: 'Bruno Ken',
   description: 'Mi portafolio',
-  themeColor: '#317EFB',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -16,7 +16,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <head>
         <link rel='preload' as='image' href='/hero.webp' />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <StyledComponentsRegistry>
           <Layout>{children}</Layout>
         </StyledComponentsRegistry>

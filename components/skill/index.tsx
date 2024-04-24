@@ -13,7 +13,7 @@ import NextSvg from '@/ui/icons/next-js-svgrepo-com.svg';
 import React from 'react';
 import {SpanTitle} from '@/ui/contenedores';
 import './style.css';
-import {DivContentIcons} from './styled';
+import {DivContentIcons, DivSlider} from './styled';
 export function Skill() {
   return (
     <div style={{textAlign: 'center', width: '100%'}} id='skill'>
@@ -32,7 +32,7 @@ export function Skill() {
           Habilidades<SpanTitle></SpanTitle>
         </h2>
       </div>
-      <div className='slider'>
+      <DivSlider>
         <DivContentIcons className='slide-track'>
           <div className='slide'>
             <Firebase />
@@ -107,7 +107,7 @@ export function Skill() {
             <Express style={{width: '120px !important'}} />
           </div>
         </DivContentIcons>
-      </div>
+      </DivSlider>
     </div>
   );
 }
