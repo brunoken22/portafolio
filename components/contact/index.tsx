@@ -46,7 +46,13 @@ export function Contact() {
     <ContenedorForm id='contacto'>
       <Slide>
         <DivContact>
-          <div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
             <Body>
               <Span>Datos de contacto</Span>
             </Body>

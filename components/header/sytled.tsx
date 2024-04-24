@@ -84,17 +84,6 @@ export const LineaDiv = styled.div<{$isActive: boolean}>`
   transition: all 2s;
   background-color: ${({theme}: any) =>
     theme.background == '#fff' ? '#000' : '#fff'};
-  /* &:nth-child(1) {
-    display: ${({$isActive}) => ($isActive ? 'block' : 'none')};
-  }
-  &:nth-child(2) {
-    &:nth-child(1) {
-      display: ${({$isActive}) => ($isActive ? 'block' : 'none')};
-    }
-  }
-  &:nth-child(2) {
-    display: ${({$isActive}) => ($isActive ? 'block' : 'none')};
-  } */
 `;
 export const Mode = styled.div`
   border-radius: 40%;
@@ -113,4 +102,25 @@ export const ModeBoton = styled.div`
   border-radius: 50%;
   background-color: ${({theme}: any) =>
     theme.background == '#fff' ? 'black' : 'yellow'};
+`;
+export const DivWhatsaap = styled.div`
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  border-radius: 50%;
+  background-color: #2f992f;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+`;
+export const EnlaceWhatsaap = styled.a`
+  height: 40px;
+  width: 40px;
+  fill: white;
+  &:hover {
+    opacity: 0.7;
+  }
 `;

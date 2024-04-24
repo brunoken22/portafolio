@@ -11,7 +11,6 @@ import SequelizeSvg from '@/ui/icons/sequelize-svgrepo-com.svg';
 import StyleComSvg from '@/ui/icons/styled-components-svgrepo-com (1).svg';
 import NextSvg from '@/ui/icons/next-js-svgrepo-com.svg';
 import React from 'react';
-import {SpanTitle} from '@/ui/contenedores';
 import './style.css';
 import {DivContentIcons, DivSlider} from './styled';
 import CodingSvg from '@/ui/icons/coding.svg';
@@ -20,7 +19,7 @@ export function Skill() {
   return (
     <div
       style={{textAlign: 'center', width: '100%', paddingTop: '5rem'}}
-      id='skill'>
+      id='habilidades'>
       <div
         style={{
           display: 'flex',
@@ -30,7 +29,6 @@ export function Skill() {
         <Subtitle>
           <CodingSvg className='codingSvg' />
           Habilidades
-          {/* <SpanTitle></SpanTitle> */}
         </Subtitle>
       </div>
       <DivSlider>

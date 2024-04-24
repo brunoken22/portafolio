@@ -10,13 +10,16 @@ import {
   DivDespleHam,
   ModeBoton,
   Mode,
+  DivWhatsaap,
+  EnlaceWhatsaap,
 } from './sytled';
 import {DespleHam} from '../hamburg';
 import Bk from '@/ui/icons/BK.svg';
 import Link from 'next/link';
+import WhatsaapSvg from '@/ui/icons/whatsapp.svg';
 const pages = [
-  {url: 'Skill', id: 'skill'},
-  {url: 'Experiencia', id: 'proyectos'},
+  {url: 'Habilidades', id: 'habilidades'},
+  {url: 'Proyectos', id: 'proyectos'},
   {url: 'Contacto', id: 'contacto'},
 ];
 
@@ -81,6 +84,13 @@ export function Header(props: any) {
           <DespleHam click={handleClickHam} />
         </DivDespleHam>
       ) : null}
+      <DivWhatsaap>
+        <EnlaceWhatsaap
+          href='https://api.whatsapp.com/send?phone=+541161204047&text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20?'
+          className='hover:opacity-70'>
+          <WhatsaapSvg />
+        </EnlaceWhatsaap>
+      </DivWhatsaap>
     </>
   );
 }

@@ -14,7 +14,6 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   text-align: center;
   margin-bottom: 3rem;
-  width: min-content;
   display: flex;
   gap: 0.5rem;
   align-items: center;

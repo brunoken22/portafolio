@@ -16,7 +16,6 @@ import Heart from '@/ui/icons/heart.svg';
 import Github from '@/ui/icons/github.svg';
 import {Zoom} from 'react-awesome-reveal';
 import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
-import {SpanTitle} from '@/ui/contenedores';
 import ComputerSvg from '@/ui/icons/computer.svg';
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
@@ -48,7 +47,6 @@ export function Proyectos() {
         <Subtitle>
           <ComputerSvg className='computerSvg' />
           Proyectos
-          {/* <SpanTitle></SpanTitle> */}
         </Subtitle>
       </div>
       <DivProyectos>

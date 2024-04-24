@@ -1,6 +1,11 @@
+import React from 'react';
 import {DivHamburg, DivElemnt, Enlaces} from './styled';
 import {useRouter} from 'next/navigation';
-const pages = ['Skill', 'Experiencia', 'Contacto'];
+const pages = [
+  {title: 'Habilidades', link: '#habilidades'},
+  {title: 'Experiencia', link: '#proyectos'},
+  {title: 'Contacto', link: '#contacto'},
+];
 
 export function DespleHam(props: any) {
   const router = useRouter();
@@ -13,9 +18,9 @@ export function DespleHam(props: any) {
     <>
       <DivHamburg>
         <DivElemnt>
-          {pages.map((e: any, p: any) => (
-            <Enlaces href={'#' + p} onClick={handleClick} key={p}>
-              {e}
+          {pages.map((e) => (
+            <Enlaces href={e.link} onClick={handleClick} key={e.link}>
+              {e.title}
             </Enlaces>
           ))}
         </DivElemnt>

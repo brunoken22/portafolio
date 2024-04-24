@@ -19,12 +19,17 @@ export const ContenedorForm = styled.div`
   align-items: center;
   padding-top: 5rem;
 `;
-export const DivContact = styled(ContenedorForm)`
-  width: auto;
+export const DivContact = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 2rem;
   flex-direction: column;
   @media (max-width: 700px) {
-    margin: 1rem;
+    margin: 1rem auto;
+    gap: 1rem;
   }
 `;
 export const OneContact = styled(DivContact)<any>`
@@ -45,6 +50,7 @@ export const Form = styled.form`
     width: 95vw;
     margin: 0;
     margin-bottom: 2rem;
+    box-shadow: none;
   }
 `;
 export const Label = styled.label`
