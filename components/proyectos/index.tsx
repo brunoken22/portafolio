@@ -9,7 +9,7 @@ import {
   LinkGthub,
   ImageProyect,
 } from './styled';
-import {Body} from '@/ui/typography';
+import {Body, Subtitle} from '@/ui/typography';
 import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import Heart from '@/ui/icons/heart.svg';
@@ -17,7 +17,7 @@ import Github from '@/ui/icons/github.svg';
 import {Zoom} from 'react-awesome-reveal';
 import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
 import {SpanTitle} from '@/ui/contenedores';
-
+import ComputerSvg from '@/ui/icons/computer.svg';
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
   accessToken: process.env.NEXT_PUBLIC_CONTENFUL as string,
@@ -38,22 +38,18 @@ export function Proyectos() {
     });
   }, []);
   return (
-    <div id='proyectos'>
+    <div id='proyectos' style={{paddingTop: '5rem'}}>
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <h2
-          style={{
-            textAlign: 'center',
-            marginBottom: '3rem',
-            position: 'relative',
-            width: 'min-content',
-          }}>
-          Experiencia<SpanTitle></SpanTitle>
-        </h2>
+        <Subtitle>
+          <ComputerSvg className='computerSvg' />
+          Proyectos
+          {/* <SpanTitle></SpanTitle> */}
+        </Subtitle>
       </div>
       <DivProyectos>
         {proyect && data

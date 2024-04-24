@@ -64,11 +64,6 @@ export const DivProyectos = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-
-  @media (max-width: 570px) {
-    padding: 0.5rem;
-  }
 `;
 export const ImageProyect = styled.img`
   object-fit: cover;

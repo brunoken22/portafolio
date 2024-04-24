@@ -1,4 +1,5 @@
 'use client';
+import {Container, DivContainer} from '@/ui/contenedores';
 import React, {useRef} from 'react';
 
 export default function ProgressBar({children}: {children: React.ReactNode}) {
@@ -25,7 +26,9 @@ export default function ProgressBar({children}: {children: React.ReactNode}) {
     <>
       {' '}
       <div className='progress-bar' ref={handleScroll}></div>
-      <div ref={handleContaner}>{children}</div>
+      <Container ref={handleContaner}>
+        <DivContainer>{children}</DivContainer>
+      </Container>
     </>
   );
 }

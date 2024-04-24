@@ -14,23 +14,24 @@ import React from 'react';
 import {SpanTitle} from '@/ui/contenedores';
 import './style.css';
 import {DivContentIcons, DivSlider} from './styled';
+import CodingSvg from '@/ui/icons/coding.svg';
+import {Subtitle} from '@/ui/typography';
 export function Skill() {
   return (
-    <div style={{textAlign: 'center', width: '100%'}} id='skill'>
+    <div
+      style={{textAlign: 'center', width: '100%', paddingTop: '5rem'}}
+      id='skill'>
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <h2
-          style={{
-            marginBottom: '3rem',
-            position: 'relative',
-            width: 'min-content',
-          }}>
-          Habilidades<SpanTitle></SpanTitle>
-        </h2>
+        <Subtitle>
+          <CodingSvg className='codingSvg' />
+          Habilidades
+          {/* <SpanTitle></SpanTitle> */}
+        </Subtitle>
       </div>
       <DivSlider>
         <DivContentIcons className='slide-track'>

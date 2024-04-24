@@ -12,13 +12,37 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-  /* color:${({theme}: any) => theme.color};
-   font-weight:${({theme}: any) => (theme.color === '#000' ? 400 : '')}; 
-   font-size: 2rem;
-   text-align: center;
-   @media(max-width:700px){
-      font-size: 1.5rem;
-   } */
+  text-align: center;
+  margin-bottom: 3rem;
+  width: min-content;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-direction: row;
+
+  .codingSvg path:nth-child(1) {
+    /* stroke: ${({theme}: any) => theme.color}; */
+    fill: ${({theme}: any) => theme.color};
+  }
+  .codingSvg path:nth-child(2) {
+    /* stroke: ${({theme}: any) => theme.color}; */
+    fill: none;
+  }
+  .codingSvg path:nth-child(3) {
+    /* stroke: ${({theme}: any) => theme.color}; */
+    fill: ${({theme}: any) => theme.color};
+  }
+  .codingSvg path,
+  rect {
+    fill: none;
+    stroke: ${({theme}: any) => theme.color};
+  }
+  .computerSvg path,
+  rect {
+    fill: none;
+    stroke: ${({theme}: any) => theme.color};
+    stroke-width: 2px;
+  }
 `;
 export const Body = styled.p<any>`
   font-size: ${(props: any) => (props.$size ? props.$size : '1.2rem')};
