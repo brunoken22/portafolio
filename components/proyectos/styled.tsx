@@ -105,3 +105,17 @@ export const LinkGthub = styled.a<any>`
     opacity: 0.6;
   }
 `;
+export const IconsTecnology = styled.p`
+  height: 30px;
+  font-size: 0.8rem;
+  background-color: #352db1;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 20px;
+  svg {
+    height: 20px;
+    width: auto;
+  }
+`;

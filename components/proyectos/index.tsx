@@ -8,6 +8,7 @@ import {
   Loader,
   LinkGthub,
   ImageProyect,
+  IconsTecnology,
 } from './styled';
 import {Body, Subtitle} from '@/ui/typography';
 import {useEffect, useState} from 'react';
@@ -17,6 +18,10 @@ import Github from '@/ui/icons/github.svg';
 import {Zoom} from 'react-awesome-reveal';
 import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
 import ComputerSvg from '@/ui/icons/computer.svg';
+import TailwindSvg from '@/ui/icons/tailwind.svg';
+import ReactSvg from '@/ui/icons/react.svg';
+import NextSvg from '@/ui/icons/next-js-svgrepo-com.svg';
+
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
   accessToken: process.env.NEXT_PUBLIC_CONTENFUL as string,
@@ -63,6 +68,28 @@ export function Proyectos() {
                           alt={el.fields.appMisPelis}
                         />
                       </Link>
+                      <div
+                        style={{
+                          display: 'flex',
+                          gap: '1rem',
+                          rowGap: '0.2rem',
+                          flexWrap: 'wrap',
+                          paddingLeft: '1rem',
+                          paddingRight: '1rem',
+                        }}>
+                        <IconsTecnology>
+                          <TailwindSvg />
+                          Tailwind
+                        </IconsTecnology>
+                        <IconsTecnology>
+                          <ReactSvg />
+                          React.js
+                        </IconsTecnology>
+                        <IconsTecnology>
+                          <NextSvg />
+                          Next.js
+                        </IconsTecnology>
+                      </div>
                       <div style={{padding: '1rem'}}>
                         <div
                           style={{
@@ -102,12 +129,10 @@ export function Proyectos() {
                 </div>
               );
             })
-          : [1, 2, 3, 4, 5].map((item: number) => (
+          : [1, 2, 3].map((item: number) => (
               <TemplateLoadingProyect key={item}>
                 <Loader>
                   <div className='space'>
-                    <div className='loading'></div>
-                    <div className='loading'></div>
                     <div className='loading'></div>
                     <div className='loading'></div>
                     <div className='loading'></div>
