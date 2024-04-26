@@ -9,12 +9,16 @@ export const TemplateProyect = styled.div`
   box-shadow: -2px 0px 5px 4px #5959597a;
   transition: transform 200ms ease;
   border-radius: 15px;
-  width: min-content;
-  max-width: 320px;
+  width: 320px;
   &:hover {
     box-shadow: 0px 0px 10px 10px #5959597a;
     opacity: 0.8;
     transform: scale(1.1);
+  }
+  @media (max-width: 420px) {
+    & {
+      width: 90vw;
+    }
   }
 `;
 export const TemplateLoadingProyect = styled(TemplateProyect)`
@@ -71,11 +75,8 @@ export const ImageProyect = styled.img`
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width: 320px;
+  width: 100%;
   height: 230px;
-  @media (max-width: 470px) {
-    width: 90vw;
-  }
 `;
 export const Botton = styled.button<any>`
   border: 0;
