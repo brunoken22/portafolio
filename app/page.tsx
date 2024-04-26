@@ -3,7 +3,7 @@ import {Body, Title, BodyParr} from '@/ui/typography';
 import {Skill} from '@/components/skill';
 import {Proyectos} from '@/components/proyectos';
 import {Contact} from '@/components/contact';
-import {Container, EnlaceArrow} from '@/ui/contenedores';
+import {EnlaceArrow} from '@/ui/contenedores';
 import Arrow from '@/ui/icons/arrow.svg';
 import ProgressBar from '@/components/progress-bar';
 

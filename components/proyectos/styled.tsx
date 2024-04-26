@@ -10,6 +10,7 @@ export const TemplateProyect = styled.div`
   transition: transform 200ms ease;
   border-radius: 15px;
   width: min-content;
+  max-width: 320px;
   &:hover {
     box-shadow: 0px 0px 10px 10px #5959597a;
     opacity: 0.8;
@@ -18,13 +19,14 @@ export const TemplateProyect = styled.div`
 `;
 export const TemplateLoadingProyect = styled(TemplateProyect)`
   width: 320px;
-  height: 380px;
+  height: 350px;
   box-shadow: none;
   border: none;
   background-color: transparent;
   &:hover {
     opacity: 1;
     transform: none;
+    box-shadow: none;
   }
 `;
 export const Loader = styled.div`
@@ -106,13 +108,15 @@ export const LinkGthub = styled.a<any>`
   }
 `;
 export const IconsTecnology = styled.p`
+  width: max-content;
   height: 30px;
   font-size: 0.8rem;
-  background-color: #352db1;
+  background-color: ${({theme}) =>
+    theme.background !== '#fff' ? '#573dbf' : '#e7e7e7'};
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.2rem;
   border-radius: 20px;
   svg {
     height: 20px;

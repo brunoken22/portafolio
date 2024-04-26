@@ -13,14 +13,12 @@ import {
 import {Body, Subtitle} from '@/ui/typography';
 import {useEffect, useState} from 'react';
 import Link from 'next/link';
-import Heart from '@/ui/icons/heart.svg';
-import Github from '@/ui/icons/github.svg';
 import {Zoom} from 'react-awesome-reveal';
 import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
+import Heart from '@/ui/icons/heart.svg';
+import Github from '@/ui/icons/github.svg';
 import ComputerSvg from '@/ui/icons/computer.svg';
-import TailwindSvg from '@/ui/icons/tailwind.svg';
-import ReactSvg from '@/ui/icons/react.svg';
-import NextSvg from '@/ui/icons/next-js-svgrepo-com.svg';
+import {DivContentIcons} from '../skill/styled';
 
 const client = contentful.createClient({
   space: 'dehbm7ub5p2i',
@@ -28,7 +26,7 @@ const client = contentful.createClient({
 });
 
 export function Proyectos() {
-  const [proyect, setProyect] = useState();
+  const [proyect, setProyect] = useState<any>();
   const {data} = ObtenerLikes();
   const [localStorageLikes] = useState<any>(
     typeof localStorage !== 'undefined' &&
@@ -38,7 +36,7 @@ export function Proyectos() {
   useEffect(() => {
     client.getEntries({content_type: 'cms'}).then((response: any) => {
       const productos = response.items;
-      setProyect(productos);
+      return setProyect(productos);
     });
   }, []);
   return (
@@ -72,23 +70,18 @@ export function Proyectos() {
                         style={{
                           display: 'flex',
                           gap: '1rem',
-                          rowGap: '0.2rem',
-                          flexWrap: 'wrap',
                           paddingLeft: '1rem',
                           paddingRight: '1rem',
+                          overflow: 'auto',
                         }}>
-                        <IconsTecnology>
-                          <TailwindSvg />
-                          Tailwind
-                        </IconsTecnology>
-                        <IconsTecnology>
-                          <ReactSvg />
-                          React.js
-                        </IconsTecnology>
-                        <IconsTecnology>
-                          <NextSvg />
-                          Next.js
-                        </IconsTecnology>
+                        {el.fields.technologiess.map(
+                          (item: {title: string; svg: string}) => (
+                            <IconsTecnology key={item.title}>
+                              <img src={item.svg} alt={item.title} width={20} />
+                              {item.title}
+                            </IconsTecnology>
+                          )
+                        )}
                       </div>
                       <div style={{padding: '1rem'}}>
                         <div
