@@ -62,6 +62,33 @@ export const Enlaces = styled.a`
     background: #ff6038;
   }
 `;
+
+export const Hambug = styled.button<{$isActive: boolean}>`
+  background-color: transparent;
+  border: none;
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-right: 1rem;
+  position: relative;
+  cursor: pointer;
+
+  @media (max-width: 700px) {
+    display: flex;
+  }
+  div:nth-child(1) {
+    display: ${({$isActive}) => ($isActive ? 'none' : '')};
+  }
+  div:nth-child(2) {
+    border-radius: 10px;
+    transform: ${({$isActive}) => ($isActive ? ' rotate(45deg)' : '')};
+  }
+  div:nth-child(3) {
+    border-radius: 10px;
+    transform: ${({$isActive}) => ($isActive ? ' rotate(138deg)' : '')};
+    translate: ${({$isActive}) => ($isActive ? ' -1px -8px' : '')};
+  }
+`;
 export const DivDespleHam = styled.div`
   position: fixed;
   top: 0;
@@ -74,23 +101,10 @@ export const DivDespleHam = styled.div`
     display: none;
   }
 `;
-export const Hambug = styled.button`
-  background-color: transparent;
-  border: none;
-  display: none;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-right: 1rem;
-  position: relative;
-  cursor: pointer;
-  @media (max-width: 700px) {
-    display: flex;
-  }
-`;
 export const LineaDiv = styled.div<{$isActive: boolean}>`
   width: 30px;
   height: 4px;
-  transition: all 2s;
+  transition: all 1s;
   background-color: ${({theme}: any) =>
     theme.background == '#fff' ? '#000' : '#fff'};
 `;

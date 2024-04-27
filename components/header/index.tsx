@@ -74,7 +74,10 @@ export function Header(props: any) {
                 theme == 'default' ? 'modeLight' : 'modeDark'
               }`}></ModeBoton>
           </Mode>
-          <Hambug onClick={handleClick}>
+          <Hambug
+            onClick={handleClick}
+            onBlur={() => console.log('onblur')}
+            $isActive={desple}>
             <LineaDiv $isActive={!desple}></LineaDiv>
             <LineaDiv $isActive={desple}></LineaDiv>
             <LineaDiv $isActive={desple}></LineaDiv>
