@@ -62,7 +62,7 @@ export function Proyectos() {
                       <Link
                         href={el.fields.linkDeArticle}
                         target='blank'
-                        style={{overflow: 'hidden'}}>
+                        style={{overflow: 'hidden', height: '230px'}}>
                         <ImageProyect
                           src={el.fields.linkImgPagina}
                           loading='lazy'
