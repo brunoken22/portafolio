@@ -6,6 +6,7 @@ export const Title = styled.h1`
   text-align: center;
   font-size: 4rem;
   margin-bottom: 0;
+  filter: drop-shadow(4px -5px 5px);
   @media (max-width: 700px) {
     font-size: 3rem;
   }
@@ -51,12 +52,10 @@ export const Body = styled.p<any>`
   margin: ${(props: any) => (props.$margin ? props.$margin : 0)};
   color: ${({theme}: any) => theme.color};
   text-align: ${(props: any) => (props.$align ? props.$align : 'center')};
-  padding: 1rem;
 
   @media (max-width: 700px) {
     margin-left: 2%;
     margin-right: 2%;
-    padding: 0.5rem;
   }
 `;
 

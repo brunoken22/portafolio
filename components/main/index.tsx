@@ -1,18 +1,10 @@
 import Image from 'next/image';
 import {Body, Title, BodyParr} from '@/ui/typography';
-import {EnlaceArrow} from '@/ui/contenedores';
+import {ContainerMain, EnlaceArrow} from '@/ui/contenedores';
 import Arrow from '@/ui/icons/arrow.svg';
 export default function Main() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        height: '90vh',
-        position: 'relative',
-      }}>
+    <ContainerMain>
       <div
         style={{
           display: 'flex',
@@ -52,7 +44,7 @@ export default function Main() {
             Software Developer <span>&#160;</span>
           </BodyParr>
         </div>
-        <Body $opacity='0.9'>
+        <Body $opacity='0.8'>
           Tengo un sólido conocimiento en desarrollo Fullstack y un entusiasmo
           por la creación de soluciones innovadoras. Durante mi formación, he
           adquirido habilidades en diversas tecnologías, incluyendo desarrollo
@@ -65,6 +57,6 @@ export default function Main() {
       <EnlaceArrow href='#habilidades' aria-label='arrow'>
         <Arrow className='arrow' />
       </EnlaceArrow>
-    </div>
+    </ContainerMain>
   );
 }

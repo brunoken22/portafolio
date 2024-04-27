@@ -40,3 +40,30 @@ export const SpanTitle = styled.span`
   left: 0;
   background-color: #ff8827;
 `;
+
+export const ContainerMain = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90vh;
+  position: relative;
+  z-index: 2;
+  &:after {
+    content: '';
+    height: 250px;
+    width: 250px;
+    background-color: #2c256f;
+    border-radius: 50%;
+    filter: blur(100px);
+    position: absolute;
+    z-index: -1;
+    top: 0%;
+    right: 29%;
+  }
+  @media (max-width: 550px) {
+    &:after {
+      right: 10%;
+    }
+  }
+`;
