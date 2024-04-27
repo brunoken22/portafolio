@@ -15,7 +15,6 @@ export const HeaderNav = styled.header`
   color: ${({theme}: any) => theme.color};
   background-color: ${({theme}: any) => theme.background};
   transition: all 0.15s linear;
-
   margin: 0;
   padding: 0;
   top: 0;

@@ -18,7 +18,12 @@ import {Subtitle} from '@/ui/typography';
 export function Skill() {
   return (
     <div
-      style={{textAlign: 'center', width: '100%', paddingTop: '5rem'}}
+      style={{
+        textAlign: 'center',
+        width: '100%',
+        paddingTop: '5rem',
+        position: 'relative',
+      }}
       id='habilidades'>
       <div
         style={{

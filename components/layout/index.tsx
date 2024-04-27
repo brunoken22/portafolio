@@ -1,7 +1,9 @@
 'use client';
 import {Header} from '../header';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ThemeProvider} from 'styled-components';
+// import {ParticlesComp} from '@/components/particles';
+
 const themes: any = {
   default: {
     background: '#0e141b',
@@ -19,7 +21,17 @@ const themes: any = {
 };
 export function Layout({children}: any) {
   const [tema, setTema] = useState('default');
+  // useEffect(() => {
+  //   const mq = window.matchMedia('(prefers-color-scheme: dark)');
 
+  //   if (mq.matches) {
+  //     // setIsDark(true);
+  //     console.log(true);
+  //   }
+
+  //   // This callback will fire if the perferred color scheme changes without a reload
+  //   mq.addEventListener('change', (evt) => console.log(evt.matches));
+  // }, []);
   const handleTema = (e: any) => {
     if (tema == 'default') {
       setTema('light');
@@ -30,6 +42,7 @@ export function Layout({children}: any) {
 
   return (
     <ThemeProvider theme={themes[tema]}>
+      {/* <ParticlesComp /> */}
       <Header tema={handleTema} />
       {children}
     </ThemeProvider>

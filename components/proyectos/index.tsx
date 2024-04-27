@@ -40,7 +40,7 @@ export function Proyectos() {
     });
   }, []);
   return (
-    <div id='proyectos' style={{paddingTop: '5rem'}}>
+    <div id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
       <div
         style={{
           display: 'flex',
@@ -59,7 +59,10 @@ export function Proyectos() {
                 <div key={el.fields.id}>
                   <Zoom>
                     <TemplateProyect>
-                      <Link href={el.fields.linkDeArticle} target='blank'>
+                      <Link
+                        href={el.fields.linkDeArticle}
+                        target='blank'
+                        style={{overflow: 'hidden'}}>
                         <ImageProyect
                           src={el.fields.linkImgPagina}
                           loading='lazy'
@@ -75,9 +78,14 @@ export function Proyectos() {
                           overflow: 'auto',
                         }}>
                         {el.fields.technologiess.map(
-                          (item: {title: string; svg: string}) => (
-                            <IconsTecnology key={item.title}>
-                              <img src={item.svg} alt={item.title} width={20} />
+                          (item: {title: string; svg: string}, t: number) => (
+                            <IconsTecnology key={item.title + t}>
+                              <img
+                                src={item.svg}
+                                alt={item.title}
+                                width={20}
+                                loading='lazy'
+                              />
                               {item.title}
                             </IconsTecnology>
                           )

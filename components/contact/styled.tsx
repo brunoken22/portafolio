@@ -18,6 +18,7 @@ export const ContenedorForm = styled.div`
   flex-wrap: wrap;
   align-items: center;
   padding-top: 5rem;
+  position: relative;
 `;
 export const DivContact = styled.div`
   width: 100%;
