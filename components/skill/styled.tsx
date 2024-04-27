@@ -11,7 +11,6 @@ export const DivContentIcons = styled.div`
 export const DivSlider = styled.div`
   position: relative;
   margin: auto;
-  width: 90%;
   display: grid;
   place-items: center;
   overflow: hidden;
