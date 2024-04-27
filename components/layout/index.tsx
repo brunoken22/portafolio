@@ -21,17 +21,19 @@ const themes: any = {
 };
 export function Layout({children}: any) {
   const [tema, setTema] = useState('default');
-  // useEffect(() => {
-  //   const mq = window.matchMedia('(prefers-color-scheme: dark)');
-
-  //   if (mq.matches) {
-  //     // setIsDark(true);
-  //     console.log(true);
-  //   }
-
-  //   // This callback will fire if the perferred color scheme changes without a reload
-  //   mq.addEventListener('change', (evt) => console.log(evt.matches));
-  // }, []);
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.matches) {
+      return setTema('default');
+    }
+    setTema('light');
+    mq.addEventListener('change', (event) => {
+      if (event.matches) {
+        return setTema('default');
+      }
+      setTema('light');
+    });
+  }, []);
   const handleTema = (e: any) => {
     if (tema == 'default') {
       setTema('light');
