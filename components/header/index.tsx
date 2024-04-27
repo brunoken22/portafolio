@@ -1,5 +1,5 @@
 'use client';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {
   NavBar,
   Enlaces,
@@ -25,8 +25,11 @@ const pages = [
 
 export function Header(props: any) {
   const [desple, setDesple] = useState(false);
-  const [theme, setTheme] = useState('default');
+  const [theme, setTheme] = useState<'default' | 'light'>(props.defaultTheme);
 
+  useEffect(() => {
+    setTheme(props.defaultTheme);
+  }, [props.defaultTheme]);
   const handleClick = (e: any) => {
     e.preventDefault();
     if (desple) {
@@ -48,7 +51,6 @@ export function Header(props: any) {
     props.tema('default');
     setTheme('default');
   };
-
   return (
     <>
       <HeaderNav>
@@ -59,7 +61,7 @@ export function Header(props: any) {
             </Link>
           </div>
           <Div>
-            {pages.map((e: any, p: any) => (
+            {pages.map((e: any) => (
               <Enlaces href={'#' + e.id} key={e.id}>
                 {e.url}
               </Enlaces>

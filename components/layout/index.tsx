@@ -45,7 +45,7 @@ export function Layout({children}: any) {
   return (
     <ThemeProvider theme={themes[tema]}>
       {/* <ParticlesComp /> */}
-      <Header tema={handleTema} />
+      <Header tema={handleTema} defaultTheme={tema} />
       {children}
     </ThemeProvider>
   );

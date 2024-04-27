@@ -1,5 +1,6 @@
 :root {
   --fondo-bg: #0e141b;
+  --fondo-bg-secundary: #fff;
 }
 * {
   box-sizing: border-box;
@@ -33,12 +34,12 @@ body {
   padding: 15px;
 }
 
-.default g {
-  fill: (var(--fondo-bg));
+.default path {
+  fill: var(--fondo-bg);
 }
 
-.light {
-  fill: (var(--fondo-bg));
+.light path {
+  fill: var(--fondo-bg-secundary);
 }
 
 @keyframes arrow {
