@@ -68,7 +68,7 @@ export const DivDespleHam = styled.div`
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 3;
   backdrop-filter: blur(5px);
   @media (min-width: 701px) {
     display: none;
