@@ -52,7 +52,7 @@ export default function Main() {
             Software Developer <span>&#160;</span>
           </BodyParr>
         </div>
-        <Body>
+        <Body $opacity='0.9'>
           Tengo un sólido conocimiento en desarrollo Fullstack y un entusiasmo
           por la creación de soluciones innovadoras. Durante mi formación, he
           adquirido habilidades en diversas tecnologías, incluyendo desarrollo

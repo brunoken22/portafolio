@@ -46,6 +46,8 @@ export const Subtitle = styled.h2`
 export const Body = styled.p<any>`
   font-size: ${(props: any) => (props.$size ? props.$size : '1.2rem')};
   font-weight: ${(props: any) => (props.$weight ? props.$weight : 400)};
+  opacity: ${(props: any) =>
+    props.$opacity && props.theme.color == '#fff' ? props.$opacity : '1'};
   margin: ${(props: any) => (props.$margin ? props.$margin : 0)};
   color: ${({theme}: any) => theme.color};
   text-align: ${(props: any) => (props.$align ? props.$align : 'center')};
