@@ -49,9 +49,12 @@ export const Body = styled.p<any>`
   margin: ${(props: any) => (props.$margin ? props.$margin : 0)};
   color: ${({theme}: any) => theme.color};
   text-align: ${(props: any) => (props.$align ? props.$align : 'center')};
+  padding: 1rem;
+
   @media (max-width: 700px) {
     margin-left: 2%;
     margin-right: 2%;
+    padding: 0.5rem;
   }
 `;
 
