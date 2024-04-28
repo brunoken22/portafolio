@@ -4,7 +4,7 @@
 
 ## Acerca de Mí
 
-Soy un desarrollador fullstack con experiencia en el desarrollo de aplicaciones web y móviles utilizando tecnologías como Next.js, React.js, Node.js y PostgreSQL, entre otras. Mi enfoque principal es crear soluciones eficientes y escalables que mejoren la experiencia del usuario. Me apasiona el aprendizaje continuo y estoy siempre explorando nuevas tecnologías para ampliar mis habilidades y mantenerme actualizado en el mundo del desarrollo de software.
+Soy un desarrollador fullstack con experiencia en el desarrollo de aplicaciones web utilizando tecnologías como Next.js, React.js, Node.js y PostgreSQL, entre otras. Mi enfoque principal es crear soluciones eficientes y escalables que mejoren la experiencia del usuario. Me apasiona el aprendizaje continuo y estoy siempre explorando nuevas tecnologías para ampliar mis habilidades y mantenerme actualizado en el mundo del desarrollo de software.
 
 ## Portafolio
 
