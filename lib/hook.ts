@@ -5,7 +5,7 @@ async function fetchApiAuth(api: any) {
     if (api[0]) {
       const response = await fetch(
         (process.env.NEXT_PUBLIC_PORT ||
-          'https://portafolio-taupe-nine.vercel.app') + api[0],
+          'https://brunoken.vercel.app') + api[0],
         option
       );
       const data = await response.json();
