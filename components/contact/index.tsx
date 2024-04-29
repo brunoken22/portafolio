@@ -8,38 +8,48 @@ import {
   Textarea,
   DivContact,
   OneContact,
-  Enviado,
   Span,
   Enlaces,
   DivEnlaceContact,
+  ContainerThankYou,
+  DivThankYou,
+  DivHandSvg,
 } from './styled';
 import {Body, Subtitle} from '@/ui/typography';
-import {useForm} from 'react-hook-form';
+import {SubmitHandler, useForm} from 'react-hook-form';
 import Linkedin from '@/ui/icons/linkedin.svg';
 import Github from '@/ui/icons/github.svg';
+import CloseSvg from '@/ui/icons/close.svg';
 import Whatsapp from '@/ui/icons/whatsapp.svg';
 import Link from 'next/link';
-import {Slide, Fade} from 'react-awesome-reveal';
+import {Slide} from 'react-awesome-reveal';
 import {mensaje} from '@/lib/hook';
+import {ButtonCloseMessage} from '@/ui/button';
+import {useEffect, useState} from 'react';
 type FormData = {
   name: string;
   email: string;
   message: string;
 };
 export function Contact() {
-  const {register, setValue, handleSubmit, formState} = useForm<FormData>();
-
-  const onSubmit = async (e: any) => {
+  const [openHandLike, setOpenHandLilke] = useState(false);
+  const {register, setValue, handleSubmit, reset, formState} =
+    useForm<FormData>();
+  useEffect(() => {
+    if (formState.isSubmitted) {
+      setOpenHandLilke(true);
+    }
+  }, [formState.isSubmitted]);
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     await mensaje({
-      name: e.name,
-      email: e.email,
-      message: e.message,
+      name: data.name,
+      email: data.email,
+      message: data.message,
     });
     setValue('name', '');
     setValue('email', '');
     setValue('message', '');
-
-    alert('mensaje enviado');
+    reset();
   };
 
   return (
@@ -130,14 +140,43 @@ export function Contact() {
             }}>
             <Button aria-label='Enviar'>Enviar</Button>
           </div>
-
-          {formState.isSubmitted && (
-            <div>
-              <Enviado>Formulario enviado, Revisa tu correo</Enviado>
-            </div>
-          )}
         </Form>
       </Slide>
+      {openHandLike && (
+        <ContainerThankYou>
+          <DivThankYou>
+            <div
+              style={{width: '100%', display: 'flex', justifyContent: 'end'}}>
+              <ButtonCloseMessage onClick={() => setOpenHandLilke(false)}>
+                <CloseSvg />
+              </ButtonCloseMessage>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100%',
+              }}>
+              <DivHandSvg>
+                <img
+                  src='/handLike.svg'
+                  alt='HandLike'
+                  aria-label='Hand Like'
+                  width={150}
+                  height={150}
+                />
+              </DivHandSvg>
+              <h2 style={{fontSize: '2rem'}}>Gracias por contactarme</h2>
+              <p>
+                "¡Gracias por ponerte en contacto! Apreciamos tu interés y me
+                pondré en contacto contigo lo antes posible."
+              </p>
+            </div>
+          </DivThankYou>
+        </ContainerThankYou>
+      )}
     </ContenedorForm>
   );
 }

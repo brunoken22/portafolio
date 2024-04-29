@@ -11,7 +11,6 @@ export const Title = styled.h1`
     font-size: 3rem;
   }
 `;
-
 export const Subtitle = styled.h2`
   text-align: center;
   margin-bottom: 3rem;

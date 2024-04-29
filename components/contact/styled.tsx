@@ -1,17 +1,16 @@
 import styled, {keyframes} from 'styled-components';
 const msj = keyframes`
-   0%{
-      color:#fff;
-   }
-   50%{
-      color:#8ff79d;
-
-   }
-   100%{
-      color:#00ff22;
-   }
+0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 180deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
 `;
-export const ContenedorForm = styled.section`
+export const ContenedorForm = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -99,7 +98,6 @@ export const Span = styled.span`
   color: ${({theme}: any) =>
     theme.color == '#000' ? '#7868fd' : 'greenyellow'};
 `;
-
 export const Button = styled.button`
   padding: 10px 20px;
   background-color: ${({theme}: any) =>
@@ -117,17 +115,10 @@ export const Button = styled.button`
     background-color: #2d99f1;
   }
 `;
-
-export const Enviado = styled.p`
-  text-align: center;
-  animation: ${msj} 2s ease 5s infinite normal forwards;
-  box-shadow: 0px 10px 10px 1px;
-`;
 export const Enlaces = styled.a`
   color: ${({theme}: any) => theme.color};
   text-decoration: none;
 `;
-
 export const DivEnlaceContact = styled.div<any>`
   width: 25px;
   svg {
@@ -145,4 +136,37 @@ export const DivEnlaceContact = styled.div<any>`
     fill: #4b9cec;
     transform: scale(1.2);
   }
+`;
+export const ContainerThankYou = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: brightness(0.2);
+`;
+export const DivThankYou = styled.div`
+  max-width: 1024px;
+  width: 95%;
+  height: 80%;
+  padding: 1rem;
+  background-color: ${({theme}) => theme.background};
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+export const DivHandSvg = styled.div`
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: #5fbe56;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* animation: ${msj} 2s ease 5s infinite normal forwards; */
 `;
