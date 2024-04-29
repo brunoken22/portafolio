@@ -12,19 +12,16 @@ export default function Main() {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <picture>
-          <Image
-            src={'/hero.webp'}
-            alt='hero'
-            loading='lazy'
-            height={250}
-            width={250}
-            style={{
-              backgroundColor: 'rgb(229 229 229)',
-              borderRadius: '50%',
-            }}
-          />
-        </picture>
+        <img
+          src={'/hero.webp'}
+          alt='hero'
+          height={250}
+          width={250}
+          style={{
+            backgroundColor: 'rgb(229 229 229)',
+            borderRadius: '50%',
+          }}
+        />
       </div>
       <div
         style={{
