@@ -12,19 +12,19 @@ export default function Main() {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Image
-          src={'/hero.webp'}
-          alt='hero'
-          loading='lazy'
-          height={250}
-          width={250}
-          style={{
-            backgroundColor: 'rgb(229 229 229)',
-            borderRadius: '50%',
-            maxWidth: '300px',
-            minWidth: '250px',
-          }}
-        />
+        <picture>
+          <Image
+            src={'/hero.webp'}
+            alt='hero'
+            loading='lazy'
+            height={250}
+            width={250}
+            style={{
+              backgroundColor: 'rgb(229 229 229)',
+              borderRadius: '50%',
+            }}
+          />
+        </picture>
       </div>
       <div
         style={{
@@ -35,23 +35,18 @@ export default function Main() {
         }}>
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            textAlign: 'center',
           }}>
           <Title>Bruno ken</Title>
           <BodyParr>
             Software Developer <span>&#160;</span>
           </BodyParr>
         </div>
-        <BodyMain $opacity='0.8'>
-          Tengo un sólido conocimiento en desarrollo Fullstack y un entusiasmo
-          por la creación de soluciones innovadoras. Durante mi formación, he
-          adquirido habilidades en diversas tecnologías, incluyendo desarrollo
-          web front-end con HTML, CSS, TypeScript y frameworks como React.js
-          ,Next.js También estoy familiarizado con el desarrollo back-end
-          utilizando Node.js, Express y bases de datos como PostgreSQL Y
-          Firebase.
+        <BodyMain $opacity={0.8}>
+          Tengo sólido conocimiento en desarrollo Fullstack y pasión por
+          soluciones innovadoras. Durante mi formación, adquirí habilidades en
+          diversas tecnologías: front-end TypeScript, React.js, Next.js, y en
+          back-end con Node.js, Express, PostgreSQL y Firebase
         </BodyMain>
       </div>
       <EnlaceArrow href='#habilidades' aria-label='arrow'>

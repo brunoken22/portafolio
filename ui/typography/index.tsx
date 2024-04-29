@@ -58,12 +58,16 @@ export const Body = styled.p<any>`
   }
 `;
 export const BodyMain = styled.p<any>`
-  opacity: ${(props: any) =>
-    props.$opacity && props.theme.color == '#fff' ? props.$opacity : '1'};
+  opacity: ${(props) =>
+    props.$opacity && props.theme.color === '#fff' ? props.$opacity : '1'};
   text-align: center;
   font-size: 1.1rem;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
 `;
 export const BodyParr = styled.p`
   color: ${({theme}: any) => theme.color};
