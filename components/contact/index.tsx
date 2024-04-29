@@ -170,8 +170,8 @@ export function Contact() {
               </DivHandSvg>
               <h2 style={{fontSize: '2rem'}}>Gracias por contactarme</h2>
               <p>
-                "¡Gracias por ponerte en contacto! Apreciamos tu interés y me
-                pondré en contacto contigo lo antes posible."
+                ¡Gracias por ponerte en contacto! Apreciamos tu interés y me
+                pondré en contacto contigo lo antes posible.
               </p>
             </div>
           </DivThankYou>
