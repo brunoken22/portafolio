@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import {Body, Title, BodyParr} from '@/ui/typography';
+import {BodyMain, Title, BodyParr} from '@/ui/typography';
 import {ContainerMain, EnlaceArrow} from '@/ui/contenedores';
 import Arrow from '@/ui/icons/arrow.svg';
 export default function Main() {
@@ -44,15 +44,15 @@ export default function Main() {
             Software Developer <span>&#160;</span>
           </BodyParr>
         </div>
-        <Body $opacity='0.8'>
+        <BodyMain $opacity='0.8'>
           Tengo un sólido conocimiento en desarrollo Fullstack y un entusiasmo
           por la creación de soluciones innovadoras. Durante mi formación, he
           adquirido habilidades en diversas tecnologías, incluyendo desarrollo
-          web front-end con HTML, CSS, TypeScript y frameworks como{' '}
-          <span>React.js ,Next.js</span>. También estoy familiarizado con el
-          desarrollo back-end utilizando Node.js, Express y bases de datos como
-          PostgreSQL Y Firebase.
-        </Body>
+          web front-end con HTML, CSS, TypeScript y frameworks como React.js
+          ,Next.js También estoy familiarizado con el desarrollo back-end
+          utilizando Node.js, Express y bases de datos como PostgreSQL Y
+          Firebase.
+        </BodyMain>
       </div>
       <EnlaceArrow href='#habilidades' aria-label='arrow'>
         <Arrow className='arrow' />

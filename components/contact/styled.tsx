@@ -11,7 +11,7 @@ const msj = keyframes`
       color:#00ff22;
    }
 `;
-export const ContenedorForm = styled.div`
+export const ContenedorForm = styled.section`
   width: 100%;
   display: flex;
   justify-content: space-evenly;

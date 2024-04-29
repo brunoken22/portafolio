@@ -4,8 +4,7 @@ async function fetchApiAuth(api: any) {
     const option = api[1] || {};
     if (api[0]) {
       const response = await fetch(
-        (process.env.NEXT_PUBLIC_PORT ||
-          'https://brunoken.vercel.app') + api[0],
+        process.env.NEXT_PUBLIC_PORT + api[0],
         option
       );
       const data = await response.json();

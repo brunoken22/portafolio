@@ -2,7 +2,6 @@
 import {Header} from '../header';
 import React, {useEffect, useState} from 'react';
 import {ThemeProvider} from 'styled-components';
-// import {ParticlesComp} from '@/components/particles';
 
 const themes: any = {
   default: {
@@ -44,7 +43,6 @@ export function Layout({children}: any) {
 
   return (
     <ThemeProvider theme={themes[tema]}>
-      {/* <ParticlesComp /> */}
       <Header tema={handleTema} defaultTheme={tema} />
       {children}
     </ThemeProvider>

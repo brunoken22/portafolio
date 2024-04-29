@@ -40,7 +40,7 @@ export function Proyectos() {
     });
   }, []);
   return (
-    <div id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
+    <section id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
       <div
         style={{
           display: 'flex',
@@ -80,12 +80,15 @@ export function Proyectos() {
                         {el.fields.technologiess.map(
                           (item: {title: string; svg: string}, t: number) => (
                             <IconsTecnology key={item.title + t}>
+                              {/* <div style={{width:"20px"}}> */}
                               <img
                                 src={item.svg}
-                                alt={item.title}
+                                alt={'Tecnologias ' + item.title}
+                                height={20}
                                 width={20}
                                 loading='lazy'
                               />
+                              {/* </div> */}
                               {item.title}
                             </IconsTecnology>
                           )
@@ -104,7 +107,7 @@ export function Proyectos() {
                           </Body>
                           <LinkGthub
                             href={el.fields.github}
-                            alt='Link github proyect'
+                            aria-label={el.fields.appMisPelis}
                             target='_blank'>
                             <Github />
                           </LinkGthub>
@@ -147,7 +150,7 @@ export function Proyectos() {
               </TemplateLoadingProyect>
             ))}
       </DivProyectos>
-    </div>
+    </section>
   );
 }
 function Like(props: any) {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TemplateProyect = styled.div`
+export const TemplateProyect = styled.article`
   display: flex;
   flex-direction: column;
   background-color: ${({theme}: any) => theme.background};

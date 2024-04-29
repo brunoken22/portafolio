@@ -17,7 +17,7 @@ import CodingSvg from '@/ui/icons/coding.svg';
 import {Subtitle} from '@/ui/typography';
 export function Skill() {
   return (
-    <div
+    <section
       style={{
         textAlign: 'center',
         width: '100%',
@@ -112,6 +112,6 @@ export function Skill() {
           </div>
         </DivContentIcons>
       </DivSlider>
-    </div>
+    </section>
   );
 }

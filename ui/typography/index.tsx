@@ -58,7 +58,14 @@ export const Body = styled.p<any>`
     margin-right: 2%;
   }
 `;
-
+export const BodyMain = styled.p<any>`
+  opacity: ${(props: any) =>
+    props.$opacity && props.theme.color == '#fff' ? props.$opacity : '1'};
+  text-align: center;
+  font-size: 1.1rem;
+  margin-left: 2%;
+  margin-right: 2%;
+`;
 export const BodyParr = styled.p`
   color: ${({theme}: any) => theme.color};
   position: relative;
