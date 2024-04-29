@@ -80,7 +80,6 @@ export function Proyectos() {
                         {el.fields.technologiess.map(
                           (item: {title: string; svg: string}, t: number) => (
                             <IconsTecnology key={item.title + t}>
-                              {/* <div style={{width:"20px"}}> */}
                               <img
                                 src={item.svg}
                                 alt={'Tecnologias ' + item.title}
@@ -88,7 +87,6 @@ export function Proyectos() {
                                 width={20}
                                 loading='lazy'
                               />
-                              {/* </div> */}
                               {item.title}
                             </IconsTecnology>
                           )
