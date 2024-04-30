@@ -123,8 +123,8 @@ export const ModeBoton = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: ${({theme}: any) =>
-    theme.background == '#fff' ? 'black' : 'yellow'};
+  /* background-color: ${({theme}: any) =>
+    theme.background == '#fff' ? 'black' : 'yellow'}; */
 `;
 export const DivWhatsaap = styled.div`
   position: fixed;

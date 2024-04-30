@@ -70,12 +70,10 @@ body {
 }
 
 .modeLight {
-  background-color: #080303;
   transition: transform 0.5s ease;
   transform: translateX(24px) scale(1) rotate(180deg);
 }
 .modeDark {
-  background-color: rgb(212, 212, 1);
   transition: transform 0.5s ease;
-  transform: translateX(0px) scale(1) rotate(180deg);
+  transform: translateX(0px) scale(1) rotate(353deg);
 }

@@ -14,9 +14,12 @@ import {
   EnlaceWhatsaap,
 } from './sytled';
 import {DespleHam} from '../hamburg';
-import Bk from '@/ui/icons/BK.svg';
 import Link from 'next/link';
+import Bk from '@/ui/icons/logoByMe.svg';
 import WhatsaapSvg from '@/ui/icons/whatsapp.svg';
+import SunSvg from '@/ui/icons/sun.svg';
+import NightSvg from '@/ui/icons/night.svg';
+
 const pages = [
   {url: 'Habilidades', id: 'habilidades'},
   {url: 'Proyectos', id: 'proyectos'},
@@ -70,9 +73,9 @@ export function Header(props: any) {
           <Mode>
             <ModeBoton
               onClick={handleCambiar}
-              className={`${
-                theme == 'default' ? 'modeLight' : 'modeDark'
-              }`}></ModeBoton>
+              className={`${theme == 'default' ? 'modeLight' : 'modeDark'}`}>
+              {theme == 'default' ? <SunSvg /> : <NightSvg />}
+            </ModeBoton>
           </Mode>
           <Hambug
             aria-label='open desple'
