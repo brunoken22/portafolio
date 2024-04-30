@@ -73,7 +73,7 @@ export const ContainerMain = styled.main`
     top: 0%;
     left: 80%;
   }
-  @media (max-width: 550px) {
+  @media (max-width: 1020px) {
     &:after {
       display: none;
     }
