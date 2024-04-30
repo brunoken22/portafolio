@@ -55,15 +55,85 @@ export const ContainerMain = styled.main`
     width: 250px;
     background-color: #2c256f;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(200px);
+    position: absolute;
+    z-index: -1;
+    top: 80%;
+    right: 0%;
+  }
+  &:before {
+    content: '';
+    height: 250px;
+    width: 250px;
+    background-color: #2c256f;
+    border-radius: 50%;
+    filter: blur(200px);
     position: absolute;
     z-index: -1;
     top: 0%;
-    right: 29%;
+    left: 80%;
   }
   @media (max-width: 550px) {
     &:after {
-      right: 10%;
+      display: none;
     }
+    &:before {
+      display: none;
+    }
+  }
+`;
+
+export const ContainerMe = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @media (max-width: 1020px) {
+    & {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      flex-direction: column;
+    }
+  }
+`;
+
+export const DivName = styled.div`
+  @media (max-width: 1020px) {
+    & {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+`;
+
+export const DivConnect = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  @media (max-width: 1020px) {
+    & {
+      margin-top: 2rem;
+
+      justify-content: center;
+    }
+  }
+`;
+
+export const ImageMe = styled.img`
+  background-color: rgb(229 229 229);
+  border-radius: 50%;
+  transition: width 1s ease 1s;
+  width: 350px;
+  @media (max-width: 1020px) {
+    width: 250px;
   }
 `;

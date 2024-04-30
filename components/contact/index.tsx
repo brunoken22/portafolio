@@ -14,6 +14,7 @@ import {
   ContainerThankYou,
   DivThankYou,
   DivHandSvg,
+  SpanRequiredForm,
 } from './styled';
 import {Body, Subtitle} from '@/ui/typography';
 import {SubmitHandler, useForm} from 'react-hook-form';
@@ -57,7 +58,7 @@ export function Contact() {
 
   return (
     <ContenedorForm id='contacto'>
-      <Slide>
+      <Slide triggerOnce>
         <DivContact>
           <div
             style={{
@@ -109,7 +110,9 @@ export function Contact() {
         </DivContact>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <Label htmlFor='name'>Nombre</Label>
+            <Label htmlFor='name'>
+              Nombre <SpanRequiredForm>*</SpanRequiredForm>
+            </Label>
             <Input
               type='text'
               {...register('name')}
@@ -118,7 +121,9 @@ export function Contact() {
               required></Input>
           </div>
           <div>
-            <Label htmlFor='email'>Email</Label>
+            <Label htmlFor='email'>
+              Email <SpanRequiredForm>*</SpanRequiredForm>
+            </Label>
             <Input
               type='email'
               {...register('email')}
@@ -127,7 +132,9 @@ export function Contact() {
               required></Input>
           </div>
           <div>
-            <Label htmlFor='message'>Mensaje</Label>
+            <Label htmlFor='message'>
+              Mensaje <SpanRequiredForm>*</SpanRequiredForm>
+            </Label>
             <Textarea {...register('message')} id='message' required></Textarea>
           </div>
           <div

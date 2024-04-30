@@ -2,13 +2,13 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  color: ${({theme}: any) => theme.color};
-  text-align: center;
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 0;
-  filter: drop-shadow(4px -5px 5px);
-  @media (max-width: 700px) {
-    font-size: 3rem;
+  transition: font-size 1s ease 1s;
+  @media (max-width: 1020px) {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 1rem;
   }
 `;
 export const Subtitle = styled.h2`
@@ -60,13 +60,16 @@ export const Body = styled.p<any>`
 export const BodyMain = styled.p<any>`
   opacity: ${(props) =>
     props.$opacity && props.theme.color === '#fff' ? props.$opacity : '1'};
-  text-align: center;
+  font-size: 1.3rem;
+  text-align: start;
   font-size: 1.1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-
-  @media (max-width: 700px) {
+  margin-top: 4rem;
+  width: 80%;
+  @media (max-width: 1024px) {
     font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
   }
 `;
 export const BodyParr = styled.p`

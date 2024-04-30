@@ -1,3 +1,4 @@
+'use client';
 import styled, {keyframes} from 'styled-components';
 const msj = keyframes`
 0% {
@@ -97,6 +98,9 @@ export const Textarea = styled.textarea`
 export const Span = styled.span`
   color: ${({theme}: any) =>
     theme.color == '#000' ? '#7868fd' : 'greenyellow'};
+`;
+export const SpanRequiredForm = styled.span`
+  color: #fd5e5e;
 `;
 export const Button = styled.button`
   padding: 10px 20px;

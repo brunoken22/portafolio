@@ -49,7 +49,7 @@ export function Proyectos() {
           ? (proyect as any).map((el: any) => {
               return (
                 <div key={el.fields.id}>
-                  <Zoom>
+                  <Zoom triggerOnce>
                     <TemplateProyect>
                       <Link
                         href={el.fields.linkDeArticle}

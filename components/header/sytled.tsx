@@ -182,10 +182,13 @@ export const DivWhatsaap = styled.div`
     2s infinite;
 `;
 export const EnlaceWhatsaap = styled.a`
-  height: 40px;
-  width: 40px;
   fill: white;
+  height: 40px;
   &:hover {
     opacity: 0.7;
+  }
+  svg {
+    height: 40px;
+    width: 40px;
   }
 `;
