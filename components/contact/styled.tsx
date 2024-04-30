@@ -43,7 +43,7 @@ export const Form = styled.form`
   margin: 3rem;
   padding: 1rem;
   width: 450px;
-  box-shadow: -2px 2px 3px 1px #ddd;
+  box-shadow: -2px 2px 3px 1px #2c256f;
   border-radius: 5px;
 
   @media (max-width: 700px) {
@@ -109,15 +109,28 @@ export const Button = styled.button`
   width: 100%;
   font-size: 1rem;
   &:hover {
-    background-color: #4793d1;
-  }
-  &:active {
-    background-color: #2d99f1;
+    opacity: 0.7;
   }
 `;
 export const Enlaces = styled.a`
   color: ${({theme}: any) => theme.color};
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  svg path {
+    stroke-width: 2px;
+    fill: transparent;
+  }
+  svg path:nth-child(2) {
+    stroke: ${({theme}) => theme.color};
+  }
+  svg path:nth-child(3) {
+    stroke: ${({theme}) => theme.color};
+  }
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 export const DivEnlaceContact = styled.div<any>`
   width: 25px;

@@ -26,6 +26,9 @@ import {Slide} from 'react-awesome-reveal';
 import {mensaje} from '@/lib/hook';
 import {ButtonCloseMessage} from '@/ui/button';
 import {useEffect, useState} from 'react';
+import EmailSvg from '@/ui/icons/email.svg';
+import PhoneSvg from '@/ui/icons/phone.svg';
+
 type FormData = {
   name: string;
   email: string;
@@ -69,17 +72,13 @@ export function Contact() {
             <Subtitle>¡Trabajemos juntos!</Subtitle>
           </div>
           <OneContact>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-              <Body>Tlf: </Body>
-              <Enlaces href='tel:+541161204047'> +541161204047</Enlaces>
-            </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-              <Body>Email: </Body>
-              <Enlaces href='mailto:bruno_am_22@hotmail.com'>
-                {' '}
-                bruno_am_22@hotmail.com
-              </Enlaces>
-            </div>
+            <Enlaces href='tel:+541161204047'>
+              <PhoneSvg /> +541161204047
+            </Enlaces>
+            <Enlaces href='mailto:bruno_am_22@hotmail.com'>
+              <EmailSvg />
+              bruno_am_22@hotmail.com
+            </Enlaces>
           </OneContact>
           <OneContact $direction='row'>
             <Link
