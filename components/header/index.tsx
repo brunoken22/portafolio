@@ -56,7 +56,7 @@ export function Header(props: any) {
       <HeaderNav>
         <NavBar>
           <div>
-            <Link href='/' aria-label='logo'>
+            <Link href='/#inicio' aria-label='logo'>
               <Bk className={`${theme == 'default' ? 'light' : 'default'}`} />
             </Link>
           </div>

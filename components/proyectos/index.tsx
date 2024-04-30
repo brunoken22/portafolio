@@ -1,5 +1,4 @@
 'use client';
-import * as contentful from 'contentful';
 import {
   TemplateProyect,
   DivProyectos,
@@ -11,34 +10,27 @@ import {
   IconsTecnology,
 } from './styled';
 import {Body, Subtitle} from '@/ui/typography';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import Link from 'next/link';
 import {Zoom} from 'react-awesome-reveal';
-import {ObtenerLikes, SubirLikes, QuitarLike} from '@/lib/hook';
+import {
+  ObtenerLikes,
+  SubirLikes,
+  QuitarLike,
+  ObtenerProyectos,
+} from '@/lib/hook';
 import Heart from '@/ui/icons/heart.svg';
 import Github from '@/ui/icons/github.svg';
 import ComputerSvg from '@/ui/icons/computer.svg';
-import {DivContentIcons} from '../skill/styled';
-
-const client = contentful.createClient({
-  space: 'dehbm7ub5p2i',
-  accessToken: process.env.NEXT_PUBLIC_CONTENFUL as string,
-});
 
 export function Proyectos() {
-  const [proyect, setProyect] = useState<any>();
+  const {proyect} = ObtenerProyectos();
   const {data} = ObtenerLikes();
   const [localStorageLikes] = useState<any>(
     typeof localStorage !== 'undefined' &&
       (JSON.parse(localStorage.getItem('likes') as string) as Object[])
   );
 
-  useEffect(() => {
-    client.getEntries({content_type: 'cms'}).then((response: any) => {
-      const productos = response.items;
-      return setProyect(productos);
-    });
-  }, []);
   return (
     <section id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
       <div

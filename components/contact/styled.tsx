@@ -63,13 +63,13 @@ export const Input = styled.input`
   font-size: 1rem;
   padding: 0.5rem;
   border: 1px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
   border-bottom: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
   border-left: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
   &:focus {
-    outline: none;
+    outline: 1px solid #b198cf;
   }
 `;
 export const Textarea = styled.textarea`
@@ -82,16 +82,16 @@ export const Textarea = styled.textarea`
   min-height: 140px;
   padding: 0.5rem;
   border: 1px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
 
   border-bottom: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
 
   border-left: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#75b5ff' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
 
   &:focus {
-    outline: none;
+    outline: 1px solid #b198cf;
   }
 `;
 export const Span = styled.span`

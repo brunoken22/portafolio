@@ -4,7 +4,7 @@ import {ContainerMain, EnlaceArrow} from '@/ui/contenedores';
 import Arrow from '@/ui/icons/arrow.svg';
 export default function Main() {
   return (
-    <ContainerMain>
+    <ContainerMain id='inicio'>
       <div
         style={{
           display: 'flex',

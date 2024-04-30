@@ -17,12 +17,16 @@ async function fetchApiAuth(api: any) {
   }
 }
 
+export function ObtenerProyectos() {
+  const api = '/api/proyect';
+  const {data} = useSWR([api], fetchApiAuth);
+  return {proyect: data};
+}
 export function ObtenerLikes() {
   const api = '/api/like';
-  const {data, error, isLoading} = useSWR([api], fetchApiAuth);
-  return {data, error, isLoading};
+  const {data} = useSWR([api], fetchApiAuth);
+  return {data};
 }
-
 export async function SubirLikes(like: any) {
   const api = '/api/like';
   const header = {
