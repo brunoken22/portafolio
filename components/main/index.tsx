@@ -13,7 +13,7 @@ import Linkedin from '@/ui/icons/linkedin.svg';
 import Github from '@/ui/icons/github.svg';
 import Whatsapp from '@/ui/icons/whatsapp.svg';
 import Link from 'next/link';
-
+import {EnlaceCv, DivEnlaceCv} from './styled';
 export default function Main() {
   return (
     <ContainerMain id='inicio'>
@@ -66,6 +66,25 @@ export default function Main() {
               </DivEnlaceContact>
             </Link>
           </DivConnect>
+          <DivEnlaceCv>
+            <EnlaceCv
+              href='https://docs.google.com/document/d/1WSPtYwUcIszN0l9QItG1rrCI7wNrAP28cc66o86DJ14/edit?usp=sharing'
+              target='_blank'>
+              <p>Ver CV</p>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-6 w-6'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+                stroke-width='4'>
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M14 5l7 7m0 0l-7 7m7-7H3'></path>
+              </svg>
+            </EnlaceCv>
+          </DivEnlaceCv>
         </div>
       </ContainerMe>
       <EnlaceArrow href='#habilidades' aria-label='arrow'>

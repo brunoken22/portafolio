@@ -134,6 +134,7 @@ export const ImageMe = styled.img`
   transition: width 1s ease 1s;
   width: 350px;
   height: auto;
+  border: 2px solid;
   @media (max-width: 1020px) {
     width: 250px;
   }

@@ -1,3 +1,4 @@
+'use client';
 import styled from 'styled-components';
 
 export const TemplateProyect = styled.article`
@@ -99,7 +100,8 @@ export const Botton = styled.button<any>`
   }
 `;
 export const LinkGthub = styled.a<any>`
-  width: auto;
+  width: 40px;
+
   svg {
     fill: ${({theme}: any) => (theme?.background == '#fff' ? '#000' : '#fff')};
   }
@@ -125,3 +127,10 @@ export const IconsTecnology = styled.p`
     width: auto;
   }
 `;
+// &:hover > .templateProyect:not(:hover) {
+//   opacity: 0.4; /* Opacidad reducida para los hijos que no están bajo hover */
+// }
+
+// .templateProyect:hover {
+//   opacity: 1; /* Restaurar la opacidad al hijo que está bajo hover */
+// }
