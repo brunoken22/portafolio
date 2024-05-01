@@ -7,7 +7,9 @@ const poppins = Poppins({subsets: ['latin'], weight: '400'});
 
 export const metadata: Metadata = {
   title: 'Bruno Ken',
-  description: 'Mi portafolio',
+  description:
+    'Mi portafolio: Desarrollador y diseñador web creando soluciones digitales para clientes',
+  authors: [{name: 'Bruno Ken'}],
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
