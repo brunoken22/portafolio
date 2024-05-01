@@ -25,7 +25,7 @@ export const EnlaceCv = styled.a`
     margin: 0;
     position: relative;
     font-size: 1.1rem;
-    color: #c84747;
+    color: rgb(255 190 190);
   }
 
   &::after {
@@ -64,7 +64,7 @@ export const EnlaceCv = styled.a`
   }
 
   svg {
-    color: #c84747;
+    color: rgb(255 190 190);
     transition: 0.2s;
     position: relative;
     width: 15px;
