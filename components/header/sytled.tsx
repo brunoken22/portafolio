@@ -120,11 +120,13 @@ export const Mode = styled.div`
 `;
 export const ModeBoton = styled.div`
   cursor: pointer;
-  width: 20px;
-  height: 20px;
   border-radius: 50%;
-  /* background-color: ${({theme}: any) =>
-    theme.background == '#fff' ? 'black' : 'yellow'}; */
+  width: 25px;
+  height: 25px;
+  svg {
+    width: 25px;
+    height: 25px;
+  }
 `;
 export const DivWhatsaap = styled.div`
   position: fixed;
