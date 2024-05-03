@@ -20,7 +20,7 @@ async function fetchApiAuth(api: any) {
 export function ObtenerProyectos() {
   const api = '/api/proyect';
   const {data} = useSWR([api], fetchApiAuth, {
-    refreshInterval: 10000,
+    refreshInterval: 50000,
   });
   return {proyect: data};
 }
