@@ -19,7 +19,9 @@ async function fetchApiAuth(api: any) {
 
 export function ObtenerProyectos() {
   const api = '/api/proyect';
-  const {data} = useSWR([api], fetchApiAuth);
+  const {data} = useSWR([api], fetchApiAuth, {
+    refreshInterval: 2000,
+  });
   return {proyect: data};
 }
 export function ObtenerLikes() {
