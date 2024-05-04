@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     'Mi portafolio: Desarrollador y diseñador web creando soluciones digitales para clientes',
   authors: [{name: 'Bruno Ken'}],
+  themeColor: '#0e141b',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
