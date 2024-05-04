@@ -29,9 +29,7 @@ body {
 }
 
 .arrow {
-  animation: arrow 5s ease-in infinite, arrow 5s 5s ease-in infinite,
-    arrow 5s 5s ease-out infinite, arrow 1500ms 3s ease-in infinite;
-  padding: 15px;
+  animation: arrow 3s ease-out infinite;
 }
 
 .default path {
@@ -54,7 +52,7 @@ body {
   }
   100% {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(15px);
   }
 }
 
