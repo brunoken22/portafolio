@@ -17,7 +17,9 @@ import ComputerSvg from '@/ui/icons/computer.svg';
 import Like from './like';
 
 export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
-  const [localStorageLikes, setLocalStorageLikes] = useState<any[] | []>([]);
+  const [localStorageLikes, setLocalStorageLikes] = useState<
+    {id: string}[] | []
+  >([]);
   useEffect(() => {
     if (typeof localStorage !== 'undefined') {
       const isLocalstorage = localStorage.getItem('likes');
@@ -26,7 +28,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
         : [];
       setLocalStorageLikes(localStorageResult);
     }
-  },[]);
+  }, []);
   return (
     <section id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
       <div
@@ -108,7 +110,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                           )}
                           isLikeLocal={
                             localStorageLikes?.find(
-                              (item: any) => item.id === el.fields.id
+                              (item) => item.id === el.fields.id
                             )
                               ? true
                               : false

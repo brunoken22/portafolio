@@ -78,13 +78,13 @@ export const ImageProyect = styled.img`
     scale: 1.3;
   }
 `;
-export const Botton = styled.button<any>`
+export const Botton = styled.button<{$isLike: boolean}>`
   border: 0;
   padding: 0;
   background: transparent;
   cursor: pointer;
   svg {
-    fill: ${(prev) => (prev.$isLike ? 'tomato' : '#ddd')};
+    fill: ${({$isLike}) => ($isLike ? 'tomato' : '#ddd')};
   }
   &:hover svg {
     fill: tomato;
@@ -92,12 +92,7 @@ export const Botton = styled.button<any>`
     height: 45px;
     z-index: 10;
   }
-  &:focus svg {
-    fill: tomato;
-    width: 45px;
-    height: auto;
-    z-index: 10;
-  }
+
 `;
 export const LinkGthub = styled.a<any>`
   width: 40px;
