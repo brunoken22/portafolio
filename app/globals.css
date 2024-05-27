@@ -5,30 +5,26 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
-/* 
-#tsparticles canvas {
-  opacity: 0.4 !important;
-} */
-/* Estilo del scrollbar */
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 5px;
 }
 
-/* Estilo del scrollbar vertical */
 ::-webkit-scrollbar-thumb {
   background-color: #7a7aff;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #9393fd; /* Cambia el color del thumb cuando se pasa el mouse sobre él */
+  background-color: #9393fd;
 }
-
 .arrow {
   animation: arrow 3s ease-out infinite;
 }
