@@ -25,7 +25,7 @@ export default function Main() {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <ImageMe src={'/hero.webp'} alt='hero' />
+          <ImageMe src={'/hero.webp'} alt='hero' width={350} height={'auto'} />
         </div>
         <div>
           <DivName>
