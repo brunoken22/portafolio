@@ -9,7 +9,7 @@ import {
   IconsTecnology,
 } from './styled';
 import {Body, Subtitle} from '@/ui/typography';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import {Zoom} from 'react-awesome-reveal';
 import Github from '@/ui/icons/github.svg';
@@ -17,11 +17,16 @@ import ComputerSvg from '@/ui/icons/computer.svg';
 import Like from './like';
 
 export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
-  const [localStorageLikes] = useState<any>(
-    typeof localStorage !== 'undefined' &&
-      (JSON.parse(localStorage.getItem('likes') as string) as Object[])
-  );
-
+  const [localStorageLikes, setLocalStorageLikes] = useState<any[] | []>([]);
+  useEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      const isLocalstorage = localStorage.getItem('likes');
+      const localStorageResult = isLocalstorage
+        ? JSON.parse(isLocalstorage)
+        : [];
+      setLocalStorageLikes(localStorageResult);
+    }
+  });
   return (
     <section id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
       <div
