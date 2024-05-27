@@ -46,7 +46,7 @@ export const ContainerMain = styled.main`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 90vh;
+  min-height: 90vh;
   position: relative;
   z-index: 2;
   &:after {

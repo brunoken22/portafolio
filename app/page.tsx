@@ -1,9 +1,13 @@
 import {Skill} from '@/components/skill';
-import {Proyectos} from '@/components/proyectos';
+import Proyectos from '@/components/proyectos';
 import {Contact} from '@/components/contact';
 import ProgressBar from '@/components/progress-bar';
 import Main from '@/components/main';
-export default function Home() {
+import {fetchApiAuth} from '@/lib/hook';
+export default async function Home() {
+  const proyect = await fetchApiAuth(['/api/proyect']);
+  const data = await fetchApiAuth(['/api/like']);
+
   return (
     <ProgressBar>
       <Main />
@@ -15,7 +19,7 @@ export default function Home() {
           boxShadow: '#ddd 0px 100px 1000px 10px',
         }}
       />
-      <Proyectos />
+      <Proyectos proyect={proyect} data={data} />
       <hr
         style={{
           width: '80%',

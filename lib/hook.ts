@@ -1,5 +1,4 @@
-import useSWR from 'swr';
-async function fetchApiAuth(api: any) {
+export async function fetchApiAuth(api: any) {
   try {
     const option = api[1] || {};
     if (api[0]) {
@@ -15,19 +14,6 @@ async function fetchApiAuth(api: any) {
   } catch (e: any) {
     return e.message;
   }
-}
-
-export function ObtenerProyectos() {
-  const api = '/api/proyect';
-  const {data} = useSWR([api], fetchApiAuth, {
-    refreshInterval: 50000,
-  });
-  return {proyect: data};
-}
-export function ObtenerLikes() {
-  const api = '/api/like';
-  const {data} = useSWR([api], fetchApiAuth);
-  return {data};
 }
 export async function SubirLikes(like: any) {
   const api = '/api/like';
