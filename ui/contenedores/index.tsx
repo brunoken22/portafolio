@@ -26,7 +26,8 @@ export const DivContainer = styled.div`
 `;
 export const EnlaceArrow = styled.a`
   fill: ${({theme}: any) => theme.color};
-  &:hover {
+  padding: 0.5rem;
+  &:hover { 
     opacity: 0.7;
   }
 `;

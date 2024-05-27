@@ -6,7 +6,7 @@ export const Title = styled.h1`
   margin-bottom: 0;
   transition: font-size 1s ease 1s;
   @media (max-width: 1020px) {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     margin-top: 1rem;
   }

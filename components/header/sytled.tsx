@@ -4,7 +4,7 @@ const move = keyframes`
   transform: translateY(0);
  }
  100%{
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 
  }
 `;
@@ -140,7 +140,7 @@ export const DivWhatsaap = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 9;
-  animation: ${move} 700ms
+  animation: ${move} 1s
     linear(
       0 0%,
       0 2.27%,

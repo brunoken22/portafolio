@@ -21,6 +21,7 @@ export const EnlaceCv = styled.a`
   gap: 0.5rem;
   align-items: center;
   width: max-content;
+  margin-bottom: 1rem;
   p {
     margin: 0;
     position: relative;
