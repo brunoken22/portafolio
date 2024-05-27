@@ -15,6 +15,7 @@ import Whatsapp from '@/ui/icons/whatsapp.svg';
 import Link from 'next/link';
 import {EnlaceCv, DivEnlaceCv} from './styled';
 export default function Main() {
+  console.log('Desde server /hero.webp');
   return (
     <ContainerMain id='inicio'>
       <ContainerMe>

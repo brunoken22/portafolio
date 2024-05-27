@@ -26,7 +26,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
         : [];
       setLocalStorageLikes(localStorageResult);
     }
-  });
+  },[]);
   return (
     <section id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
       <div
