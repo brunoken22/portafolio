@@ -27,7 +27,7 @@ export const EnlaceCv = styled.a`
     position: relative;
     font-size: 1.1rem;
     color: ${({theme}) =>
-      theme.color !== '#fff' ? 'rgb(99 1 251)' : '#ae7ef9'};
+      theme.color !== '#fff' ? 'rgb(99 1 251)' : '#befb60'};
   }
 
   &::after {
@@ -67,7 +67,7 @@ export const EnlaceCv = styled.a`
 
   svg {
     color: ${({theme}) =>
-      theme.color !== '#fff' ? 'rgb(99 1 251)' : '#ae7ef9'};
+      theme.color !== '#fff' ? 'rgb(99 1 251)' : '#befb60'};
     transition: 0.2s;
     position: relative;
     width: 15px;

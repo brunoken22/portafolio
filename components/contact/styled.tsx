@@ -44,7 +44,7 @@ export const Form = styled.form`
   margin: 3rem;
   padding: 1rem;
   width: 450px;
-  box-shadow: -2px 2px 3px 1px #2c256f;
+  box-shadow: -2px 2px 3px 1px #ddd;
   border-radius: 5px;
 
   @media (max-width: 700px) {
@@ -64,11 +64,11 @@ export const Input = styled.input`
   font-size: 1rem;
   padding: 0.5rem;
   border: 1px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
   border-bottom: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
   border-left: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
   &:focus {
     outline: 1px solid #b198cf;
   }
@@ -83,21 +83,20 @@ export const Textarea = styled.textarea`
   min-height: 140px;
   padding: 0.5rem;
   border: 1px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
 
   border-bottom: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
 
   border-left: 3px solid
-    ${({theme}: any) => (theme.color == '#fff' ? '#b198ce' : '#000')};
+    ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
 
   &:focus {
     outline: 1px solid #b198cf;
   }
 `;
 export const Span = styled.span`
-  color: ${({theme}: any) =>
-    theme.color == '#000' ? '#7868fd' : 'greenyellow'};
+  color: ${({theme}: any) => (theme.color == '#000' ? '#7868fd' : '#befb60')};
 `;
 export const SpanRequiredForm = styled.span`
   color: #fd5e5e;
@@ -105,8 +104,9 @@ export const SpanRequiredForm = styled.span`
 export const Button = styled.button`
   padding: 10px 20px;
   background-color: ${({theme}: any) =>
-    theme.background == '#fff' ? '#a29ae7' : '#3291df'};
-  color: #fff;
+    theme.background == '#fff' ? '#a29ae7' : '#befb60'};
+  color: ${({theme}: any) => (theme.background !== '#fff' ? '#000' : '#fff')};
+  font-weight: ${({theme}: any) => (theme.background !== '#fff' ? '600' : '')};
   border: none;
   border-radius: 5px;
   cursor: pointer;
