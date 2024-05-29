@@ -6,7 +6,7 @@ apiInstance.setApiKey(
   process.env.SENDINBLUE as string
 );
 export async function sendEmail(dataEmail: any) {
-  apiInstance
+  await apiInstance
     .sendTransacEmail({
       subject: 'Gracias por Contáctarme!',
       sender: {email: 'bruno_am_22@hotmail.com', name: 'Bruno Ken'},
@@ -157,7 +157,7 @@ export async function sendEmail(dataEmail: any) {
         return error;
       }
     );
-  apiInstance
+  await apiInstance
     .sendTransacEmail({
       subject: 'Mensaje de portafolio!',
 
