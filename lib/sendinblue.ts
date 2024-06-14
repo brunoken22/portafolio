@@ -244,7 +244,7 @@ export async function sendEmail(dataEmail: any) {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td class="esd-block-text" align="left" height="28">
-                                                                                        <h3>Hola, ${dataEmail.newFullName},</h3>
+                                                                                        <h3>Hola, ${dataEmail.name},</h3>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
