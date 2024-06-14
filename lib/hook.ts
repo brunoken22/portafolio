@@ -2,10 +2,10 @@ export async function fetchApiAuth(api: any) {
   try {
     const option = api[1] || {};
     if (api[0]) {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_PORT + api[0],
-        option
-      );
+      const response = await fetch(process.env.NEXT_PUBLIC_PORT + api[0], {
+        ...option,
+        next: {revalidate: 5000},
+      });
       const data = await response.json();
       if (data) {
         return data;
@@ -43,7 +43,6 @@ export async function QuitarLike(like: any) {
   const dataMod = await fetchApiAuth(like.like ? [api, header] : null);
   return dataMod;
 }
-
 export function mensaje(data: any) {
   const api = '/api/mensaje';
   const header = {

@@ -7,7 +7,6 @@ import {fetchApiAuth} from '@/lib/hook';
 export default async function Home() {
   const proyect = await fetchApiAuth(['/api/proyect']);
   const data = await fetchApiAuth(['/api/like']);
-
   return (
     <ProgressBar>
       <Main />
