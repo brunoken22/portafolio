@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --fondo-bg: #0e141b;
   --fondo-bg-secundary: #fff;

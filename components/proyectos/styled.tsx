@@ -8,7 +8,7 @@ export const TemplateProyect = styled.article`
   color: ${({theme}: any) => theme.color};
   gap: 1rem;
   box-shadow: -2px 0px 5px 4px #5959597a;
-  border-radius: 15px;
+  border-radius: 5px;
   width: 320px;
 
   @media (max-width: 420px) {
@@ -69,13 +69,14 @@ export const DivProyectos = styled.div`
 `;
 export const ImageProyect = styled.img`
   object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   width: 100%;
   height: 230px;
   transition: scale 200ms ease;
   &:hover {
     scale: 1.3;
+    opacity: 0.5;
   }
 `;
 export const Botton = styled.button<{$isLike: boolean}>`
@@ -92,11 +93,10 @@ export const Botton = styled.button<{$isLike: boolean}>`
     height: 45px;
     z-index: 10;
   }
-
 `;
 export const LinkGthub = styled.a<any>`
   width: 40px;
-
+  position: relative;
   svg {
     fill: ${({theme}: any) => (theme?.background == '#fff' ? '#000' : '#fff')};
   }
@@ -106,26 +106,5 @@ export const LinkGthub = styled.a<any>`
 `;
 export const IconsTecnology = styled.p`
   width: max-content;
-  height: 30px;
-  font-size: 0.8rem;
-  background-color: ${({theme}) =>
-    theme.background !== '#fff' ? '#573dbf' : '#e7e7e7'};
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 0.2rem;
-  border-radius: 20px;
-  svg {
-    height: 20px;
-    width: auto;
-  }
+  font-size: 0.6rem;
 `;
-// &:hover > .templateProyect:not(:hover) {
-//   opacity: 0.4; /* Opacidad reducida para los hijos que no están bajo hover */
-// }
-
-// .templateProyect:hover {
-//   opacity: 1; /* Restaurar la opacidad al hijo que está bajo hover */
-// }

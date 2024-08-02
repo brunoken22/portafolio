@@ -15,7 +15,6 @@ export async function fetchApiAuth(api: any) {
     return e.message;
   }
 }
-
 export async function SubirLikes(like: any) {
   const api = '/api/like';
   const header = {

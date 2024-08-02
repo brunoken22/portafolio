@@ -30,14 +30,18 @@ export function Layout({children}: any) {
       if (event.matches) {
         return setTema('default');
       }
+
       setTema('light');
     });
   }, []);
   const handleTema = (e: any) => {
     if (tema == 'default') {
+      document.documentElement.classList.add('dark');
       setTema('light');
       return;
     }
+    document.documentElement.classList.remove('dark');
+
     setTema('default');
   };
 

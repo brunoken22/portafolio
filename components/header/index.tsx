@@ -48,9 +48,12 @@ export function Header(props: any) {
     e.preventDefault();
     if (theme == 'default') {
       setTheme('light');
+      document.documentElement.classList.add('dark');
       props.tema('light');
       return;
     }
+    document.documentElement.classList.remove('dark');
+
     props.tema('default');
     setTheme('default');
   };

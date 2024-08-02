@@ -27,7 +27,7 @@ export const DivContainer = styled.div`
 export const EnlaceArrow = styled.a`
   fill: ${({theme}: any) => theme.color};
   padding: 0.5rem;
-  &:hover { 
+  &:hover {
     opacity: 0.7;
   }
 `;
@@ -130,6 +130,7 @@ export const DivConnect = styled.div`
 `;
 
 export const ImageMe = styled.img`
+  max-width: none;
   background-color: rgb(229 229 229);
   border-radius: 50%;
   transition: width 1s ease 1s;
