@@ -30,7 +30,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
     }
   }, []);
   return (
-    <section id='proyectos' style={{paddingTop: '5rem', position: 'relative'}}>
+    <section id='proyectos' className='pt-20 relative w-full'>
       <div
         style={{
           display: 'flex',
@@ -49,7 +49,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                 <Zoom
                   triggerOnce
                   key={el.fields.id}
-                  className='templateProyect'>
+                  className='templateProyect  m-auto max-sm:w-[95%]  w-[350px]'>
                   <TemplateProyect>
                     <div className='h-[230px] relative overflow-hidden [&>div]:hover:flex'>
                       <ImageProyect

@@ -8,14 +8,7 @@ export const TemplateProyect = styled.article`
   color: ${({theme}: any) => theme.color};
   gap: 1rem;
   box-shadow: -2px 0px 5px 4px #5959597a;
-  border-radius: 5px;
-  width: 320px;
-
-  @media (max-width: 420px) {
-    & {
-      width: 90vw;
-    }
-  }
+  border-radius: 7px;
 `;
 export const TemplateLoadingProyect = styled(TemplateProyect)`
   width: 320px;
