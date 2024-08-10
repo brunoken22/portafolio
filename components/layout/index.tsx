@@ -23,24 +23,19 @@ export function Layout({children}: any) {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     if (mq.matches) {
+      document.documentElement.classList.add('dark');
       return setTema('default');
     }
+    document.documentElement.classList.remove('dark');
     setTema('light');
-    mq.addEventListener('change', (event) => {
-      if (event.matches) {
-        return setTema('default');
-      }
-
-      setTema('light');
-    });
   }, []);
-  const handleTema = (e: any) => {
+  const handleTema = () => {
     if (tema == 'default') {
-      document.documentElement.classList.add('dark');
       setTema('light');
+      document.documentElement.classList.remove('dark');
       return;
     }
-    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('dark');
 
     setTema('default');
   };

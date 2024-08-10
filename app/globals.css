@@ -6,6 +6,10 @@
   --fondo-bg: #0e141b;
   --fondo-bg-secundary: #fff;
 }
+@media (prefers-color-scheme: dark) {
+  * {
+  }
+}
 * {
   box-sizing: border-box;
 }

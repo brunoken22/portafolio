@@ -89,7 +89,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                         (item: {title: string; svg: string}, t: number) => (
                           <div
                             key={item.title + t}
-                            className='flex items-center  bg-[#573dbf] dark:bg-[#ddd] p-1 w-max rounded-lg h-[30px] gap-1'>
+                            className='flex items-center  dark:bg-[#573dbf] bg-[#ddd] p-1 w-max rounded-lg h-[30px] gap-1'>
                             <img
                               src={item.svg}
                               alt={'Tecnologias ' + item.title}

@@ -48,11 +48,9 @@ export function Header(props: any) {
     e.preventDefault();
     if (theme == 'default') {
       setTheme('light');
-      document.documentElement.classList.add('dark');
       props.tema('light');
       return;
     }
-    document.documentElement.classList.remove('dark');
 
     props.tema('default');
     setTheme('default');
@@ -67,7 +65,7 @@ export function Header(props: any) {
             </Link>
           </div>
           <Div>
-            {pages.map((e: any) => (
+            {pages.map((e) => (
               <Enlaces href={'#' + e.id} key={e.id}>
                 {e.url}
               </Enlaces>
@@ -84,9 +82,9 @@ export function Header(props: any) {
             aria-label='open desple'
             onClick={handleClick}
             $isActive={desple}>
-            <LineaDiv $isActive={!desple}></LineaDiv>
-            <LineaDiv $isActive={desple}></LineaDiv>
-            <LineaDiv $isActive={desple}></LineaDiv>
+            <LineaDiv $isActive={!desple} className='dark:bg-white'></LineaDiv>
+            <LineaDiv $isActive={desple} className='dark:bg-white'></LineaDiv>
+            <LineaDiv $isActive={desple} className='dark:bg-white'></LineaDiv>
           </Hambug>
         </NavBar>
       </HeaderNav>
