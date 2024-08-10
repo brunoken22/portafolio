@@ -67,11 +67,11 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                             width='50'
                             height='50'
                             viewBox='0 0 24 24'
-                            stroke-width='1.5'
+                            strokeWidth='1.5'
                             stroke='#00deff'
                             fill='none'
-                            stroke-linecap='round'
-                            stroke-linejoin='round'>
+                            strokeLinecap='round'
+                            strokeLinejoin='round'>
                             <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                             <path d='M21 12a9 9 0 1 0 -9 9' />
                             <path d='M3.6 9h16.8' />
@@ -117,7 +117,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                           href={el.fields.github}
                           aria-label={el.fields.appMisPelis}
                           target='_blank'>
-                          <div style={{display: 'none', position: 'absolute'}}>
+                          <div>
                             <Github />
                           </div>
                         </LinkGthub>
