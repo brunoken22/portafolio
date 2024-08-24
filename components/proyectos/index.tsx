@@ -29,6 +29,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
       setLocalStorageLikes(localStorageResult);
     }
   }, []);
+
   return (
     <section id='proyectos' className='pt-20 relative w-full'>
       <div
@@ -49,7 +50,7 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                 <Zoom
                   triggerOnce
                   key={el.fields.id}
-                  className='templateProyect  m-auto max-sm:w-[95%]  w-[350px]'>
+                  className='templateProyect  m-auto max-sm:w-[95%] w-[350px]'>
                   <TemplateProyect>
                     <div className='h-[230px] relative overflow-hidden [&>div]:hover:flex'>
                       <ImageProyect

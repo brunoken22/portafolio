@@ -4,12 +4,10 @@ export async function fetchApiAuth(api: any) {
     if (api[0]) {
       const response = await fetch(process.env.NEXT_PUBLIC_PORT + api[0], {
         ...option,
-        next: {revalidate: 5000},
+        next: {revalidate: 5},
       });
       const data = await response.json();
-      if (data) {
-        return data;
-      }
+      return data;
     }
   } catch (e: any) {
     return e.message;
