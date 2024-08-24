@@ -69,12 +69,15 @@ export const Input = styled.input`
     ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
   border-left: 3px solid
     ${({theme}: any) => (theme.color == '#fff' ? '#befb60' : '#000')};
+  color: black;
   &:focus {
     outline: 1px solid #b198cf;
   }
 `;
 export const Textarea = styled.textarea`
   text-indent: 6px;
+  color: black;
+
   border-radius: 10px;
   font-size: 1rem;
   max-width: 100%;
