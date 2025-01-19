@@ -16,17 +16,17 @@ import {
   DivHandSvg,
   SpanRequiredForm,
 } from './styled';
-import {Body, Subtitle} from '@/ui/typography';
-import {SubmitHandler, useForm} from 'react-hook-form';
+import { Body, Subtitle } from '@/ui/typography';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import Linkedin from '@/ui/icons/linkedin.svg';
 import Github from '@/ui/icons/github.svg';
 import CloseSvg from '@/ui/icons/close.svg';
 import Whatsapp from '@/ui/icons/whatsapp.svg';
 import Link from 'next/link';
-import {Slide} from 'react-awesome-reveal';
-import {mensaje} from '@/lib/hook';
-import {ButtonCloseMessage} from '@/ui/button';
-import {useEffect, useState} from 'react';
+import { Slide } from 'react-awesome-reveal';
+import { mensaje } from '@/lib/hook';
+import { ButtonCloseMessage } from '@/ui/button';
+import { useEffect, useState } from 'react';
 import EmailSvg from '@/ui/icons/email.svg';
 import PhoneSvg from '@/ui/icons/phone.svg';
 
@@ -36,26 +36,27 @@ type FormData = {
   message: string;
 };
 export function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
   const [openHandLike, setOpenHandLilke] = useState(false);
-  const {register, setValue, handleSubmit, reset, formState} =
-    useForm<FormData>();
+  const { register, setValue, handleSubmit, reset, formState } = useForm<FormData>();
   useEffect(() => {
     if (formState.isSubmitted) {
       setOpenHandLilke(true);
     }
   }, [formState.isSubmitted]);
   const onSubmit: SubmitHandler<FormData> = async (data) => {
+    setIsLoading(true);
     await mensaje({
       name: data.name,
       email: data.email,
       message: data.message,
     });
+    setIsLoading(false);
     setValue('name', '');
     setValue('email', '');
     setValue('message', '');
     reset();
   };
-
   return (
     <ContenedorForm id='contacto'>
       <Slide triggerOnce>
@@ -82,10 +83,7 @@ export function Contact() {
             </Enlaces>
           </OneContact>
           <OneContact $direction='row'>
-            <Link
-              href='https://github.com/brunoken22'
-              aria-label='github'
-              target='_blank'>
+            <Link href='https://github.com/brunoken22' aria-label='github' target='_blank'>
               <DivEnlaceContact>
                 <Github className='github' />
               </DivEnlaceContact>
@@ -118,7 +116,8 @@ export function Contact() {
               {...register('name')}
               id='name'
               placeholder='Bruno Ken'
-              required></Input>
+              required
+              disabled={isLoading}></Input>
           </div>
           <div>
             <Label htmlFor='email'>
@@ -129,13 +128,18 @@ export function Contact() {
               {...register('email')}
               id='email'
               placeholder='Bruno_am_22@hotmail.com'
-              required></Input>
+              required
+              disabled={isLoading}></Input>
           </div>
           <div>
             <Label htmlFor='message'>
               Mensaje <SpanRequiredForm>*</SpanRequiredForm>
             </Label>
-            <Textarea {...register('message')} id='message' required></Textarea>
+            <Textarea
+              {...register('message')}
+              id='message'
+              required
+              disabled={isLoading}></Textarea>
           </div>
           <div
             style={{
@@ -144,15 +148,16 @@ export function Contact() {
               justifyContent: 'center',
               width: '100%',
             }}>
-            <Button aria-label='Enviar'>Enviar</Button>
+            <Button type='submit' aria-label='Enviar'>
+              {isLoading ? 'Procesando...' : 'Enviar'}
+            </Button>
           </div>
         </Form>
       </Slide>
       {openHandLike && (
         <ContainerThankYou>
           <DivThankYou>
-            <div
-              style={{width: '100%', display: 'flex', justifyContent: 'end'}}>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
               <ButtonCloseMessage onClick={() => setOpenHandLilke(false)}>
                 <CloseSvg />
               </ButtonCloseMessage>
@@ -174,10 +179,10 @@ export function Contact() {
                   height={150}
                 />
               </DivHandSvg>
-              <h2 style={{fontSize: '2rem'}}>Gracias por contactarme</h2>
+              <h2 style={{ fontSize: '2rem' }}>Gracias por contactarme</h2>
               <p>
-                ¡Gracias por ponerte en contacto! Apreciamos tu interés y me
-                pondré en contacto contigo lo antes posible.
+                ¡Gracias por ponerte en contacto! Apreciamos tu interés y me pondré en contacto
+                contigo lo antes posible.
               </p>
             </div>
           </DivThankYou>
