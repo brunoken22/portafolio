@@ -76,6 +76,7 @@ export function Header() {
             <Button
               variant='ghost'
               size='icon'
+              aria-label='Menú de navegación'
               onClick={() => setIsOpen(!isOpen)}
               className='z-10 md:hidden rounded-full bg-white/5 hover:bg-white/10 border border-white/10'
             >
