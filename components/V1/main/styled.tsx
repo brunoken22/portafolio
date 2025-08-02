@@ -1,5 +1,5 @@
-'use client';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
 export const DivEnlaceCv = styled.div`
   @media (max-width: 1020px) {
     display: flex;
@@ -13,7 +13,7 @@ export const EnlaceCv = styled.a`
   margin-top: 3rem;
   background: none;
   cursor: pointer;
-  --hovered-color: ${({theme}) => theme.color};
+  --hovered-color: ${({ theme }: any) => theme.color};
   position: relative;
   display: flex;
   font-weight: 600;
@@ -26,13 +26,12 @@ export const EnlaceCv = styled.a`
     margin: 0;
     position: relative;
     font-size: 1.1rem;
-    color: ${({theme}) =>
-      theme.color !== '#fff' ? 'rgb(99 1 251)' : '#befb60'};
+    color: ${({ theme }: any) => (theme.color !== "#fff" ? "rgb(99 1 251)" : "#befb60")};
   }
 
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 0;
     left: 0;
     bottom: -7px;
@@ -44,7 +43,7 @@ export const EnlaceCv = styled.a`
   p::before {
     position: absolute;
     /*   box-sizing: border-box; */
-    content: 'Ver CV';
+    content: "Ver CV";
     width: 0%;
     inset: 0;
     color: var(--hovered-color);
@@ -66,8 +65,7 @@ export const EnlaceCv = styled.a`
   }
 
   svg {
-    color: ${({theme}) =>
-      theme.color !== '#fff' ? 'rgb(99 1 251)' : '#befb60'};
+    color: ${({ theme }: any) => (theme.color !== "#fff" ? "rgb(99 1 251)" : "#befb60")};
     transition: 0.2s;
     position: relative;
     width: 15px;

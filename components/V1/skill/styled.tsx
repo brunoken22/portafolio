@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ContentIcons = styled.div``;
 export const DivContentIcons = styled.div`
-  fill: ${({theme}: any) => theme.color};
+  fill: ${({ theme }: any) => theme.color};
   gap: 2rem;
 `;
 
@@ -17,12 +17,12 @@ export const DivSlider = styled.div`
 
   &:before,
   &:after {
-    background: ${({theme}) => theme.lineaGradient};
+    background: ${({ theme }: any) => theme.lineaGradient};
     position: absolute;
     top: 0;
     width: 10%;
     height: 100%;
-    content: '';
+    content: "";
     z-index: 2;
   }
   &:before {

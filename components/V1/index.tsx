@@ -7,8 +7,9 @@ import Main from "@/components/V1/main";
 import { Header } from "./header";
 import { useEffect, useState } from "react";
 
-export default async function V1({ proyect, data }: { proyect: any; data: any }) {
+export default function V1({ proyect, data }: { proyect: any; data: any }) {
   const [tema, setTema] = useState("default");
+
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     if (mq.matches) {
@@ -18,6 +19,7 @@ export default async function V1({ proyect, data }: { proyect: any; data: any })
     document.documentElement.classList.remove("dark");
     setTema("light");
   }, []);
+
   const handleTema = () => {
     if (tema == "default") {
       setTema("light");

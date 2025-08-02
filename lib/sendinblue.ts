@@ -1,9 +1,9 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   host: process.env.HOST, //Servidor de correo que usa el administrador.
   port: Number(process.env.PORT_NODEMAILER), //Puerto del servidor de correo.
-  secure: process.env.SECURE === 'false' ? false : true, //STARTTLS requiere 'false' (leer descripción abajo).
+  secure: process.env.SECURE === "false" ? false : true, //STARTTLS requiere 'false' (leer descripción abajo).
   auth: {
     user: process.env.NAME_EMAIL, //Email del administrador.
     pass: process.env.PASSWORD_EMAIL, //Contraseña del correo del administrador.
@@ -13,9 +13,9 @@ const transporter = nodemailer.createTransport({
 export async function sendEmail(dataEmail: any) {
   try {
     const mailOptionsRemitente = {
-      subject: 'Gracias por Contáctarme!',
-      from: 'bruno_am_22@hotmail.com',
-      replyTo: 'bruno_am_22@hotmail.com',
+      subject: "Gracias por Contáctarme!",
+      from: "bruno_am_22@hotmail.com",
+      replyTo: "bruno_am_22@hotmail.com",
       to: dataEmail.email,
       html: `
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -75,7 +75,7 @@ export async function sendEmail(dataEmail: any) {
                                                                                     <tr>
                                                                                         <td class="esd-block-image es-p15b" align="center">
                                                                                             <a target="_blank">
-                                                                                                <img class="adapt-img" src="https://qrcfge.stripocdn.email/content/guids/CABINET_63fbbc11db6741389cc3292b09a63e6d/images/63541516368770627.png" alt="Handshake" title="Handshake" width="600">
+                                                                                                Image class="adapt-img" src="https://qrcfge.stripocdn.email/content/guids/CABINET_63fbbc11db6741389cc3292b09a63e6d/images/63541516368770627.png" alt="Handshake" title="Handshake" width="600">
                                                                                             </a>
                                                                                         </td>
                                                                                     </tr>
@@ -139,10 +139,10 @@ export async function sendEmail(dataEmail: any) {
     };
 
     const mailOptionsRecibe = {
-      subject: 'Mensaje de portafolio!',
+      subject: "Mensaje de portafolio!",
       from: dataEmail.email,
       replyTo: dataEmail.email,
-      to: 'bruno_am_22@hotmail.com',
+      to: "bruno_am_22@hotmail.com",
       html: `
           <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -277,7 +277,7 @@ export async function sendEmail(dataEmail: any) {
     await transporter.sendMail(mailOptionsRemitente);
     transporter.sendMail(mailOptionsRecibe);
   } catch (e: any) {
-    console.error('ALGO HA FALLADO AL ENVIAR MENSAJE: ', e);
+    console.error("ALGO HA FALLADO AL ENVIAR MENSAJE: ", e);
     return e.message;
   }
 }

@@ -1,5 +1,5 @@
-'use client';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
 
 export const ButtonCloseMessage = styled.button`
   border: none;
@@ -11,10 +11,10 @@ export const ButtonCloseMessage = styled.button`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: ${({theme}) => theme.color};
+  background-color: ${({ theme }: any) => theme.color};
   svg {
-    stroke: ${({theme}) => theme.background};
-    fill: ${({theme}) => theme.background};
+    stroke: ${({ theme }: any) => theme.background};
+    fill: ${({ theme }: any) => theme.background};
   }
 
   &:hover {

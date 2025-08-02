@@ -7,5 +7,5 @@ export default async function Home() {
   const proyect = await fetchApiAuth(["/api/proyect"]);
   const data = await fetchApiAuth(["/api/like"]);
 
-  return <V2 proyect={proyect} data={data} />;
+  return <V2 proyect={proyect} />;
 }

@@ -7,10 +7,7 @@ import { ContactSection } from "./contact-section";
 import { FloatingElements } from "./floating-elements";
 import { ScrollProgress } from "./scroll-progress";
 
-export default function V2({ proyect, data }: { proyect: any; data: any }) {
-  // console.log("ESTE SON LOS PROYECTOS", proyect);
-  // console.log("ESTE SON LOS DATOS", data);
-
+export default function V2({ proyect }: { proyect: any }) {
   return (
     <main className='relative min-h-screen bg-black text-white overflow-x-hidden'>
       {/* Background Effects */}

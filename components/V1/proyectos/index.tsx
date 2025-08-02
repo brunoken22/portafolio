@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   TemplateProyect,
   DivProyectos,
@@ -7,25 +7,22 @@ import {
   LinkGthub,
   ImageProyect,
   IconsTecnology,
-} from './styled';
-import {Body, Subtitle} from '@/ui/typography';
-import {useEffect, useState} from 'react';
-import Link from 'next/link';
-import {Zoom} from 'react-awesome-reveal';
-import Github from '@/ui/icons/github.svg';
-import ComputerSvg from '@/ui/icons/computer.svg';
-import Like from './like';
+} from "./styled";
+import { Body, Subtitle } from "@/ui/typography";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Zoom } from "react-awesome-reveal";
+import Github from "@/ui/icons/github.svg";
+import ComputerSvg from "@/ui/icons/computer.svg";
+import Like from "./like";
+import Image from "next/image";
 
-export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
-  const [localStorageLikes, setLocalStorageLikes] = useState<
-    {id: string}[] | []
-  >([]);
+export default function Proyectos({ proyect, data }: { proyect: any; data: any }) {
+  const [localStorageLikes, setLocalStorageLikes] = useState<{ id: string }[] | []>([]);
   useEffect(() => {
-    if (typeof localStorage !== 'undefined') {
-      const isLocalstorage = localStorage.getItem('likes');
-      const localStorageResult = isLocalstorage
-        ? JSON.parse(isLocalstorage)
-        : [];
+    if (typeof localStorage !== "undefined") {
+      const isLocalstorage = localStorage.getItem("likes");
+      const localStorageResult = isLocalstorage ? JSON.parse(isLocalstorage) : [];
       setLocalStorageLikes(localStorageResult);
     }
   }, []);
@@ -34,10 +31,11 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
     <section id='proyectos' className='pt-20 relative w-full'>
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Subtitle>
           <ComputerSvg className='computerSvg' />
           Proyectos
@@ -50,7 +48,8 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                 <Zoom
                   triggerOnce
                   key={el.fields.id}
-                  className='templateProyect  m-auto max-sm:w-[95%] w-[350px]'>
+                  className='templateProyect  m-auto max-sm:w-[95%] w-[350px]'
+                >
                   <TemplateProyect>
                     <div className='h-[230px] relative overflow-hidden [&>div]:hover:flex'>
                       <ImageProyect
@@ -62,7 +61,8 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                         <Link
                           className='hover:opacity-70'
                           href={el.fields.linkDeArticle}
-                          target='blank'>
+                          target='blank'
+                        >
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
                             width='50'
@@ -72,7 +72,8 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                             stroke='#00deff'
                             fill='none'
                             strokeLinecap='round'
-                            strokeLinejoin='round'>
+                            strokeLinejoin='round'
+                          >
                             <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                             <path d='M21 12a9 9 0 1 0 -9 9' />
                             <path d='M3.6 9h16.8' />
@@ -87,13 +88,14 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                     </div>
                     <div className='grid grid-flow-col items-center overflow-y-hidden overflow-x-auto gap-4 pb-2 pl-2'>
                       {el.fields.technologiess.map(
-                        (item: {title: string; svg: string}, t: number) => (
+                        (item: { title: string; svg: string }, t: number) => (
                           <div
                             key={item.title + t}
-                            className='flex items-center  dark:bg-[#573dbf] bg-[#ddd] p-1 w-max rounded-lg h-[30px] gap-1'>
-                            <img
+                            className='flex items-center  dark:bg-[#573dbf] bg-[#ddd] p-1 w-max rounded-lg h-[30px] gap-1'
+                          >
+                            <Image
                               src={item.svg}
-                              alt={'Tecnologias ' + item.title}
+                              alt={"Tecnologias " + item.title}
                               height={20}
                               width={20}
                               loading='lazy'
@@ -106,18 +108,20 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                     <div className='m-4'>
                       <div
                         style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          textAlign: 'start',
-                        }}>
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          textAlign: "start",
+                        }}
+                      >
                         <Body $weight='500' $size='1.3rem' $align='start'>
                           {el.fields.appMisPelis}
                         </Body>
                         <LinkGthub
                           href={el.fields.github}
                           aria-label={el.fields.appMisPelis}
-                          target='_blank'>
+                          target='_blank'
+                        >
                           <div>
                             <Github />
                           </div>
@@ -126,13 +130,9 @@ export default function Proyectos({proyect, data}: {proyect: any; data: any}) {
                       <div>
                         <Like
                           id={el.fields.id}
-                          data={data.find(
-                            (item: any) => item.id == el.fields.id && item
-                          )}
+                          data={data.find((item: any) => item.id == el.fields.id && item)}
                           isLikeLocal={
-                            localStorageLikes?.find(
-                              (item) => item.id === el.fields.id
-                            )
+                            localStorageLikes?.find((item) => item.id === el.fields.id)
                               ? true
                               : false
                           }

@@ -26,8 +26,6 @@ interface Project {
 export function ProjectsSection({ proyect }: { proyect: Project[] }) {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
-  console.log(proyect[0].fields.technologiess);
-
   return (
     <section id='projects' className='py-32 px-6 relative'>
       <div className='container mx-auto'>
