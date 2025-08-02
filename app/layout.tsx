@@ -7,7 +7,6 @@ const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brunoken.vercel.app/"),
-
   title: "Bruno Ken",
   description:
     "Mi portafolio: Desarrollador y diseñador web creando soluciones digitales para clientes",

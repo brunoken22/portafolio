@@ -4,14 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "./ui/button";
-import { useTheme } from "next-themes";
 import Bk from "@/ui/icons/logoByMe.svg";
 import Link from "next/link";
 
-export function Header() {
+export function Header(props: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -40,13 +38,9 @@ export function Header() {
           <Link
             href='/#inicio'
             aria-label='logo'
-            className='relative bg-white rounded-full h-[60px] w-[60px]'
+            className='z-10 relative bg-white rounded-full h-[60px] w-[60px]'
           >
-            <Bk
-              className={`ml-[0.3rem] pb-[0.8rem] text-white ${
-                theme == "default" ? "light" : "default"
-              }`}
-            />
+            <Bk className={`w-full h-full ml-[0.7rem]  text-white `} />
           </Link>
           <div className='absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-teal-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity' />
 
@@ -69,21 +63,21 @@ export function Header() {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className='flex items-center space-x-4'>
-            <Button
+            {/* <Button
               variant='ghost'
               size='icon'
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className='rounded-full bg-white/5 hover:bg-white/10 border border-white/10'
+              onClick={handleCambiar}
+              className='z-10 cursor-pointer rounded-full bg-white/5 hover:bg-white/10 border border-white/10'
             >
-              <Sun className='h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
-              <Moon className='absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
-            </Button>
+              <Sun className='z-10 cursor-pointer h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
+              <Moon className='z-10  cursor-pointer absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
+            </Button> */}
 
             <Button
               variant='ghost'
               size='icon'
               onClick={() => setIsOpen(!isOpen)}
-              className='md:hidden rounded-full bg-white/5 hover:bg-white/10 border border-white/10'
+              className='z-10 md:hidden rounded-full bg-white/5 hover:bg-white/10 border border-white/10'
             >
               {isOpen ? <X className='h-4 w-4' /> : <Menu className='h-4 w-4' />}
             </Button>
