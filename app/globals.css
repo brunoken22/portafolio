@@ -24,11 +24,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #7a7aff;
+  background-color: #3ca6fd;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #9393fd;
+  background-color: #45a7f7;
 }
 .arrow {
   animation: arrow 3s ease-out infinite;

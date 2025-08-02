@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
+import Bk from "@/ui/icons/logoByMe.svg";
+import Link from "next/link";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,12 +37,18 @@ export function Header() {
       <div className='container mx-auto px-6 py-4'>
         <div className='flex items-center justify-between'>
           {/* Logo */}
-          <motion.div whileHover={{ scale: 1.05 }} className='relative'>
-            <div className='text-2xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent'>
-              BRUNO KEN
-            </div>
-            <div className='absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-teal-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity' />
-          </motion.div>
+          <Link
+            href='/#inicio'
+            aria-label='logo'
+            className='relative bg-white rounded-full h-[60px] w-[60px]'
+          >
+            <Bk
+              className={`ml-[0.3rem] pb-[0.8rem] text-white ${
+                theme == "default" ? "light" : "default"
+              }`}
+            />
+          </Link>
+          <div className='absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-teal-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity' />
 
           {/* Desktop Navigation */}
           <nav className='hidden md:flex items-center space-x-8'>

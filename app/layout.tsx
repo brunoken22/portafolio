@@ -1,44 +1,46 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
-import { Layout } from '@/components/layout';
-import { StyledComponentsRegistry } from '@/components/layout/registry';
-const poppins = Poppins({ subsets: ['latin'], weight: '400' });
+import "./globals.css";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import { Layout } from "@/components/layout";
+import { StyledComponentsRegistry } from "@/components/layout/registry";
+const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: 'Bruno Ken',
+  metadataBase: new URL("https://brunoken.vercel.app/"),
+
+  title: "Bruno Ken",
   description:
-    'Mi portafolio: Desarrollador y diseñador web creando soluciones digitales para clientes',
-  authors: [{ name: 'Bruno Ken' }],
+    "Mi portafolio: Desarrollador y diseñador web creando soluciones digitales para clientes",
+  authors: [{ name: "Bruno Ken" }],
   twitter: {
-    card: 'summary',
-    title: 'Bruno Ken - Portafolio',
+    card: "summary",
+    title: "Bruno Ken - Portafolio",
     description:
-      'Explora mi portafolio como desarrollador y diseñador web. Proyectos innovadores y soluciones digitales para clientes.',
+      "Explora mi portafolio como desarrollador y diseñador web. Proyectos innovadores y soluciones digitales para clientes.",
     images: [
       {
-        url: '/hero.webp', // Imagen que se mostrará en redes sociales
+        url: "/hero.webp", // Imagen que se mostrará en redes sociales
         width: 1200,
         height: 630,
-        alt: 'Portafolio de Bruno Ken', // Descripción alternativa de la imagen
+        alt: "Portafolio de Bruno Ken", // Descripción alternativa de la imagen
       },
     ],
   },
   openGraph: {
-    title: 'Bruno Ken - Portafolio',
+    title: "Bruno Ken - Portafolio",
     description:
-      'Explora mi portafolio como desarrollador y diseñador web. Proyectos innovadores y soluciones digitales para clientes.',
-    url: 'https://brunoken.vercel.app', // Reemplaza con la URL de tu sitio
+      "Explora mi portafolio como desarrollador y diseñador web. Proyectos innovadores y soluciones digitales para clientes.",
+    url: "https://brunoken.vercel.app", // Reemplaza con la URL de tu sitio
     images: [
       {
-        url: '/hero.webp', // Imagen que se mostrará en redes sociales
+        url: "/hero.webp", // Imagen que se mostrará en redes sociales
         width: 1200,
         height: 630,
-        alt: 'Portafolio de Bruno Ken', // Descripción alternativa de la imagen
+        alt: "Portafolio de Bruno Ken", // Descripción alternativa de la imagen
       },
     ],
-    siteName: 'Bruno Ken',
-    type: 'website',
+    siteName: "Bruno Ken",
+    type: "website",
   },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
