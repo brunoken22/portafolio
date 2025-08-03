@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Send, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+import { Send, Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { mensaje } from "@/lib/hook";
+import WhatsaapSvg from "@/ui/icons/whatsapp.svg";
 
 type FormData = {
   name: string;
@@ -256,7 +257,7 @@ export function ContactSection() {
           onClick={() => window.open("https://wa.me/541161204047", "_blank")}
           className='w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-2xl hover:shadow-green-500/25 transition-all duration-300 p-0 group'
         >
-          <MessageCircle className='w-8 h-8 group-hover:scale-110 transition-transform' />
+          <WhatsaapSvg className='!w-8 !h-8 group-hover:scale-110 transition-transform fill-white' />
         </Button>
       </motion.div>
     </section>
