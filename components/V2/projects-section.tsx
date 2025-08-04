@@ -12,12 +12,12 @@ interface Technologies {
 }
 
 interface Project {
-  id: number;
   fields: {
     appMisPelis: string;
     linkImgPagina: string;
     linkDeArticle: string;
     github: string;
+    id: number;
     technologiess?: Technologies[];
     description?: string;
   };
@@ -25,7 +25,6 @@ interface Project {
 
 export function ProjectsSection({ proyect }: { proyect: Project[] }) {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-
   return (
     <section id='projects' className='py-32 px-6 relative'>
       <div className='container mx-auto'>
@@ -53,7 +52,7 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
         <div className='space-y-32'>
           {proyect.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={project.fields.id}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -61,7 +60,7 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
               className={`grid lg:grid-cols-2 gap-16 items-center ${
                 index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
-              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseEnter={() => setHoveredProject(project.fields.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image */}
@@ -123,7 +122,7 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
                 {/* Floating Elements */}
                 <motion.div
                   animate={
-                    hoveredProject === project.id
+                    hoveredProject === project.fields.id
                       ? { scale: 1.1, opacity: 1 }
                       : { scale: 1, opacity: 0.5 }
                   }
@@ -131,7 +130,7 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
                 />
                 <motion.div
                   animate={
-                    hoveredProject === project.id
+                    hoveredProject === project.fields.id
                       ? { scale: 1.1, opacity: 1 }
                       : { scale: 1, opacity: 0.5 }
                   }
