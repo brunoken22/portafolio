@@ -137,7 +137,7 @@ export function HeroSection() {
               <Link
                 target='_blank'
                 href={
-                  "https://docs.google.com/document/d/1IdMDFny9UDoP8r88W9z6GBvsZXzhmhKl/edit?usp=sharing&ouid=117376640221651395420&rtpof=true&sd=true"
+                  "https://docs.google.com/document/d/1y1T5lRsONDQzkR8uxpXHqgRktkq6wf3HNhJrSui-q3o/edit"
                 }
                 className='flex bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-4 rounded-full font-medium shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 group'
               >
