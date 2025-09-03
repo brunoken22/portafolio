@@ -1,11 +1,11 @@
-'use client';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
 
 export const TemplateProyect = styled.article`
   display: flex;
   flex-direction: column;
-  background-color: ${({theme}: any) => theme.background};
-  color: ${({theme}: any) => theme.color};
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.color};
   gap: 1rem;
   box-shadow: -2px 0px 5px 4px #5959597a;
   border-radius: 7px;
@@ -72,13 +72,13 @@ export const ImageProyect = styled.img`
     opacity: 0.5;
   }
 `;
-export const Botton = styled.button<{$isLike: boolean}>`
+export const Botton = styled.button<{ $isLike: boolean }>`
   border: 0;
   padding: 0;
   background: transparent;
   cursor: pointer;
   svg {
-    fill: ${({$isLike}) => ($isLike ? 'tomato' : '#ddd')};
+    fill: ${({ $isLike }) => ($isLike ? "tomato" : "#ddd")};
   }
   &:hover svg {
     fill: tomato;
@@ -87,11 +87,11 @@ export const Botton = styled.button<{$isLike: boolean}>`
     z-index: 10;
   }
 `;
-export const LinkGthub = styled.a<any>`
+export const LinkGthub = styled.a`
   width: 40px;
   position: relative;
   svg {
-    fill: ${({theme}: any) => (theme?.background == '#fff' ? '#000' : '#fff')};
+    fill: ${({ theme }) => (theme?.background == "#fff" ? "#000" : "#fff")};
   }
   &:hover svg {
     opacity: 0.6;

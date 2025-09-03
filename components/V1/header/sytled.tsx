@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 const move = keyframes`
  0%{
   transform: translateY(0);
@@ -12,8 +12,8 @@ const move = keyframes`
 export const HeaderNav = styled.header`
   position: sticky;
   backdrop-filter: blur(3px);
-  color: ${({ theme }: any) => theme.color};
-  background-color: ${({ theme }: any) => theme.background};
+  color: ${({ theme }) => theme.color};
+  background-color: ${({ theme }) => theme.background};
   transition: all 0.15s linear;
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ export const NavBar = styled.nav`
   align-items: center !important;
   justify-content: space-between !important ;
   margin: 0 2rem !important;
-  color: ${({ theme }: any) => theme.color} !important;
+  color: ${({ theme }) => theme.color} !important;
   transition: all 0.15s linear;
 
   @media (max-width: 700px) {
@@ -39,18 +39,18 @@ export const Div = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  color: ${({ theme }: any) => theme.color};
+  color: ${({ theme }) => theme.color};
   @media (max-width: 700px) {
     display: none;
   }
 `;
 export const Enlaces = styled.a`
   text-decoration: none;
-  color: ${({ theme }: any) => theme.color};
+  color: ${({ theme }) => theme.color};
   font-weight: 500;
   cursor: pointer;
   &:after {
-    content: '';
+    content: "";
     display: block;
     margin: auto;
     height: 2px;
@@ -77,16 +77,16 @@ export const Hambug = styled.button<{ $isActive: boolean }>`
     display: flex;
   }
   div:nth-child(1) {
-    display: ${({ $isActive }) => ($isActive ? 'none' : '')};
+    display: ${({ $isActive }) => ($isActive ? "none" : "")};
   }
   div:nth-child(2) {
     border-radius: 10px;
-    transform: ${({ $isActive }) => ($isActive ? ' rotate(45deg)' : '')};
+    transform: ${({ $isActive }) => ($isActive ? " rotate(45deg)" : "")};
   }
   div:nth-child(3) {
     border-radius: 10px;
-    transform: ${({ $isActive }) => ($isActive ? ' rotate(138deg)' : '')};
-    translate: ${({ $isActive }) => ($isActive ? ' -1px -8px' : '')};
+    transform: ${({ $isActive }) => ($isActive ? " rotate(138deg)" : "")};
+    translate: ${({ $isActive }) => ($isActive ? " -1px -8px" : "")};
   }
 `;
 export const DivDespleHam = styled.div`
@@ -105,18 +105,18 @@ export const LineaDiv = styled.div<{ $isActive: boolean }>`
   width: 30px;
   height: 4px;
   transition: all 1s;
-  background-color: ${({ theme }: any) => (theme.background == '#fff' ? '#000' : '#fff')};
+  background-color: ${({ theme }) => (theme.background == "#fff" ? "#000" : "#fff")};
 `;
 export const Mode = styled.div`
   border-radius: 40%;
   height: 30px;
   width: 60px;
-  background-color: ${({ theme }: any) => (theme.background == '#fff' ? '#ddd' : 'black')};
+  background-color: ${({ theme }) => (theme.background == "#fff" ? "#ddd" : "black")};
   display: flex;
   align-items: center;
   padding: 0px 5px;
 `;
-export const ModeBoton = styled.div`
+export const ModeBoton = styled.button`
   cursor: pointer;
   border-radius: 50%;
   width: 25px;

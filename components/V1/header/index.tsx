@@ -19,6 +19,7 @@ import Bk from "@/ui/icons/logoByMe.svg";
 import WhatsaapSvg from "@/ui/icons/whatsapp.svg";
 import SunSvg from "@/ui/icons/sun.svg";
 import NightSvg from "@/ui/icons/night.svg";
+import { ThemeType } from "@/components/V2/types";
 
 const pages = [
   { url: "Habilidades", id: "habilidades" },
@@ -26,14 +27,15 @@ const pages = [
   { url: "Contacto", id: "contacto" },
 ];
 
-export function Header(props: any) {
+export function Header(props: { tema: () => void; defaultTheme: ThemeType }) {
   const [desple, setDesple] = useState(false);
-  const [theme, setTheme] = useState<"default" | "light">(props.defaultTheme);
+  const [theme, setTheme] = useState<ThemeType>(props.defaultTheme);
 
   useEffect(() => {
     setTheme(props.defaultTheme);
   }, [props.defaultTheme]);
-  const handleClick = (e: any) => {
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (desple) {
       setDesple(false);
@@ -41,20 +43,23 @@ export function Header(props: any) {
     }
     setDesple(true);
   };
+
   const handleClickHam = (click: boolean) => {
     setDesple(click);
   };
-  const handleCambiar = (e: any) => {
+
+  const handleCambiar = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (theme == "default") {
       setTheme("light");
-      props.tema("light");
+      props.tema();
       return;
     }
 
-    props.tema("default");
+    props.tema();
     setTheme("default");
   };
+
   return (
     <>
       <HeaderNav>

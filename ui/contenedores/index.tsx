@@ -1,18 +1,18 @@
-'use client';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
 
-export const DivIconsHero = styled.div<any>`
+export const DivIconsHero = styled.div`
   svg {
     opacity: 1 !important;
   }
   svg:hover {
     opacity: 0.7 !important;
   }
-  fill: ${({theme}: any) => theme.color};
+  fill: ${({ theme }) => theme.color};
 `;
 export const Container = styled.div`
-  color: ${({theme}: any) => theme.color};
-  background-color: ${({theme}: any) => theme.background};
+  color: ${({ theme }) => theme.color};
+  background-color: ${({ theme }) => theme.background};
   transition: all 0.15s linear;
 `;
 export const DivContainer = styled.div`
@@ -25,7 +25,7 @@ export const DivContainer = styled.div`
   gap: 3rem;
 `;
 export const EnlaceArrow = styled.a`
-  fill: ${({theme}: any) => theme.color};
+  fill: ${({ theme }) => theme.color};
   padding: 0.5rem;
   &:hover {
     opacity: 0.7;
@@ -51,7 +51,7 @@ export const ContainerMain = styled.main`
   position: relative;
   z-index: 2;
   &:after {
-    content: '';
+    content: "";
     height: 250px;
     width: 250px;
     background-color: #2c256f;
@@ -63,7 +63,7 @@ export const ContainerMain = styled.main`
     right: 0%;
   }
   &:before {
-    content: '';
+    content: "";
     height: 250px;
     width: 250px;
     background-color: #2c256f;

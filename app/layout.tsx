@@ -5,6 +5,15 @@ import { Layout } from "@/components/layout";
 import { StyledComponentsRegistry } from "@/components/layout/registry";
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
+declare module "styled-components" {
+  export interface DefaultTheme {
+    background: string;
+    color: string;
+    lineaGradient: string;
+    weight?: string;
+  }
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://brunoken.vercel.app/"),
   title: "Bruno Ken | Desarrollador y Diseñador Web",

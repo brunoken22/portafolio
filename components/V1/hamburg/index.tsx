@@ -1,18 +1,20 @@
 import { DivHamburg, DivElemnt, Enlaces } from "./styled";
 import { useRouter } from "next/navigation";
+
 const pages = [
   { title: "Habilidades", link: "#habilidades" },
   { title: "Proyectos", link: "#proyectos" },
   { title: "Contacto", link: "#contacto" },
 ];
 
-export function DespleHam(props: any) {
+export function DespleHam({ click }: { click: (data: boolean) => void }) {
   const router = useRouter();
-  const handleClick = (e: any) => {
-    e.preventDefault();
-    props.click(false);
-    router.push((e as any).target.href);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    click(false);
+    router.push(e.currentTarget.href);
   };
+
   return (
     <>
       <DivHamburg>

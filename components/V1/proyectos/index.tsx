@@ -16,8 +16,9 @@ import Github from "@/ui/icons/github.svg";
 import ComputerSvg from "@/ui/icons/computer.svg";
 import Like from "./like";
 import Image from "next/image";
+import { Project } from "@/components/V2/types";
 
-export default function Proyectos({ proyect, data }: { proyect: any; data: any }) {
+export default function Proyectos({ proyect, data }: { proyect: Project[]; data: any }) {
   const [localStorageLikes, setLocalStorageLikes] = useState<{ id: string }[] | []>([]);
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
@@ -43,7 +44,7 @@ export default function Proyectos({ proyect, data }: { proyect: any; data: any }
       </div>
       <DivProyectos className='proyectAll'>
         {proyect && data
-          ? (proyect as any).map((el: any) => {
+          ? proyect.map((el) => {
               return (
                 <Zoom
                   triggerOnce
@@ -89,24 +90,22 @@ export default function Proyectos({ proyect, data }: { proyect: any; data: any }
                       </div>
                     </div>
                     <div className='grid grid-flow-col items-center overflow-y-hidden overflow-x-auto gap-4 pb-2 pl-2'>
-                      {el.fields.technologiess.map(
-                        (item: { title: string; svg: string }, t: number) => (
-                          <div
-                            key={item.title + t}
-                            className='flex items-center  dark:bg-[#573dbf] bg-[#ddd] p-1 w-max rounded-lg h-[30px] gap-1'
-                          >
-                            <Image
-                              src={item.svg}
-                              alt={"Tecnologias " + item.title}
-                              title={"Tecnologias " + item.title}
-                              height={20}
-                              width={20}
-                              loading='lazy'
-                            />
-                            <IconsTecnology>{item.title}</IconsTecnology>
-                          </div>
-                        )
-                      )}
+                      {el.fields.technologiess?.map((item, t: number) => (
+                        <div
+                          key={item.title + t}
+                          className='flex items-center  dark:bg-[#573dbf] bg-[#ddd] p-1 w-max rounded-lg h-[30px] gap-1'
+                        >
+                          <Image
+                            src={item.svg}
+                            alt={"Tecnologias " + item.title}
+                            title={"Tecnologias " + item.title}
+                            height={20}
+                            width={20}
+                            loading='lazy'
+                          />
+                          <IconsTecnology>{item.title}</IconsTecnology>
+                        </div>
+                      ))}
                     </div>
                     <div className='m-4'>
                       <div
@@ -133,10 +132,10 @@ export default function Proyectos({ proyect, data }: { proyect: any; data: any }
                       </div>
                       <div>
                         <Like
-                          id={el.fields.id}
+                          id={el.fields.id.toString()}
                           data={data.find((item: any) => item.id == el.fields.id && item)}
                           isLikeLocal={
-                            localStorageLikes?.find((item) => item.id === el.fields.id)
+                            localStorageLikes?.find((item) => Number(item.id) === el.fields.id)
                               ? true
                               : false
                           }

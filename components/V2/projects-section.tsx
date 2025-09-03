@@ -6,23 +6,7 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
-
-interface Technologies {
-  svg: string;
-  title: string;
-}
-
-interface Project {
-  fields: {
-    appMisPelis: string;
-    linkImgPagina: string;
-    linkDeArticle: string;
-    github: string;
-    id: number;
-    technologiess?: Technologies[];
-    description?: string;
-  };
-}
+import { Project } from "./types";
 
 export function ProjectsSection({ proyect }: { proyect: Project[] }) {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);

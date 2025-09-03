@@ -1,10 +1,12 @@
-export async function fetchApiAuth(api: any) {
+import { LikesRequestType, NodemailRequestType } from "@/components/V2/types";
+
+export async function fetchApiAuth(api: [string, {}]) {
   try {
     const option = api[1] || {};
     if (api[0]) {
       const response = await fetch(process.env.NEXT_PUBLIC_PORT + api[0], {
         ...option,
-        next: {revalidate: 5},
+        next: { revalidate: 5 },
       });
       const data = await response.json();
       return data;
@@ -13,43 +15,42 @@ export async function fetchApiAuth(api: any) {
     return e.message;
   }
 }
-export async function SubirLikes(like: any) {
-  const api = '/api/like';
+export async function SubirLikes(like: LikesRequestType) {
+  const api = "/api/like";
   const header = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(like),
   };
-
-  const data = await fetchApiAuth(like.id ? [api, header] : null);
+  const data = await fetchApiAuth([api, header]);
 
   return data;
 }
-export async function QuitarLike(like: any) {
-  const api = '/api/like';
+export async function QuitarLike(like: LikesRequestType) {
+  const api = "/api/like";
   const header = {
-    method: 'PATCH',
+    method: "PATCH",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(like),
   };
 
-  const dataMod = await fetchApiAuth(like.like ? [api, header] : null);
+  const dataMod = await fetchApiAuth([api, header]);
   return dataMod;
 }
-export function mensaje(data: any) {
-  const api = '/api/mensaje';
+export async function mensaje(data: NodemailRequestType) {
+  const api = "/api/mensaje";
   const header = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
   };
 
-  const dataMod = fetchApiAuth(data ? [api, header] : null);
+  const dataMod = await fetchApiAuth([api, header]);
   return dataMod;
 }

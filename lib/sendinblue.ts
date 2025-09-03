@@ -1,3 +1,4 @@
+import { NodemailRequestType } from "@/components/V2/types";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
@@ -10,7 +11,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export async function sendEmail(dataEmail: any) {
+export async function sendEmail(dataEmail: NodemailRequestType) {
   try {
     const mailOptionsRemitente = {
       subject: "Gracias por Contáctarme!",

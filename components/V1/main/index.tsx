@@ -35,7 +35,7 @@ export default function Main() {
               Software Developer <span>&#160;</span>
             </BodyParr>
           </DivName>
-          <BodyMain>
+          <BodyMain $opacity=''>
             Tengo sólido conocimiento en desarrollo Fullstack y pasión por soluciones innovadoras.
             Durante mi formación, adquirí habilidades en diversas tecnologías: front-end TypeScript,
             React.js, Next.js, y en back-end con Node.js, Express, PostgreSQL y Firebase

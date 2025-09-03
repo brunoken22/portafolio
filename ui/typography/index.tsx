@@ -1,5 +1,13 @@
-'use client';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
+
+type StyleTypes = {
+  $size?: string;
+  $weight?: string;
+  $opacity: string;
+  $margin: string;
+  $align: string;
+};
 
 export const Title = styled.h1`
   font-size: 5rem;
@@ -20,46 +28,44 @@ export const Subtitle = styled.h2`
   flex-direction: row;
 
   .codingSvg path:nth-child(1) {
-    /* stroke: ${({theme}: any) => theme.color}; */
-    fill: ${({theme}: any) => theme.color};
+    /* stroke: ${({ theme }) => theme.color}; */
+    fill: ${({ theme }) => theme.color};
   }
   .codingSvg path:nth-child(2) {
-    /* stroke: ${({theme}: any) => theme.color}; */
+    /* stroke: ${({ theme }) => theme.color}; */
     fill: none;
   }
   .codingSvg path:nth-child(3) {
-    /* stroke: ${({theme}: any) => theme.color}; */
-    fill: ${({theme}: any) => theme.color};
+    /* stroke: ${({ theme }) => theme.color}; */
+    fill: ${({ theme }) => theme.color};
   }
   .codingSvg path,
   rect {
     fill: none;
-    stroke: ${({theme}: any) => theme.color};
+    stroke: ${({ theme }) => theme.color};
   }
   .computerSvg path,
   rect {
     fill: none;
-    stroke: ${({theme}: any) => theme.color};
+    stroke: ${({ theme }) => theme.color};
     stroke-width: 2px;
   }
 `;
-export const Body = styled.p<any>`
-  font-size: ${(props: any) => (props.$size ? props.$size : '1.2rem')};
-  font-weight: ${(props: any) => (props.$weight ? props.$weight : 400)};
-  opacity: ${(props: any) =>
-    props.$opacity && props.theme.color == '#fff' ? props.$opacity : '1'};
-  margin: ${(props: any) => (props.$margin ? props.$margin : 0)};
-  color: ${({theme}: any) => theme.color};
-  text-align: ${(props: any) => (props.$align ? props.$align : 'center')};
+export const Body = styled.p<Partial<StyleTypes>>`
+  font-size: ${(props) => (props.$size ? props.$size : "1.2rem")};
+  font-weight: ${(props) => (props.$weight ? props.$weight : 400)};
+  opacity: ${(props) => (props.$opacity && props.theme.color == "#fff" ? props.$opacity : "1")};
+  margin: ${(props) => (props.$margin ? props.$margin : 0)};
+  color: ${({ theme }) => theme.color};
+  text-align: ${(props) => (props.$align ? props.$align : "center")};
 
   @media (max-width: 700px) {
     margin-left: 2%;
     margin-right: 2%;
   }
 `;
-export const BodyMain = styled.p<any>`
-  opacity: ${(props) =>
-    props.$opacity && props.theme.color === '#fff' ? props.$opacity : '1'};
+export const BodyMain = styled.p<Pick<StyleTypes, "$opacity">>`
+  opacity: ${(props) => (props.$opacity && props.theme.color === "#fff" ? props.$opacity : "1")};
   font-size: 1.3rem;
   text-align: start;
   font-size: 1.1rem;
@@ -73,20 +79,20 @@ export const BodyMain = styled.p<any>`
   }
 `;
 export const BodyParr = styled.p`
-  color: ${({theme}: any) => theme.color};
+  color: ${({ theme }) => theme.color};
   position: relative;
   float: left;
-  background: ${({theme}: any) => theme.background};
+  background: ${({ theme }) => theme.background};
   margin-top: 0;
-  font-weight: ${({theme}: any) => (theme.background !== '#fff' ? 100 : 500)};
+  font-weight: ${({ theme }) => (theme.background !== "#fff" ? 100 : 500)};
   text-align: center;
 
   span {
     position: absolute;
     right: 0;
     width: 0;
-    background-color: ${({theme}: any) => theme.background};
-    border-left: 1px solid ${({theme}: any) => theme.color};
+    background-color: ${({ theme }) => theme.background};
+    border-left: 1px solid ${({ theme }) => theme.color};
     margin-right: -7px;
     animation: escribir 5s steps(30) infinite alternate;
   }

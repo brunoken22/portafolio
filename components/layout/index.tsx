@@ -1,9 +1,8 @@
 "use client";
-import { Header } from "../V1/header";
 import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 
-const themes: any = {
+const themes = {
   default: {
     background: "#0e141b",
     color: "#fff",
@@ -18,8 +17,8 @@ const themes: any = {
       "linear-gradient(to right,rgba(255, 255, 255, 0.1)20%,rgba(255, 255, 255, 0.9)100% )",
   },
 };
-export function Layout({ children }: any) {
-  const [tema, setTema] = useState("default");
+export function Layout({ children }: { children: React.ReactNode }) {
+  const [tema, setTema] = useState<keyof typeof themes>("default");
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");

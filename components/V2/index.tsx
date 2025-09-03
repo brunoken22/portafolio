@@ -6,8 +6,9 @@ import { ProjectsSection } from "./projects-section";
 import { ContactSection } from "./contact-section";
 import { FloatingElements } from "./floating-elements";
 import { ScrollProgress } from "./scroll-progress";
+import { Project } from "./types";
 
-export default function V2({ proyect }: { proyect: any }) {
+export default function V2({ proyect }: { proyect: Project[] }) {
   return (
     <main className='relative min-h-screen bg-black text-white overflow-x-hidden'>
       {/* Background Effects */}

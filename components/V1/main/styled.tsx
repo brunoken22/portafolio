@@ -13,7 +13,7 @@ export const EnlaceCv = styled.a`
   margin-top: 3rem;
   background: none;
   cursor: pointer;
-  --hovered-color: ${({ theme }: any) => theme.color};
+  --hovered-color: ${({ theme }) => theme.color};
   position: relative;
   display: flex;
   font-weight: 600;
@@ -26,7 +26,7 @@ export const EnlaceCv = styled.a`
     margin: 0;
     position: relative;
     font-size: 1.1rem;
-    color: ${({ theme }: any) => (theme.color !== "#fff" ? "rgb(99 1 251)" : "#befb60")};
+    color: ${({ theme }) => (theme.color !== "#fff" ? "rgb(99 1 251)" : "#befb60")};
   }
 
   &::after {
@@ -65,7 +65,7 @@ export const EnlaceCv = styled.a`
   }
 
   svg {
-    color: ${({ theme }: any) => (theme.color !== "#fff" ? "rgb(99 1 251)" : "#befb60")};
+    color: ${({ theme }) => (theme.color !== "#fff" ? "rgb(99 1 251)" : "#befb60")};
     transition: 0.2s;
     position: relative;
     width: 15px;

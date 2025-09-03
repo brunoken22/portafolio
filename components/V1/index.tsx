@@ -6,9 +6,10 @@ import ProgressBar from "@/components/V1/progress-bar";
 import Main from "@/components/V1/main";
 import { Header } from "./header";
 import { useEffect, useState } from "react";
+import { Project, ThemeType } from "../V2/types";
 
-export default function V1({ proyect, data }: { proyect: any; data: any }) {
-  const [tema, setTema] = useState("default");
+export default function V1({ proyect, data }: { proyect: Project[]; data: void }) {
+  const [tema, setTema] = useState<ThemeType>("default");
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
@@ -30,6 +31,7 @@ export default function V1({ proyect, data }: { proyect: any; data: any }) {
 
     setTema("default");
   };
+
   return (
     <ProgressBar>
       <Header tema={handleTema} defaultTheme={tema} />

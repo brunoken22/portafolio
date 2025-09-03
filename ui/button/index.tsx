@@ -11,10 +11,10 @@ export const ButtonCloseMessage = styled.button`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: ${({ theme }: any) => theme.color};
+  background-color: ${({ theme }) => theme.color};
   svg {
-    stroke: ${({ theme }: any) => theme.background};
-    fill: ${({ theme }: any) => theme.background};
+    stroke: ${({ theme }) => theme.background};
+    fill: ${({ theme }) => theme.background};
   }
 
   &:hover {

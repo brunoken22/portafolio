@@ -1,34 +1,41 @@
-import {NextRequest, NextResponse} from 'next/server';
-import {firebase} from '@/lib/firebase';
+import { NextRequest, NextResponse } from "next/server";
+import { firebase } from "@/lib/firebase";
+
+type DataType = {
+  likes: string;
+  id: string;
+  proyect: string;
+};
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
     if (body.like) {
-      const dataAnterior: any = (
+      const dataAnterior: FirebaseFirestore.DocumentData | undefined = (
         await firebase.collection(body.proyect).doc(body.id).get()
       ).data();
+
       const newData = await firebase
         .collection(body.proyect)
         .doc(body.id)
-        .update({likes: Number(dataAnterior.likes) + 1});
+        .update({ likes: Number(dataAnterior?.likes) + 1 });
 
-      return NextResponse.json({newData});
+      return NextResponse.json({ newData });
     }
   } catch (e: any) {
-    return NextResponse.json(e.message);
+    return NextResponse.json(e);
   }
 }
 export async function GET() {
   try {
     const collection = await firebase.listCollections();
 
-    const data: any = [];
+    const data: DataType[] = [];
     for (let snap of collection) {
       const proyect = snap.id;
       const eje = (await snap.get()).docs;
       eje.forEach((doc) => {
-        data.push({likes: doc.data().likes, id: doc.id, proyect});
+        data.push({ likes: doc.data().likes, id: doc.id, proyect });
       });
     }
     return NextResponse.json(data);
@@ -42,17 +49,17 @@ export async function PATCH(request: NextRequest) {
   const body = await request.json();
 
   if (body.like) {
-    const dataAnterior: any = (
+    const dataAnterior: FirebaseFirestore.DocumentData | undefined = (
       await firebase.collection(body.proyect).doc(body.id).get()
     ).data();
     const newData = await firebase
       .collection(body.proyect)
       .doc(body.id)
-      .update({likes: Number(dataAnterior.likes) - 1});
+      .update({ likes: Number(dataAnterior?.likes) - 1 });
 
-    return NextResponse.json({newData});
+    return NextResponse.json({ newData });
   }
   return NextResponse.json({
-    message: 'Algo salio mal',
+    message: "Algo salio mal",
   });
 }

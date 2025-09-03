@@ -1,9 +1,10 @@
-'use client';
-import {Botton} from './styled';
-import {Body} from '@/ui/typography';
-import {SubirLikes, QuitarLike} from '@/lib/hook';
-import Heart from '@/ui/icons/heart.svg';
-import {useEffect, useState} from 'react';
+"use client";
+import { Botton } from "./styled";
+import { Body } from "@/ui/typography";
+import { SubirLikes, QuitarLike } from "@/lib/hook";
+import Heart from "@/ui/icons/heart.svg";
+import { useEffect, useState } from "react";
+import { LikesRequestType } from "@/components/V2/types";
 
 interface LikeProps {
   data: {
@@ -26,46 +27,41 @@ export default function Like(props: LikeProps) {
     e.preventDefault();
     const target = e.currentTarget;
     const getLikesLocal =
-      typeof localStorage !== 'undefined' &&
-      JSON.parse(localStorage.getItem('likes') || '[]');
+      typeof localStorage !== "undefined" && JSON.parse(localStorage.getItem("likes") || "[]");
     let newLikesAll;
     if (likesLocal) {
       setLikesLocal(false);
-      newLikesAll = getLikesLocal.filter((item: any) => item.id !== props.id);
+      newLikesAll = getLikesLocal.filter((item: LikesRequestType) => item.id !== props.id);
       setCountLikes((prev) => prev - 1);
       await QuitarLike({
         id: props.data.id,
         proyect: props.data.proyect,
         like: props.data.likes - 1,
       });
-      target.style.fill = '#ddd';
+      target.style.fill = "#ddd";
     } else {
       setLikesLocal(true);
       setCountLikes((prev) => prev + 1);
       newLikesAll = getLikesLocal
-        ? [...getLikesLocal, {id: Number(props.id)}]
-        : [{id: Number(props.id)}];
+        ? [...getLikesLocal, { id: Number(props.id) }]
+        : [{ id: Number(props.id) }];
       await SubirLikes({
         id: props.data.id,
         proyect: props.data.proyect,
         like: props.data.likes + 1,
       });
-      target.style.fill = 'tomato';
+      target.style.fill = "tomato";
     }
 
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem('likes', JSON.stringify(newLikesAll));
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("likes", JSON.stringify(newLikesAll));
     }
   };
 
   return (
     <div className='flex justify-between items-center h-[90px]'>
-      {countLikes ? <Body $size={'1rem'}>{countLikes} Me encanta</Body> : null}
-      <Botton
-        id={props.id}
-        onClick={handleLike}
-        $isLike={likesLocal}
-        aria-label='like'>
+      {countLikes ? <Body $size={"1rem"}>{countLikes} Me encanta</Body> : null}
+      <Botton id={props.id} onClick={handleLike} $isLike={likesLocal} aria-label='like'>
         <Heart />
       </Botton>
     </div>

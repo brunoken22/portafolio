@@ -1,5 +1,6 @@
 "use client";
 import styled, { keyframes } from "styled-components";
+
 const msj = keyframes`
 0% {
     transform: rotate3d(1, 1, 1, 0deg);
@@ -33,9 +34,9 @@ export const DivContact = styled.div`
     gap: 1rem;
   }
 `;
-export const OneContact = styled(DivContact)<any>`
+export const OneContact = styled(DivContact)<{ $direction?: string }>`
   align-items: center;
-  flex-direction: ${(props: any) => props.$direction};
+  flex-direction: ${(props) => props.$direction || "column"};
 `;
 export const Form = styled.form`
   display: flex;
@@ -63,9 +64,9 @@ export const Input = styled.input`
   border-radius: 10px;
   font-size: 1rem;
   padding: 0.5rem;
-  border: 1px solid ${({ theme }: any) => (theme.color == "#fff" ? "#befb60" : "#000")};
-  border-bottom: 3px solid ${({ theme }: any) => (theme.color == "#fff" ? "#befb60" : "#000")};
-  border-left: 3px solid ${({ theme }: any) => (theme.color == "#fff" ? "#befb60" : "#000")};
+  border: 1px solid ${({ theme }) => (theme.color == "#fff" ? "#befb60" : "#000")};
+  border-bottom: 3px solid ${({ theme }) => (theme.color == "#fff" ? "#befb60" : "#000")};
+  border-left: 3px solid ${({ theme }) => (theme.color == "#fff" ? "#befb60" : "#000")};
   color: black;
   &:focus {
     outline: 1px solid #b198cf;
@@ -82,27 +83,27 @@ export const Textarea = styled.textarea`
   max-height: 310px;
   min-height: 140px;
   padding: 0.5rem;
-  border: 1px solid ${({ theme }: any) => (theme.color == "#fff" ? "#befb60" : "#000")};
+  border: 1px solid ${({ theme }) => (theme.color == "#fff" ? "#befb60" : "#000")};
 
-  border-bottom: 3px solid ${({ theme }: any) => (theme.color == "#fff" ? "#befb60" : "#000")};
+  border-bottom: 3px solid ${({ theme }) => (theme.color == "#fff" ? "#befb60" : "#000")};
 
-  border-left: 3px solid ${({ theme }: any) => (theme.color == "#fff" ? "#befb60" : "#000")};
+  border-left: 3px solid ${({ theme }) => (theme.color == "#fff" ? "#befb60" : "#000")};
 
   &:focus {
     outline: 1px solid #b198cf;
   }
 `;
 export const Span = styled.span`
-  color: ${({ theme }: any) => (theme.color == "#000" ? "#7868fd" : "#befb60")};
+  color: ${({ theme }) => (theme.color == "#000" ? "#7868fd" : "#befb60")};
 `;
 export const SpanRequiredForm = styled.span`
   color: #fd5e5e;
 `;
 export const Button = styled.button`
   padding: 10px 20px;
-  background-color: ${({ theme }: any) => (theme.background == "#fff" ? "#a29ae7" : "#befb60")};
-  color: ${({ theme }: any) => (theme.background !== "#fff" ? "#000" : "#fff")};
-  font-weight: ${({ theme }: any) => (theme.background !== "#fff" ? "600" : "")};
+  background-color: ${({ theme }) => (theme.background == "#fff" ? "#a29ae7" : "#befb60")};
+  color: ${({ theme }) => (theme.background !== "#fff" ? "#000" : "#fff")};
+  font-weight: ${({ theme }) => (theme.background !== "#fff" ? "600" : "")};
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -113,7 +114,7 @@ export const Button = styled.button`
   }
 `;
 export const Enlaces = styled.a`
-  color: ${({ theme }: any) => theme.color};
+  color: ${({ theme }) => theme.color};
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -123,19 +124,19 @@ export const Enlaces = styled.a`
     fill: transparent;
   }
   svg path:nth-child(2) {
-    stroke: ${({ theme }: any) => theme.color};
+    stroke: ${({ theme }) => theme.color};
   }
   svg path:nth-child(3) {
-    stroke: ${({ theme }: any) => theme.color};
+    stroke: ${({ theme }) => theme.color};
   }
   &:hover {
     opacity: 0.7;
   }
 `;
-export const DivEnlaceContact = styled.div<any>`
+export const DivEnlaceContact = styled.div`
   width: 25px;
   svg {
-    fill: ${({ theme }: any) => theme.color};
+    fill: ${({ theme }) => theme?.color};
   }
   .github:hover {
     fill: #e196ff;
@@ -164,7 +165,7 @@ export const DivThankYou = styled.div`
   width: 95%;
   height: 80%;
   padding: 1rem;
-  background-color: ${({ theme }: any) => theme.background};
+  background-color: ${({ theme }) => theme.background};
   border-radius: 15px;
   box-shadow: 0 0 5px 1px;
   display: flex;
