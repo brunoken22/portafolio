@@ -61,6 +61,7 @@ export default function Proyectos({ proyect, data }: { proyect: any; data: any }
                       <div className='absolute inset-0 backdrop-brightness-50  items-center justify-center hidden transition-all'>
                         <Link
                           className='hover:opacity-70'
+                          title={el.fields.appMisPelis}
                           href={el.fields.linkDeArticle}
                           target='blank'
                         >
@@ -122,6 +123,7 @@ export default function Proyectos({ proyect, data }: { proyect: any; data: any }
                         <LinkGthub
                           href={el.fields.github}
                           aria-label={el.fields.appMisPelis}
+                          title={el.fields.appMisPelis}
                           target='_blank'
                         >
                           <div>

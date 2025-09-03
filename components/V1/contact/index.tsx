@@ -85,7 +85,12 @@ export function Contact() {
             </Enlaces>
           </OneContact>
           <OneContact $direction='row'>
-            <Link href='https://github.com/brunoken22' aria-label='github' target='_blank'>
+            <Link
+              href='https://github.com/brunoken22'
+              aria-label='github'
+              title='github'
+              target='_blank'
+            >
               <DivEnlaceContact>
                 <Github className='github' />
               </DivEnlaceContact>
@@ -93,6 +98,7 @@ export function Contact() {
             <Link
               href='https://www.linkedin.com/in/brunoken18/'
               aria-label='linkedin'
+              title='linkedin'
               target='_blank'
             >
               <DivEnlaceContact>
@@ -102,6 +108,7 @@ export function Contact() {
             <Link
               href='https://api.whatsapp.com/send?phone=+541161204047&text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20?'
               aria-label='whatsapp'
+              title='whatsapp'
               target='_blank'
             >
               <DivEnlaceContact>

@@ -38,6 +38,7 @@ export function Header() {
           <Link
             href='/#inicio'
             aria-label='logo'
+            title='Inicio'
             className='z-10 relative bg-white rounded-full h-[60px] w-[60px]'
           >
             <Bk className={`w-full h-full ml-[0.7rem]  text-white `} />

@@ -136,6 +136,7 @@ export function HeroSection() {
             >
               <Link
                 target='_blank'
+                title='Ver CV'
                 href={
                   "https://docs.google.com/document/d/1y1T5lRsONDQzkR8uxpXHqgRktkq6wf3HNhJrSui-q3o/edit"
                 }

@@ -1,5 +1,5 @@
-'use client';
-import {useEffect, useState} from 'react';
+"use client";
+import { useEffect, useState } from "react";
 import {
   NavBar,
   Enlaces,
@@ -12,23 +12,23 @@ import {
   Mode,
   DivWhatsaap,
   EnlaceWhatsaap,
-} from './sytled';
-import {DespleHam} from '../hamburg';
-import Link from 'next/link';
-import Bk from '@/ui/icons/logoByMe.svg';
-import WhatsaapSvg from '@/ui/icons/whatsapp.svg';
-import SunSvg from '@/ui/icons/sun.svg';
-import NightSvg from '@/ui/icons/night.svg';
+} from "./sytled";
+import { DespleHam } from "../hamburg";
+import Link from "next/link";
+import Bk from "@/ui/icons/logoByMe.svg";
+import WhatsaapSvg from "@/ui/icons/whatsapp.svg";
+import SunSvg from "@/ui/icons/sun.svg";
+import NightSvg from "@/ui/icons/night.svg";
 
 const pages = [
-  {url: 'Habilidades', id: 'habilidades'},
-  {url: 'Proyectos', id: 'proyectos'},
-  {url: 'Contacto', id: 'contacto'},
+  { url: "Habilidades", id: "habilidades" },
+  { url: "Proyectos", id: "proyectos" },
+  { url: "Contacto", id: "contacto" },
 ];
 
 export function Header(props: any) {
   const [desple, setDesple] = useState(false);
-  const [theme, setTheme] = useState<'default' | 'light'>(props.defaultTheme);
+  const [theme, setTheme] = useState<"default" | "light">(props.defaultTheme);
 
   useEffect(() => {
     setTheme(props.defaultTheme);
@@ -46,27 +46,27 @@ export function Header(props: any) {
   };
   const handleCambiar = (e: any) => {
     e.preventDefault();
-    if (theme == 'default') {
-      setTheme('light');
-      props.tema('light');
+    if (theme == "default") {
+      setTheme("light");
+      props.tema("light");
       return;
     }
 
-    props.tema('default');
-    setTheme('default');
+    props.tema("default");
+    setTheme("default");
   };
   return (
     <>
       <HeaderNav>
         <NavBar>
           <div>
-            <Link href='/#inicio' aria-label='logo'>
-              <Bk className={`${theme == 'default' ? 'light' : 'default'}`} />
+            <Link href='/#inicio' aria-label='logo' title='Inicio'>
+              <Bk className={`${theme == "default" ? "light" : "default"}`} />
             </Link>
           </div>
           <Div>
             {pages.map((e) => (
-              <Enlaces href={'#' + e.id} key={e.id}>
+              <Enlaces href={"#" + e.id} key={e.id}>
                 {e.url}
               </Enlaces>
             ))}
@@ -74,14 +74,12 @@ export function Header(props: any) {
           <Mode>
             <ModeBoton
               onClick={handleCambiar}
-              className={`${theme == 'default' ? 'modeLight' : 'modeDark'}`}>
-              {theme == 'default' ? <SunSvg /> : <NightSvg />}
+              className={`${theme == "default" ? "modeLight" : "modeDark"}`}
+            >
+              {theme == "default" ? <SunSvg /> : <NightSvg />}
             </ModeBoton>
           </Mode>
-          <Hambug
-            aria-label='open desple'
-            onClick={handleClick}
-            $isActive={desple}>
+          <Hambug aria-label='open desple' onClick={handleClick} $isActive={desple}>
             <LineaDiv $isActive={!desple} className='dark:bg-white'></LineaDiv>
             <LineaDiv $isActive={desple} className='dark:bg-white'></LineaDiv>
             <LineaDiv $isActive={desple} className='dark:bg-white'></LineaDiv>
@@ -97,7 +95,8 @@ export function Header(props: any) {
         <EnlaceWhatsaap
           aria-label='Visítame en whatsaap'
           href='https://api.whatsapp.com/send?phone=+541161204047&text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20'
-          target='_blank'>
+          target='_blank'
+        >
           <WhatsaapSvg />
         </EnlaceWhatsaap>
       </DivWhatsaap>
