@@ -183,6 +183,7 @@ export function Contact() {
                 <Image
                   src='/handLike.svg'
                   alt='HandLike'
+                  title='HandLike'
                   aria-label='Hand Like'
                   width={150}
                   height={150}

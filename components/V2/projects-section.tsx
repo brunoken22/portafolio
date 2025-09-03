@@ -73,6 +73,7 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
                   <Image
                     src={project.fields.linkImgPagina || "/placeholder.svg"}
                     alt={project.fields.appMisPelis}
+                    title={project.fields.appMisPelis}
                     width={600}
                     height={400}
                     className='w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110'

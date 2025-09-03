@@ -7,21 +7,46 @@ const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brunoken.vercel.app/"),
-  title: "Bruno Ken",
+  title: "Bruno Ken | Desarrollador y Diseñador Web",
   description:
-    "Mi portafolio: Desarrollador y diseñador web creando soluciones digitales para clientes",
+    "Desarrollador y diseñador web especializado en crear soluciones digitales innovadoras. Portfolio con proyectos personales y para clientes.",
+  keywords: [
+    "desarrollador web",
+    "diseñador web",
+    "portfolio",
+    "frontend",
+    "backend",
+    "expressjs",
+    "postgresql",
+    "firebase",
+    "react",
+    "nextjs",
+    "soluciones digitales",
+  ],
   authors: [{ name: "Bruno Ken" }],
+  creator: "Bruno Ken",
+  publisher: "Bruno Ken",
+  robots: "index, follow",
+  verification: {
+    google: "K8AWJQTO2MYQ5J7dOu9_dhCFy-ttErrYHDEWbOyw",
+  },
+  alternates: {
+    canonical: "/",
+  },
+  other: {
+    instagram: "brunoken18",
+  },
   twitter: {
-    card: "summary",
-    title: "Bruno Ken - Portafolio",
+    card: "summary_large_image",
+    title: "Bruno Ken - Desarrollador y Diseñador Web",
     description:
-      "Explora mi portafolio como desarrollador y diseñador web. Proyectos innovadores y soluciones digitales para clientes.",
+      "Portfolio de Bruno Ken: Desarrollador y diseñador web creando soluciones digitales innovadoras para clientes.",
     images: [
       {
-        url: "/hero.webp", // Imagen que se mostrará en redes sociales
+        url: "/hero.webp",
         width: 1200,
         height: 630,
-        alt: "Portafolio de Bruno Ken", // Descripción alternativa de la imagen
+        alt: "Portafolio de Bruno Ken",
       },
     ],
   },
@@ -29,19 +54,21 @@ export const metadata: Metadata = {
     title: "Bruno Ken - Portafolio",
     description:
       "Explora mi portafolio como desarrollador y diseñador web. Proyectos innovadores y soluciones digitales para clientes.",
-    url: "https://brunoken.vercel.app", // Reemplaza con la URL de tu sitio
-    images: [
-      {
-        url: "/hero.webp", // Imagen que se mostrará en redes sociales
-        width: 1200,
-        height: 630,
-        alt: "Portafolio de Bruno Ken", // Descripción alternativa de la imagen
-      },
-    ],
+    url: "https://brunoken.vercel.app",
     siteName: "Bruno Ken",
     type: "website",
+    images: [
+      {
+        url: "/hero.webp",
+        width: 1200,
+        height: 630,
+        alt: "Portafolio de Bruno Ken",
+      },
+    ],
   },
+  category: "technology",
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='es'>

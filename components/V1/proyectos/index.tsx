@@ -56,6 +56,7 @@ export default function Proyectos({ proyect, data }: { proyect: any; data: any }
                         src={el.fields.linkImgPagina}
                         loading='lazy'
                         alt={el.fields.appMisPelis}
+                        title={el.fields.appMisPelis}
                       />
                       <div className='absolute inset-0 backdrop-brightness-50  items-center justify-center hidden transition-all'>
                         <Link
@@ -96,6 +97,7 @@ export default function Proyectos({ proyect, data }: { proyect: any; data: any }
                             <Image
                               src={item.svg}
                               alt={"Tecnologias " + item.title}
+                              title={"Tecnologias " + item.title}
                               height={20}
                               width={20}
                               loading='lazy'
