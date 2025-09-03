@@ -50,6 +50,7 @@ export function Header() {
             {navItems.map((item, index) => (
               <motion.a
                 key={item.href}
+                title={item.label}
                 href={item.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -100,6 +101,7 @@ export function Header() {
                   <motion.a
                     key={item.href}
                     href={item.href}
+                    title={item.label}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}

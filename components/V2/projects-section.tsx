@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Technologies {
   svg: string;
@@ -88,14 +89,15 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
                           className='bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm'
                           asChild
                         >
-                          <a
+                          <Link
                             href={project.fields.linkDeArticle}
+                            title='Demo'
                             target='_blank'
                             rel='noopener noreferrer'
                           >
                             <ExternalLink className='w-4 h-4 mr-2' />
                             Demo
-                          </a>
+                          </Link>
                         </Button>
                         <Button
                           size='sm'
@@ -103,10 +105,15 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
                           className='bg-white/10 hover:bg-white/20 text-white border-white/20 backdrop-blur-sm'
                           asChild
                         >
-                          <a href={project.fields.github} target='_blank' rel='noopener noreferrer'>
+                          <Link
+                            href={project.fields.github}
+                            title='Código'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
                             <Github className='w-4 h-4 mr-2' />
                             Código
-                          </a>
+                          </Link>
                         </Button>
                       </div>
                     </div>
@@ -187,14 +194,15 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
                   whileHover={{ x: 10 }}
                   className='flex items-center space-x-2 text-blue-400 cursor-pointer group'
                 >
-                  <a
+                  <Link
                     href={project.fields.linkDeArticle}
+                    title='Ver proyecto completo'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='font-medium'
                   >
                     Ver proyecto completo
-                  </a>
+                  </Link>
                   <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
                 </motion.div>
               </motion.div>

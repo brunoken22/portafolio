@@ -124,6 +124,7 @@ export function ContactSection() {
               {contactInfo.map((info, index) => (
                 <motion.a
                   key={info.label}
+                  title={info.label}
                   href={info.href}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

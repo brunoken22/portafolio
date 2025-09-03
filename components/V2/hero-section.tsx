@@ -113,12 +113,13 @@ export function HeroSection() {
                   label: "LinkedIn",
                 },
                 { icon: Mail, href: "mailto:bruno_am_22@hotmail.com", label: "Email" },
-              ].map((social, index) => (
+              ].map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
                   whileHover={{ scale: 1.1, y: -2 }}
+                  title={social.label}
                   whileTap={{ scale: 0.95 }}
                   className='w-12 h-12 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center transition-all duration-300 group'
                 >

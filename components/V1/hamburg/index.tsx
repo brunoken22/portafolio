@@ -1,9 +1,9 @@
-import {DivHamburg, DivElemnt, Enlaces} from './styled';
-import {useRouter} from 'next/navigation';
+import { DivHamburg, DivElemnt, Enlaces } from "./styled";
+import { useRouter } from "next/navigation";
 const pages = [
-  {title: 'Habilidades', link: '#habilidades'},
-  {title: 'Proyectos', link: '#proyectos'},
-  {title: 'Contacto', link: '#contacto'},
+  { title: "Habilidades", link: "#habilidades" },
+  { title: "Proyectos", link: "#proyectos" },
+  { title: "Contacto", link: "#contacto" },
 ];
 
 export function DespleHam(props: any) {
@@ -18,7 +18,7 @@ export function DespleHam(props: any) {
       <DivHamburg>
         <DivElemnt>
           {pages.map((e) => (
-            <Enlaces href={e.link} onClick={handleClick} key={e.link}>
+            <Enlaces href={e.link} onClick={handleClick} key={e.link} title={e.title}>
               {e.title}
             </Enlaces>
           ))}

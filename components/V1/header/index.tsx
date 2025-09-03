@@ -66,7 +66,7 @@ export function Header(props: any) {
           </div>
           <Div>
             {pages.map((e) => (
-              <Enlaces href={"#" + e.id} key={e.id}>
+              <Enlaces href={"#" + e.id} key={e.id} title={e.url}>
                 {e.url}
               </Enlaces>
             ))}

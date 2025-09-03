@@ -76,10 +76,10 @@ export function Contact() {
             <Subtitle>¡Trabajemos juntos!</Subtitle>
           </div>
           <OneContact>
-            <Enlaces href='tel:+541161204047'>
+            <Enlaces title='Teléfono' href='tel:+541161204047'>
               <PhoneSvg /> +541161204047
             </Enlaces>
-            <Enlaces href='mailto:bruno_am_22@hotmail.com'>
+            <Enlaces title='Email' href='mailto:bruno_am_22@hotmail.com'>
               <EmailSvg />
               bruno_am_22@hotmail.com
             </Enlaces>
