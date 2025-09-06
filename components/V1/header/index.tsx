@@ -27,7 +27,7 @@ const pages = [
   { url: "Contacto", id: "contacto" },
 ];
 
-export function Header(props: { tema: () => void; defaultTheme: ThemeType }) {
+export default function Header(props: { tema: () => void; defaultTheme: ThemeType }) {
   const [desple, setDesple] = useState(false);
   const [theme, setTheme] = useState<ThemeType>(props.defaultTheme);
 

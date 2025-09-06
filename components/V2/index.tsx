@@ -1,8 +1,8 @@
-import { Header } from "./header";
+import Header from "./header";
 import { HeroSection } from "./hero-section";
 import { AboutSection } from "./about-section";
 import { SkillsSection } from "./skills-section";
-import { ProjectsSection } from "./projects-section";
+import ProjectsSection from "./projects-section";
 import { ContactSection } from "./contact-section";
 import { FloatingElements } from "./floating-elements";
 import { ScrollProgress } from "./scroll-progress";

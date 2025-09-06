@@ -1,13 +1,12 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import Bk from "@/ui/icons/logoByMe.svg";
+// import Bk from "@/ui/icons/logoByMe.svg";
 import Link from "next/link";
 
-export function Header() {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -41,7 +40,12 @@ export function Header() {
             title='Inicio'
             className='z-10 relative bg-white rounded-full h-[60px] w-[60px]'
           >
-            <Bk className={`w-full h-full ml-[0.7rem]  text-white `} />
+            <img
+              src='/icons/logoByMe.svg'
+              title='Logo de Bruno Ken'
+              alt='Logo de Bruno Ken'
+              className={`w-full h-full ml-[0.7rem]  text-white `}
+            />
           </Link>
           <div className='absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-teal-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity' />
 

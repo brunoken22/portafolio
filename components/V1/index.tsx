@@ -4,7 +4,7 @@ import Proyectos from "@/components/V1/proyectos";
 import { Contact } from "@/components/V1/contact";
 import ProgressBar from "@/components/V1/progress-bar";
 import Main from "@/components/V1/main";
-import { Header } from "./header";
+import Header from "./header";
 import { useEffect, useState } from "react";
 import { Project, ThemeType } from "../V2/types";
 

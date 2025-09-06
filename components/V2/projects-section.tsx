@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project } from "./types";
 
-export function ProjectsSection({ proyect }: { proyect: Project[] }) {
+export default function ProjectsSection({ proyect }: { proyect: Project[] }) {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   return (
     <section id='projects' className='py-32 px-6 relative'>
@@ -37,7 +37,7 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
         <div className='space-y-32'>
           {proyect.map((project, index) => (
             <motion.div
-              key={project.fields.id}
+              key={project.fields?.id}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -162,9 +162,9 @@ export function ProjectsSection({ proyect }: { proyect: Project[] }) {
                 {/* Technologies */}
                 {project.fields.technologiess && (
                   <div className='flex flex-wrap gap-3'>
-                    {project.fields.technologiess.map((tech) => (
+                    {project.fields.technologiess.map((tech, index) => (
                       <span
-                        key={tech.title}
+                        key={index}
                         className='px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors'
                       >
                         {tech.title}
