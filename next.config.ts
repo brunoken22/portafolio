@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
@@ -33,7 +33,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 //   },
 // });
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     domains: ["cdn.sanity.io", "images.ctfassets.net"],
   },
@@ -43,3 +43,5 @@ const nextConfig = {
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
+
+export default withBundleAnalyzer(nextConfig);

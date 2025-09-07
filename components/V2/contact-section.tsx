@@ -1,43 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { Send, Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { mensaje } from "@/lib/hook";
-
-type FormData = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+import { contactMessage } from "./lib/server";
 
 export function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const { register, handleSubmit, reset } = useForm<FormData>();
-
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    setIsSubmitting(true);
-    try {
-      await mensaje({
-        name: data.name,
-        email: data.email,
-        message: `${data.subject}\n\n${data.message}`,
-      });
-      setShowSuccess(true);
-      reset();
-      setTimeout(() => setShowSuccess(false), 5000);
-    } catch (error) {
-      console.error("Error sending message:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const [success, setSuccess] = useState(true);
+  const [state, formAction, isPending] = useActionState(contactMessage, null);
 
   const contactInfo = [
     {
@@ -60,10 +33,18 @@ export function ContactSection() {
     },
   ];
 
+  useEffect(() => {
+    if (state?.body.email) {
+      setTimeout(() => {
+        setSuccess(false);
+      }, 3000);
+    }
+  }, [state]);
+
   return (
     <section id='contact' className='py-32 px-6 relative'>
       {/* Success Notification */}
-      {showSuccess && (
+      {success && state?.body.email && (
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -167,14 +148,15 @@ export function ContactSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
+            <form action={formAction} className='space-y-6'>
               <div className='grid sm:grid-cols-2 gap-6'>
                 <div className='space-y-2'>
                   <label className='text-white font-medium text-sm'>Nombre *</label>
                   <Input
                     required
-                    {...register("name")}
-                    placeholder='Tu nombre'
+                    // {...register("name")}
+                    name='name'
+                    placeholder='Bruno ken'
                     className='bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500/20'
                   />
                 </div>
@@ -183,8 +165,9 @@ export function ContactSection() {
                   <Input
                     type='email'
                     required
-                    {...register("email")}
-                    placeholder='tu@email.com'
+                    // {...register("email")}
+                    name='email'
+                    placeholder='bruno_am_22@hotmail.com'
                     className='bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500/20'
                   />
                 </div>
@@ -194,7 +177,8 @@ export function ContactSection() {
                 <label className='text-white font-medium text-sm'>Asunto *</label>
                 <Input
                   required
-                  {...register("subject")}
+                  // {...register("subject")}
+                  name='subject'
                   placeholder='¿En qué puedo ayudarte?'
                   className='bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500/20'
                 />
@@ -205,7 +189,8 @@ export function ContactSection() {
                 <Textarea
                   required
                   rows={6}
-                  {...register("message")}
+                  name='message'
+                  // {...register("message")}
                   placeholder='Cuéntame sobre tu proyecto, presupuesto y timeline...'
                   className='bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500/20 resize-none'
                 />
@@ -213,10 +198,10 @@ export function ContactSection() {
 
               <Button
                 type='submit'
-                disabled={isSubmitting}
+                disabled={isPending}
                 className='w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white py-4 rounded-xl font-medium shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
               >
-                {isSubmitting ? (
+                {isPending ? (
                   <div className='flex items-center space-x-2'>
                     <div className='w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin' />
                     <span>Enviando...</span>
@@ -258,7 +243,7 @@ export function ContactSection() {
           className='w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-2xl hover:shadow-green-500/25 transition-all duration-300 p-0 group'
         >
           <img
-            src='/whatsapp.webp'
+            src='/icons/whatsapp.svg'
             title='Whatsapp'
             alt='Whatsapp'
             className='!w-8 !h-8 group-hover:scale-110 transition-transform fill-white'
