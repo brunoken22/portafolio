@@ -83,10 +83,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='es'>
       <head>
         <link rel='preload' as='image' href='/hero.webp' />
-        <meta
-          name='google-site-verification'
-          content='CnmK8AWJQTO2MYQ5J7dOu9_dhCFy-ttErrYHDEWbOyw'
-        />
         <meta name='color-scheme' content='only light' />
       </head>
       <body className={poppins.className}>
