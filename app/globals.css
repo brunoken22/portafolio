@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --fondo-bg: #0e141b;
-  --fondo-bg-secundary: #fff;
+@theme {
+  --color-primary: #0e141b;
+  --color-secondary: #fff;
 }
 
 * {
@@ -35,11 +35,11 @@ body {
 }
 
 .default path {
-  fill: var(--fondo-bg);
+  fill: var(--color-primary);
 }
 
 .light path {
-  fill: var(--fondo-bg-secundary);
+  fill: var(--color-secondary);
 }
 
 @keyframes arrow {

@@ -36,9 +36,7 @@ export const metadata: Metadata = {
   creator: "Bruno Ken",
   publisher: "Bruno Ken",
   robots: "index, follow",
-  verification: {
-    google: "K8AWJQTO2MYQ5J7dOu9_dhCFy-ttErrYHDEWbOyw",
-  },
+
   alternates: {
     canonical: "/",
   },
@@ -76,6 +74,9 @@ export const metadata: Metadata = {
     ],
   },
   category: "technology",
+  verification: {
+    google: "CnmK8AWJQTO2MYQ5J7dOu9_dhCFy-ttErrYHDEWbOyw",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
